@@ -1,13 +1,14 @@
 import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pinolo/src/ui/welcome_page.dart';
 import 'package:pinolo/src/utils/strings.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
   @override
-  SplashScreenState createState() => new SplashScreenState();
+  SplashScreenState createState() => SplashScreenState();
 }
 
 class SplashScreenState extends State<SplashScreen>
@@ -18,8 +19,8 @@ class SplashScreenState extends State<SplashScreen>
   late Animation<double> animation;
 
   startTime() async {
-    var _duration = new Duration(seconds: 3);
-    return new Timer(_duration, navigationPage);
+    var duration = const Duration(seconds: 5);
+    return Timer(duration, navigationPage);
   }
 
   void navigationPage() {
@@ -33,12 +34,12 @@ class SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-    animationController = new AnimationController(
-        vsync: this, duration: new Duration(seconds: 2));
+    animationController = AnimationController(
+        vsync: this, duration: const Duration(seconds: 1));
     animation =
-    new CurvedAnimation(parent: animationController, curve: Curves.easeOut);
+    CurvedAnimation(parent: animationController, curve: Curves.easeOut);
 
-    animation.addListener(() => this.setState(() {}));
+    animation.addListener(() => setState(() {}));
     animationController.forward();
 
     setState(() {
@@ -61,7 +62,7 @@ class SplashScreenState extends State<SplashScreen>
             ),
           const Positioned(
             bottom: 20,
-              child: Text(Strings.pinolo, style: TextStyle(fontFamily: 'Baloo2SemiBold',fontSize: 28,color: AppColors.kOrange),),),
+              child: Text(Strings.kPinolo, style: TextStyle(fontFamily: 'Baloo2SemiBold',fontSize: 28,color: AppColors.kOrange),),),
         ],
       ),
     );
