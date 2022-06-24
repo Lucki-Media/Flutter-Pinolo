@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:pinolo/src/ui/home_page.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/strings.dart';
 import 'package:intro_slider/intro_slider.dart';
@@ -104,8 +105,12 @@ class _FirstInfoSliderState extends State<FirstInfoSlider> {
   }
 
   void onDonePress() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const HomePage()),
+    );
     // Back to the first tab
-    goToTab(0);
+    //goToTab(0);
   }
 
   void onTabChangeCompleted(index) {
@@ -114,14 +119,14 @@ class _FirstInfoSliderState extends State<FirstInfoSlider> {
   }
 
   Widget renderNextBtn() {
-    return const Text('Next',
+    return const Text(Strings.kNext,
     style: TextStyle(
         fontFamily: 'Baloo2SemiBold',fontSize: 14,color: AppColors.kBlue
     ),);
   }
 
   Widget renderDoneBtn() {
-    return const Text('Finish',
+    return const Text(Strings.kFinish,
       style: TextStyle(
           fontFamily: 'Baloo2SemiBold',fontSize: 14,color: AppColors.kGreen
       ),);
@@ -169,13 +174,14 @@ class _FirstInfoSliderState extends State<FirstInfoSlider> {
                 height: 10,
               ),
               SizedBox(
-                width: 50,
+                width: 234,
                 child: Text(
                   slides[index].description ?? '',
                   style: slides[index].styleDescription,
                   textAlign: TextAlign.center,
+                  //softWrap:false,
                  // maxLines: 5,
-                  //overflow: TextOverflow.ellipsis,
+                 // overflow: TextOverflow.clip,
                 ),
               ),
             ],
@@ -199,7 +205,8 @@ class _FirstInfoSliderState extends State<FirstInfoSlider> {
      // doneButtonStyle: myButtonStyle(),
 
       // Dot indicator
-      colorDot: AppColors.kBlue,
+      colorDot: AppColors.kGrey,
+      colorActiveDot:AppColors.kBlue,
       sizeDot: 7.0,
       typeDotAnimation: DotSliderAnimation.DOT_MOVEMENT,
 

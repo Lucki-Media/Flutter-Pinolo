@@ -13,4 +13,10 @@ class Strings {
   static const String kSliderTitle3 = 'Park out & Get Paid!';
   static const String kSliderTitle4 = 'Payout any time!';
   static const String kSliderTitle5 = 'Plant the trees!';
+  static const String kNext = 'Next';
+  static const String kFinish = 'Finish';
+  static const String kHello = 'Hello there!';
+  static const String kAlreadyAcc = 'If you already have an account Log In with your credentials, if you don’t,  Sing Up to Pinolo!';
+  static const String kSignUp = 'Sign Up';
+  static const String kLogIn = 'Log In';
 }
