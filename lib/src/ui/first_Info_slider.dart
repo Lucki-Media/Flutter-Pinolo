@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:pinolo/src/ui/home_page.dart';
+import 'package:pinolo/src/ui/your_location_page.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/strings.dart';
 import 'package:intro_slider/intro_slider.dart';
@@ -107,7 +107,7 @@ class _FirstInfoSliderState extends State<FirstInfoSlider> {
   void onDonePress() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const HomePage()),
+      MaterialPageRoute(builder: (context) => const YourLocationPage()),
     );
     // Back to the first tab
     //goToTab(0);

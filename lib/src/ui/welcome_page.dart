@@ -33,14 +33,14 @@ class WelcomePage extends StatelessWidget {
                   fontFamily: 'BalooRegular',
                 ),
               ),
-              const SizedBox(
+               SizedBox(
                 width: 255,
                 child: Text(
                   Strings.kParkApp,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
-                    color: AppColors.kBlack,
+                    color: AppColors.kBlack.withOpacity(.8),
                     fontFamily: 'Baloo2Medium',
                   ),
                 ),

@@ -19,4 +19,12 @@ class Strings {
   static const String kAlreadyAcc = 'If you already have an account Log In with your credentials, if you don’t,  Sing Up to Pinolo!';
   static const String kSignUp = 'Sign Up';
   static const String kLogIn = 'Log In';
+  static const String kWhereAreYou = 'Where are you?';
+  static const String kAllowLocation = 'Allow Pinolo location sharing so he can show you parking spots in your area.';
+  static const String kShareLocation = 'Share your location';
+  static const String kLoginWith = 'Welcome back to Pinolo, Log in with your credentials.';
+  static const String kEmail = 'e-mail';
+  static const String kPassword = 'Password';
+  static const String kEnterEmail = 'Enter your e-mail';
+  static const String kEnterPassword = 'Enter your Password';
 }
