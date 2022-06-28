@@ -22,9 +22,19 @@ class Strings {
   static const String kWhereAreYou = 'Where are you?';
   static const String kAllowLocation = 'Allow Pinolo location sharing so he can show you parking spots in your area.';
   static const String kShareLocation = 'Share your location';
-  static const String kLoginWith = 'Welcome back to Pinolo, Log in with your credentials.';
+  static const String kWelcomeBack = 'Welcome back to Pinolo, Log in with your credentials.';
   static const String kEmail = 'e-mail';
   static const String kPassword = 'Password';
   static const String kEnterEmail = 'Enter your e-mail';
   static const String kEnterPassword = 'Enter your Password';
+  static const String kLoginWith = 'To login with your account, please enter your e-mail and password.';
+  static const String kForgotPassword = 'Forgot password?';
+  static const String kCreateAcc = 'Create your account!';
+  static const String kPhoneNumber = 'Phone Number';
+  static const String kWhenYouEnter = 'When you enter your phone number and e-mail you will receive SMS with verification code.';
+  static const String kIHaveRead = 'I have read and agreed with ';
+  static const String kTermsConditions = 'Terms and Conditions ';
+  static const String kAnd = '& ';
+  static const String kPrivacyPolicy = 'Privacy Policy.';
+
 }
