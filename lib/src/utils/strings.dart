@@ -36,5 +36,7 @@ class Strings {
   static const String kTermsConditions = 'Terms and Conditions ';
   static const String kAnd = '& ';
   static const String kPrivacyPolicy = 'Privacy Policy.';
+  static const String kVerifyCode = 'Verification code';
+  static const String kResend = 'Resend';
 
 }
