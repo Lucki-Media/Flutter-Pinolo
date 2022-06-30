@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinolo/src/ui/verification_page.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
+import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
@@ -13,6 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isChecked = false;
+  bool _isObscure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,222 +124,179 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget LogInPopUp() {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(22.0),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 40,
-                ),
-                Row(
-                  //mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: CircleAvatar(
-                        radius: 16.0,
-                        backgroundColor: AppColors.kGrey,
-                        child: Icon(Icons.close, color: AppColors.kBlack),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 105,
-                    ),
-                    const Text(
-                      Strings.kLogIn,
-                      style: TextStyle(
-                        fontSize: 22,
-                        color: AppColors.kBlack,
-                        fontFamily: 'Baloo2SemiBold',
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                SizedBox(
-                  width: 210,
-                  child: Text(
-                    Strings.kWelcomeBack,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: AppColors.kBlack.withOpacity(.4),
-                      fontFamily: 'Baloo2Regular',
-                    ),
+    return StatefulBuilder(
+        builder: (BuildContext context, StateSetter setState) {
+      return Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(22.0),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 40,
                   ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 34),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      Strings.kEmail,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: AppColors.kBlack.withOpacity(.9),
-                        fontFamily: 'Baloo2Medium',
+                  Row(
+                    //mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: CircleAvatar(
+                          radius: 16.0,
+                          backgroundColor: AppColors.kGrey,
+                          child: Icon(Icons.close, color: AppColors.kBlack),
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: TextFormField(
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: AppColors.kBlack,
-                      fontFamily: 'Baloo2Regular',
-                    ),
-                    decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.symmetric(
-                          vertical: 0, horizontal: 25),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                            color: AppColors.kBlue, width: 1.0),
-                        borderRadius: BorderRadius.circular(30.0),
+                      SizedBox(
+                        width: 105,
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: AppColors.kBlack.withOpacity(0.2),
-                            width: 1.0),
-                        borderRadius: BorderRadius.circular(30.0),
-                      ),
-                      hintText: Strings.kEnterEmail,
-                      hintStyle: TextStyle(
-                        fontSize: 14,
-                        color: AppColors.kBlack.withOpacity(.2),
-                        fontFamily: 'Baloo2Regular',
-                      ),
-                      //labelText: 'e-mail',
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 34),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      Strings.kPassword,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: AppColors.kBlack.withOpacity(.9),
-                        fontFamily: 'Baloo2Medium',
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: TextFormField(
-                    obscureText: true,
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: AppColors.kBlack,
-                      fontFamily: 'Baloo2Regular',
-                    ),
-                    decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.symmetric(
-                          vertical: 0, horizontal: 25),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                            color: AppColors.kBlue, width: 1.0),
-                        borderRadius: BorderRadius.circular(30.0),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: AppColors.kBlack.withOpacity(0.2),
-                            width: 1.0),
-                        borderRadius: BorderRadius.circular(30.0),
-                      ),
-                      hintText: Strings.kEnterPassword,
-                      hintStyle: TextStyle(
-                        fontSize: 14,
-                        color: AppColors.kBlack.withOpacity(.2),
-                        fontFamily: 'Baloo2Regular',
-                      ),
-                      //labelText: 'Password',
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: SizedBox(
-                      width: 237,
-                      child: Text(
-                        Strings.kLoginWith,
-                        textAlign: TextAlign.start,
+                      const Text(
+                        Strings.kLogIn,
                         style: TextStyle(
-                          fontSize: 12,
-                          color: AppColors.kBlack.withOpacity(.3),
-                          fontFamily: 'Baloo2Regular',
+                          fontSize: 22,
+                          color: AppColors.kBlack,
+                          fontFamily: 'Baloo2SemiBold',
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  SizedBox(
+                    width: 210,
+                    child: Text(
+                      Strings.kWelcomeBack,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.kBlack.withOpacity(.4),
+                        fontFamily: 'Baloo2Regular',
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 34),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        Strings.kEmail,
+                        textAlign: TextAlign.center,
+                        style: AppCommon.labelTextStyle(),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: TextFormField(
+                      style: AppCommon.fieldTextStyle(),
+                      decoration: AppCommon.textFiledDecoration(hintText: Strings.kEnterEmail),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 34),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        Strings.kPassword,
+                        textAlign: TextAlign.center,
+                        style: AppCommon.labelTextStyle(),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: TextFormField(
+                      obscureText: _isObscure,
+                        obscuringCharacter:'*',
+                      style: AppCommon.fieldTextStyle(),
+                      decoration: AppCommon.textFiledDecoration(
+                          hintText: Strings.kEnterPassword,
+                      Suffix:InkWell(
+                        child: Icon(
+                          _isObscure ? Icons.visibility : Icons.visibility_off,
+                        ),
+                        onTap: () {
+                          setState(() {
+                            _isObscure = !_isObscure;
+                          });
+                        },
+                      ), ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: SizedBox(
+                        width: 237,
+                        child: Text(
+                          Strings.kLoginWith,
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: AppColors.kBlack.withOpacity(.3),
+                            fontFamily: 'Baloo2Regular',
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 12),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        ),
-                        child: const Text(
-                          Strings.kForgotPassword,
-                          style: TextStyle(
-                              fontFamily: 'Baloo2Medium',
-                              fontSize: 14,
-                              color: AppColors.kRed),
-                        )),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 12),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          ),
+                          child: const Text(
+                            Strings.kForgotPassword,
+                            style: TextStyle(
+                                fontFamily: 'Baloo2Medium',
+                                fontSize: 14,
+                                color: AppColors.kRed),
+                          )),
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          Positioned(
-            bottom: 35,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 32, right: 32),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 140),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0)),
-                  textStyle: const TextStyle(
-                      fontFamily: 'Baloo2SemiBold',
-                      fontSize: 16,
-                      color: AppColors.kWhite),
-                  primary: AppColors.kOrange,
-                ),
-                //icon: Icon(Icons.add, size: 18),
-                child: const Text(Strings.kLogIn),
+                ],
               ),
             ),
-          )
-        ],
-      ),
+            Positioned(
+              bottom: 35,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 32, right: 32),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 10, horizontal: 140),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0)),
+                    textStyle: const TextStyle(
+                        fontFamily: 'Baloo2SemiBold',
+                        fontSize: 16,
+                        color: AppColors.kWhite),
+                    primary: AppColors.kOrange,
+                  ),
+                  //icon: Icon(Icons.add, size: 18),
+                  child: const Text(Strings.kLogIn),
+                ),
+              ),
+            )
+          ],
+        ),
+      );}
     );
   }
 
@@ -406,11 +365,7 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           Strings.kPhoneNumber,
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: AppColors.kBlack.withOpacity(.9),
-                            fontFamily: 'Baloo2Medium',
-                          ),
+                          style: AppCommon.labelTextStyle(),
                         ),
                       ),
                     ),
@@ -418,33 +373,8 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.only(left: 10, right: 10),
                       child: IntlPhoneField(
                         disableLengthCheck:true,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: AppColors.kBlack,
-                          fontFamily: 'Baloo2Regular',
-                        ),
-                        decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 0, horizontal: 25),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: AppColors.kBlue, width: 1.0),
-                            borderRadius: BorderRadius.circular(30.0),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: AppColors.kBlack.withOpacity(0.2),
-                                width: 1.0),
-                            borderRadius: BorderRadius.circular(30.0),
-                          ),
-                         // hintText: ,
-                          hintStyle: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.kBlack.withOpacity(.2),
-                            fontFamily: 'Baloo2Regular',
-                          ),
-                          //labelText: 'e-mail',
-                        ),
+                        style: AppCommon.fieldTextStyle(),
+                        decoration: AppCommon.textFiledDecoration(),
                         initialCountryCode: 'RS',
                         onChanged: (phone) {
                           print(phone.completeNumber);
@@ -494,44 +424,15 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           Strings.kEmail,
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: AppColors.kBlack.withOpacity(.9),
-                            fontFamily: 'Baloo2Medium',
-                          ),
+                          style: AppCommon.labelTextStyle(),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 10, right: 10),
                       child: TextFormField(
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: AppColors.kBlack,
-                          fontFamily: 'Baloo2Regular',
-                        ),
-                        decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 0, horizontal: 25),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: AppColors.kBlue, width: 1.0),
-                            borderRadius: BorderRadius.circular(30.0),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: AppColors.kBlack.withOpacity(0.2),
-                                width: 1.0),
-                            borderRadius: BorderRadius.circular(30.0),
-                          ),
-                          hintText: Strings.kEnterEmail,
-                          hintStyle: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.kBlack.withOpacity(.2),
-                            fontFamily: 'Baloo2Regular',
-                          ),
-                          //labelText: 'e-mail',
-                        ),
+                        style: AppCommon.fieldTextStyle(),
+                        decoration: AppCommon.textFiledDecoration(hintText: Strings.kEnterEmail),
                       ),
                     ),
                     Padding(

@@ -38,5 +38,21 @@ class Strings {
   static const String kPrivacyPolicy = 'Privacy Policy.';
   static const String kVerifyCode = 'Verification code';
   static const String kResend = 'Resend';
+  static const String kFirstName = 'First Name';
+  static const String kEnterFirstName = 'Enter your first name';
+  static const String kLastName = 'Last Name';
+  static const String kEnterLastName = 'Enter your last name';
+  static const String kConfirmPassword = 'Confirm Password';
+  static const String kConfirmYourPassword = 'Confirm your password';
+  static const String kMake = 'Make';
+  static const String kChooseVehicleMake = 'Choose your vehicle make';
+  static const String kModel = 'Model';
+  static const String kChooseVehicleModel = 'Choose your vehicle model';
+  static const String kBody = 'Body';
+  static const String kChooseVehicleBody = 'Choose your vehicle body';
+  static const String kColor = 'Color';
+  static const String kChooseVehicleColor = 'Choose your vehicle color';
+  static const String kRegiNumber = 'Registration number';
+  static const String kEnterRegiNo = 'Enter your registration number';
 
 }
