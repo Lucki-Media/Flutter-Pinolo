@@ -4,6 +4,7 @@ import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:location/location.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,6 +16,34 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   bool isChecked = false;
   bool _isObscure = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _initLocationService();
+  }
+
+  Future _initLocationService() async {
+    var location = Location();
+
+    if (!await location.serviceEnabled()) {
+      if (!await location.requestService()) {
+        return;
+      }
+    }
+
+    var permission = await location.hasPermission();
+    if (permission == PermissionStatus.denied) {
+      permission = await location.requestPermission();
+      if (permission != PermissionStatus.granted) {
+        return;
+      }
+    }
+
+    var loc = await location.getLocation();
+    print("${loc.latitude} ${loc.longitude}");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,6 +158,7 @@ class _HomePageState extends State<HomePage> {
       return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Stack(
+          //fit: StackFit.expand,
           children: [
             Padding(
               padding: const EdgeInsets.all(22.0),
@@ -306,6 +336,7 @@ class _HomePageState extends State<HomePage> {
         return Scaffold(
           resizeToAvoidBottomInset: false,
           body: Stack(
+           // fit: StackFit.expand,
             children: [
               Padding(
                 padding: const EdgeInsets.all(22.0),

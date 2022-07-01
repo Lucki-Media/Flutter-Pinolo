@@ -173,15 +173,12 @@ class _FirstInfoSliderState extends State<FirstInfoSlider> {
               const SizedBox(
                 height: 10,
               ),
-              SizedBox(
-                width: 234,
+              Padding(
+                padding: const EdgeInsets.only(left: 80,right: 80),
                 child: Text(
                   slides[index].description ?? '',
                   style: slides[index].styleDescription,
                   textAlign: TextAlign.center,
-                  //softWrap:false,
-                 // maxLines: 5,
-                 // overflow: TextOverflow.clip,
                 ),
               ),
             ],

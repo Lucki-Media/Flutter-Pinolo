@@ -45,5 +45,13 @@
 	<false/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>This app needs access to location when open and in the background.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This app requires location access for current location to search trainer by location</string>
+    <key>NSLocationUsageDescription</key>
+    <string>This app requires location access for current location to find trainer by nearest location</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app needs access to location when open.</string>
 </dict>
 </plist>

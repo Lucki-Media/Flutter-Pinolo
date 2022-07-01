@@ -14,164 +14,168 @@ class VehicleInfo extends StatefulWidget {
 class _VehicleInfoState extends State<VehicleInfo> {
 
   TextEditingController VehicleColorController = TextEditingController();
-
+  Color currentColor = Color(0xff443a49);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
+        fit: StackFit.expand,
         children: [
           Padding(
             padding: const EdgeInsets.all(32.0),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 30,
-                ),
-                const Text(
-                  Strings.kSignUp,
-                  style: TextStyle(
-                    fontSize: 22,
-                    color: AppColors.kBlack,
-                    fontFamily: 'Baloo2SemiBold',
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 30,
                   ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      Strings.kMake,
-                      textAlign: TextAlign.center,
-                      style: AppCommon.labelTextStyle(),
+                  const Text(
+                    Strings.kSignUp,
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: AppColors.kBlack,
+                      fontFamily: 'Baloo2SemiBold',
                     ),
                   ),
-                ),
-                TextFormField(
-                  style: AppCommon.fieldTextStyle(),
-                  decoration: AppCommon.textFiledDecoration(
-                      hintText: Strings.kChooseVehicleMake),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      Strings.kModel,
-                      textAlign: TextAlign.center,
-                      style: AppCommon.labelTextStyle(),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        Strings.kMake,
+                        textAlign: TextAlign.center,
+                        style: AppCommon.labelTextStyle(),
+                      ),
                     ),
                   ),
-                ),
-                TextFormField(
-                  style: AppCommon.fieldTextStyle(),
-                  decoration: AppCommon.textFiledDecoration(
-                      hintText: Strings.kChooseVehicleModel),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      Strings.kBody,
-                      textAlign: TextAlign.center,
-                      style: AppCommon.labelTextStyle(),
+                  TextFormField(
+                    style: AppCommon.fieldTextStyle(),
+                    decoration: AppCommon.textFiledDecoration(
+                        hintText: Strings.kChooseVehicleMake),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        Strings.kModel,
+                        textAlign: TextAlign.center,
+                        style: AppCommon.labelTextStyle(),
+                      ),
                     ),
                   ),
-                ),
-                TextFormField(
-                  style: AppCommon.fieldTextStyle(),
-                  decoration: AppCommon.textFiledDecoration(
-                      hintText: Strings.kChooseVehicleBody),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      Strings.kColor,
-                      textAlign: TextAlign.center,
-                      style: AppCommon.labelTextStyle(),
+                  TextFormField(
+                    style: AppCommon.fieldTextStyle(),
+                    decoration: AppCommon.textFiledDecoration(
+                        hintText: Strings.kChooseVehicleModel),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        Strings.kBody,
+                        textAlign: TextAlign.center,
+                        style: AppCommon.labelTextStyle(),
+                      ),
                     ),
                   ),
-                ),
-                TextFormField(
-                  controller: VehicleColorController,
-                  style: AppCommon.fieldTextStyle(),
-                  decoration: AppCommon.textFiledDecoration(
-                      hintText: Strings.kChooseVehicleColor,
-                      Suffix: IconButton(
-                          onPressed: () {
-                            showDialog(
-                              context: context,
-                             // barrierColor: AppColors.fCreamDark.withOpacity(.8),
-                              builder: (BuildContext context) {
-                                return BlockPicker(
-                                  pickerColor: Colors.red,
-                                  layoutBuilder: (context, colors, child) {
-                                    return SizedBox(
-                                      width: 100,
-                                      height: 300,
-                                      child: GridView.count(
-                                        crossAxisCount: 6,
-                                        crossAxisSpacing: 5,
-                                        mainAxisSpacing: 5,
-                                        children: [for (Color color in colors) child(color)],
-                                      ),
-                                    );
-                                  },
-                                  onColorChanged: (Color color){
-                                    // setState(
-                                    //     (){
-                                    //       VehicleColorController..text = color.toString();
-                                    //     }
-                                    // );
-                                    print(color);
-                                    Navigator.pop(context);//on color picked
-                                  },
-                                );
-                              },
-                            );
-                          },
-                          icon: Icon(
-                            Icons.circle,
-                            size: 35,
-                            color: Colors.red,
-                          ))),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      Strings.kRegiNumber,
-                      textAlign: TextAlign.center,
-                      style: AppCommon.labelTextStyle(),
+                  TextFormField(
+                    style: AppCommon.fieldTextStyle(),
+                    decoration: AppCommon.textFiledDecoration(
+                        hintText: Strings.kChooseVehicleBody),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        Strings.kColor,
+                        textAlign: TextAlign.center,
+                        style: AppCommon.labelTextStyle(),
+                      ),
                     ),
                   ),
-                ),
-                TextFormField(
-                  style: AppCommon.fieldTextStyle(),
-                  decoration: AppCommon.textFiledDecoration(
-                      hintText: Strings.kEnterRegiNo),
-                ),
-              ],
+                  TextFormField(
+                    controller: VehicleColorController,
+                    style: AppCommon.fieldTextStyle(),
+                    decoration: AppCommon.textFiledDecoration(
+                        hintText: Strings.kChooseVehicleColor,
+                        Suffix: IconButton(
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                barrierColor: Colors.transparent,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(30.0))),
+                                    content: BlockPicker(
+                                      pickerColor: currentColor,
+                                      layoutBuilder: (context, colors, child) {
+                                        return Container(
+                                          //color: Colors.white,
+                                          width: 400,
+                                          height: 175,
+                                          child: GridView.count(
+                                            crossAxisCount: 6,
+                                            crossAxisSpacing: 5,
+                                            mainAxisSpacing: 5,
+                                            children: [for (Color color in colors) child(color)],
+                                          ),
+                                        );
+                                      },
+                                      onColorChanged: (Color color){
+                                        setState(() => currentColor = color);
+                                        print(color);
+                                        Navigator.pop(context);//on color picked
+                                      },
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                            icon: Icon(
+                              Icons.circle,
+                              size: 35,
+                              color: currentColor,
+                            ))),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        Strings.kRegiNumber,
+                        textAlign: TextAlign.center,
+                        style: AppCommon.labelTextStyle(),
+                      ),
+                    ),
+                  ),
+                  TextFormField(
+                    style: AppCommon.fieldTextStyle(),
+                    decoration: AppCommon.textFiledDecoration(
+                        hintText: Strings.kEnterRegiNo),
+                  ),
+                ],
+              ),
             ),
           ),
           Positioned(
