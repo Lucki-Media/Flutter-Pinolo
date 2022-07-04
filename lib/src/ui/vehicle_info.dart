@@ -12,20 +12,22 @@ class VehicleInfo extends StatefulWidget {
 }
 
 class _VehicleInfoState extends State<VehicleInfo> {
-
-  TextEditingController VehicleColorController = TextEditingController();
+  final TextEditingController _VehicleMakeController = TextEditingController();
+  final TextEditingController _VehicleModelController = TextEditingController();
+  final TextEditingController _VehicleBodyController = TextEditingController();
+  final TextEditingController _VehicleRegiNoController = TextEditingController();
+  TextEditingController _VehicleColorController = TextEditingController();
   Color currentColor = Color(0xff443a49);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: SingleChildScrollView(
+      resizeToAvoidBottomInset: true,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(32.0),
               child: Column(
                 children: [
                   SizedBox(
@@ -54,6 +56,7 @@ class _VehicleInfoState extends State<VehicleInfo> {
                     ),
                   ),
                   TextFormField(
+                    controller: _VehicleMakeController,
                     style: AppCommon.fieldTextStyle(),
                     decoration: AppCommon.textFiledDecoration(
                         hintText: Strings.kChooseVehicleMake),
@@ -73,6 +76,7 @@ class _VehicleInfoState extends State<VehicleInfo> {
                     ),
                   ),
                   TextFormField(
+                    controller: _VehicleModelController,
                     style: AppCommon.fieldTextStyle(),
                     decoration: AppCommon.textFiledDecoration(
                         hintText: Strings.kChooseVehicleModel),
@@ -92,6 +96,7 @@ class _VehicleInfoState extends State<VehicleInfo> {
                     ),
                   ),
                   TextFormField(
+                    controller: _VehicleBodyController,
                     style: AppCommon.fieldTextStyle(),
                     decoration: AppCommon.textFiledDecoration(
                         hintText: Strings.kChooseVehicleBody),
@@ -111,7 +116,7 @@ class _VehicleInfoState extends State<VehicleInfo> {
                     ),
                   ),
                   TextFormField(
-                    controller: VehicleColorController,
+                    controller: _VehicleColorController,
                     style: AppCommon.fieldTextStyle(),
                     decoration: AppCommon.textFiledDecoration(
                         hintText: Strings.kChooseVehicleColor,
@@ -170,6 +175,7 @@ class _VehicleInfoState extends State<VehicleInfo> {
                     ),
                   ),
                   TextFormField(
+                    controller: _VehicleRegiNoController,
                     style: AppCommon.fieldTextStyle(),
                     decoration: AppCommon.textFiledDecoration(
                         hintText: Strings.kEnterRegiNo),
@@ -177,10 +183,8 @@ class _VehicleInfoState extends State<VehicleInfo> {
                 ],
               ),
             ),
-          ),
-          Positioned(
-            bottom: 35,
-            child: Padding(
+            SizedBox(height: 125,),
+            Padding(
               padding: const EdgeInsets.only(left: 32, right: 32),
               child: Column(
                 children: [
@@ -244,9 +248,9 @@ class _VehicleInfoState extends State<VehicleInfo> {
                   ),
                 ],
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
     ;
