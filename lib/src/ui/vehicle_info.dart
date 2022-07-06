@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinolo/src/ui/main_map.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
@@ -229,7 +230,7 @@ class _VehicleInfoState extends State<VehicleInfo> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => VehicleInfo()),
+                        MaterialPageRoute(builder: (context) => MainMap()),
                       );
                     },
                     style: ElevatedButton.styleFrom(

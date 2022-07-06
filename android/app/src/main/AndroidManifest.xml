@@ -8,6 +8,10 @@
         android:label="pinolo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+       <meta-data
+           android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyAbhjCmnqGl_yvBV9U1EoQHUY1Ldsetr24"
+           />
         <activity
             android:name=".MainActivity"
             android:exported="true"
