@@ -54,5 +54,6 @@ class Strings {
   static const String kChooseVehicleColor = 'Choose your vehicle color';
   static const String kRegiNumber = 'Registration number';
   static const String kEnterRegiNo = 'Enter your registration number';
+  static const String kParkOut = 'Park Out';
 
 }

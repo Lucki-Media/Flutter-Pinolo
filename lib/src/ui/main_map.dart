@@ -6,6 +6,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_google_places_hoc081098/flutter_google_places_hoc081098.dart';
 import 'package:google_api_headers/google_api_headers.dart';
 import 'package:google_maps_webservice/places.dart';
+import 'package:location/location.dart';
 
 class MainMap extends StatefulWidget {
   const MainMap({Key? key}) : super(key: key);
@@ -20,26 +21,23 @@ class _MainMapState extends State<MainMap> {
   Completer<GoogleMapController> _controller = Completer();
   Map<MarkerId, Marker> markers = <MarkerId, Marker>{};
   static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(17.4435, 78.3772),
+    target: LatLng(27.6602292, 85.308027),
     zoom: 14.0,
   );
   List<MarkerId>listMarkerIds=List<MarkerId>.empty(growable: true);
   //final MarkerId markerId = MarkerId("current");
 
 
-  String googleApikey = "GOOGLE_MAP_API_KAY";
+  String googleApikey = "AIzaSyAbhjCmnqGl_yvBV9U1EoQHUY1Ldsetr24";
   GoogleMapController? mapController; //contrller for Google map
-  CameraPosition? cameraPosition;
-  LatLng startLocation = LatLng(27.6602292, 85.308027);
-  String location = "Search Location";
-
+  //CameraPosition? cameraPosition;
+  //LatLng startLocation = LatLng(27.6602292, 85.308027);
+  String location = "Where do you want to go?";
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
-
   }
 
   @override
@@ -51,7 +49,7 @@ class _MainMapState extends State<MainMap> {
         body: Stack(
           children: [
             GoogleMap(initialCameraPosition: _kGooglePlex,
-
+              myLocationEnabled: true,
               onTap: (_){
 
               },
@@ -59,7 +57,8 @@ class _MainMapState extends State<MainMap> {
               markers: Set<Marker>.of(markers.values),
 
               onMapCreated: (GoogleMapController controler){
-                _controller.complete(controler);
+                //_controller.complete(controler);
+                mapController = controler;
 
                 MarkerId markerId1 = MarkerId("1");
                 MarkerId markerId2 = MarkerId("2");
@@ -102,60 +101,113 @@ class _MainMapState extends State<MainMap> {
             ),
             //search autoconplete input
             Positioned(  //search input bar
-                top:10,
-                child: InkWell(
-                    onTap: () async {
-                      var place = await PlacesAutocomplete.show(
-                          context: context,
-                          apiKey: googleApikey,
-                          mode: Mode.overlay,
-                          types: [],
-                          strictbounds: false,
-                          components: [Component(Component.country, 'np')],
-                          //google_map_webservice package
-                          onError: (err){
-                            print(err);
-                          }
-                      );
+                top:35,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8,right: 8),
+                  child: Row(
+                    children: [
+                      IconButton(
+                          onPressed: () {
+                          },
+                          icon:
+                            Image.asset('assets/images/user_icon.png',height: 35,),
+                            ),
+                      InkWell(
+                          onTap: () async {
+                            var place = await PlacesAutocomplete.show(
+                                context: context,
+                                apiKey: googleApikey,
+                                mode: Mode.overlay,
+                                types: [],
+                                strictbounds: false,
+                                components: [Component(Component.country, 'np')],
+                                //google_map_webservice package
+                                onError: (err){
+                                  print(err);
+                                }
+                            );
 
-                      if(place != null){
-                        setState(() {
-                          location = place.description.toString();
-                        });
+                            if(place != null){
+                              setState(() {
+                                location = place.description.toString();
+                              });
 
-                        //form google_maps_webservice package
-                        final plist = GoogleMapsPlaces(apiKey:googleApikey,
-                          apiHeaders: await GoogleApiHeaders().getHeaders(),
-                          //from google_api_headers package
-                        );
-                        String placeid = place.placeId ?? "0";
-                        final detail = await plist.getDetailsByPlaceId(placeid);
-                        final geometry = detail.result.geometry!;
-                        final lat = geometry.location.lat;
-                        final lang = geometry.location.lng;
-                        var newlatlang = LatLng(lat, lang);
+                              //form google_maps_webservice package
+                              final plist = GoogleMapsPlaces(apiKey:googleApikey,
+                                apiHeaders: await GoogleApiHeaders().getHeaders(),
+                                //from google_api_headers package
+                              );
+                              String placeid = place.placeId ?? "0";
+                              final detail = await plist.getDetailsByPlaceId(placeid);
+                              final geometry = detail.result.geometry!;
+                              final lat = geometry.location.lat;
+                              final lang = geometry.location.lng;
+                              var newlatlang = LatLng(lat, lang);
 
-
-                        //move map camera to selected place with animation
-                        mapController?.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(target: newlatlang, zoom: 17)));
-                      }
-                    },
-                    child:Padding(
-                      padding: EdgeInsets.all(15),
-                      child: Card(
-                        child: Container(
-                            padding: EdgeInsets.all(0),
-                            width: MediaQuery.of(context).size.width - 40,
-                            child: ListTile(
-                              title:Text(location, style: TextStyle(fontSize: 18),),
-                              trailing: Icon(Icons.search),
-                              dense: true,
-                            )
-                        ),
+                              //move map camera to selected place with animation
+                              mapController?.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(target: newlatlang, zoom: 14)));
+                            }
+                          },
+                          child:Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: AppColors.kBlue.withOpacity(.25),
+                                // border: Border(
+                                //   left: BorderSide(
+                                //     color: Colors.green,
+                                //     width: 3,
+                                //   ),
+                                // ),
+                              ),
+                            //color: AppColors.kBlue.withOpacity(.25),
+                              padding: EdgeInsets.all(0),
+                              width: MediaQuery.of(context).size.width - 110,
+                              //height: 32,
+                              child: ListTile(
+                                title:Text(location, style: TextStyle(fontSize: 18),),
+                                //trailing: Icon(Icons.search),
+                                dense: true,
+                              )
+                          ),
                       ),
-                    )
-                )
+                      IconButton(
+                        onPressed: () {
+                        },
+                        icon:
+                        Image.asset('assets/images/up_down_icon.png',height: 35,),
+                      ),
+                    ],
+                  ),
+                ),
+            ),
+            Positioned(
+              bottom: 35,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 32, right: 32),
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => MainMap()),
+                    // );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 140),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0)),
+                    textStyle: const TextStyle(
+                        fontFamily: 'Baloo2SemiBold',
+                        fontSize: 16,
+                        color: AppColors.kWhite),
+                    primary: AppColors.kOrange,
+                  ),
+                  //icon: Icon(Icons.add, size: 18),
+                  child: const Text(Strings.kParkOut),
+                ),
+              ),
             )
+
           ],
         )
     );

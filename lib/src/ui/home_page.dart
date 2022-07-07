@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinolo/src/ui/main_map.dart';
 import 'package:pinolo/src/ui/verification_page.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
@@ -307,7 +308,12 @@ class _HomePageState extends State<HomePage> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 32, right: 32),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MainMap()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     padding:
                         const EdgeInsets.symmetric(vertical: 10, horizontal: 140),
