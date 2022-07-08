@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinolo/src/ui/home_page.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
+import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
 
 class YourLocationPage extends StatefulWidget {
@@ -61,18 +62,16 @@ class _YourLocationPageState extends State<YourLocationPage> {
             Positioned(
               bottom: 35,
               //left: 30,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const HomePage()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 90),shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0)),textStyle: const TextStyle(fontFamily: 'Baloo2SemiBold',fontSize: 16,color: AppColors.kWhite),primary: AppColors.kBlue,),
-                //icon: Icon(Icons.add, size: 18),
-                child: const Text(Strings.kShareLocation),
-              ),),
+              child: AppCommon.appButton(
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomePage()),
+                    );
+                  },
+                  btnText:  Strings.kShareLocation,
+                  btnColor:AppColors.kBlue,
+                  horizontal: 90),),
           ]
       ),
     );

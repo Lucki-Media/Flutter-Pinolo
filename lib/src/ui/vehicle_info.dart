@@ -226,27 +226,16 @@ class _VehicleInfoState extends State<VehicleInfo> {
                       ],
                     ),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => MainMap()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10, horizontal: 140),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0)),
-                      textStyle: const TextStyle(
-                          fontFamily: 'Baloo2SemiBold',
-                          fontSize: 16,
-                          color: AppColors.kWhite),
-                      primary: AppColors.kBlue,
-                    ),
-                    //icon: Icon(Icons.add, size: 18),
-                    child: const Text(Strings.kFinish),
-                  ),
+                  AppCommon.appButton(
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MainMap()),
+                        );
+                      },
+                      btnText:Strings.kFinish,
+                      btnColor:AppColors.kBlue,
+                      horizontal: 140 ),
                 ],
               ),
             )

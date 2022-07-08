@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinolo/src/ui/first_Info_slider.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
+import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -59,20 +60,18 @@ class WelcomePage extends StatelessWidget {
           ),
         ),
            Positioned(
-            bottom: 30,
+            bottom: 35,
             //left: 30,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const FirstInfoSlider()),
-                );
-              },
-              style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 100),shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0)),textStyle: const TextStyle(fontFamily: 'Baloo2SemiBold',fontSize: 16,color: AppColors.kWhite),primary: AppColors.kOrange,),
-              //icon: Icon(Icons.add, size: 18),
-              child: const Text(Strings.kGetStart),
-            ),),
+            child: AppCommon.appButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const FirstInfoSlider()),
+                  );
+                },
+                btnText:  Strings.kGetStart,
+                btnColor:AppColors.kOrange,
+            horizontal: 120),),
         ]
       ),
     );

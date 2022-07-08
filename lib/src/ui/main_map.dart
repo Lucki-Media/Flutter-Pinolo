@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pinolo/src/ui/my_bids.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
+import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
 import 'dart:async';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -184,27 +186,16 @@ class _MainMapState extends State<MainMap> {
               bottom: 35,
               child: Padding(
                 padding: const EdgeInsets.only(left: 32, right: 32),
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => MainMap()),
-                    // );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 140),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0)),
-                    textStyle: const TextStyle(
-                        fontFamily: 'Baloo2SemiBold',
-                        fontSize: 16,
-                        color: AppColors.kWhite),
-                    primary: AppColors.kOrange,
-                  ),
-                  //icon: Icon(Icons.add, size: 18),
-                  child: const Text(Strings.kParkOut),
-                ),
+                child: AppCommon.appButton(
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyBids()),
+                      );
+                    },
+                    btnText:Strings.kParkOut,
+                    btnColor:AppColors.kOrange,
+                    horizontal: 130 ),
               ),
             )
 

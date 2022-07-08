@@ -158,27 +158,16 @@ class _PersonalInfoState extends State<PersonalInfo> {
                       ],
                     ),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) =>  VehicleInfo()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10, horizontal: 145),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0)),
-                      textStyle: const TextStyle(
-                          fontFamily: 'Baloo2SemiBold',
-                          fontSize: 16,
-                          color: AppColors.kWhite),
-                      primary: AppColors.kBlue,
-                    ),
-                    //icon: Icon(Icons.add, size: 18),
-                    child: const Text(Strings.kNext),
-                  ),
+                  AppCommon.appButton(
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) =>  VehicleInfo()),
+                        );
+                      },
+                      btnText:Strings.kNext,
+                      btnColor:AppColors.kBlue,
+                      horizontal: 145 ),
                 ],
               ),
             ),

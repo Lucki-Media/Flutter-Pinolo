@@ -95,57 +95,35 @@ class _HomePageState extends State<HomePage> {
           //left: 30,
           child: Column(
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                    context: context,
-                    isScrollControlled: true,
-                    builder: (builder) {
-                      return LogInPopUp();
-                    },
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 138),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0)),
-                  textStyle: const TextStyle(
-                      fontFamily: 'Baloo2SemiBold',
-                      fontSize: 16,
-                      color: AppColors.kWhite),
-                  primary: AppColors.kOrange,
-                ),
-                //icon: Icon(Icons.add, size: 18),
-                child: const Text(Strings.kLogIn),
-              ),
+              AppCommon.appButton(
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      builder: (builder) {
+                        return LogInPopUp();
+                      },
+                    );
+                  },
+                  btnText: Strings.kLogIn,
+                  btnColor: AppColors.kOrange,
+                  horizontal: 138),
               const SizedBox(
                 height: 16,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                    context: context,
-                    isScrollControlled: true,
-                    builder: (builder) {
-                      return SignUpPopUp();
-                    },
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 133),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0)),
-                  textStyle: const TextStyle(
-                      fontFamily: 'Baloo2SemiBold',
-                      fontSize: 16,
-                      color: AppColors.kWhite),
-                  primary: AppColors.kBlue,
-                ),
-                //icon: Icon(Icons.add, size: 18),
-                child: const Text(Strings.kSignUp),
-              ),
+              AppCommon.appButton(
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      builder: (builder) {
+                        return SignUpPopUp();
+                      },
+                    );
+                  },
+                  btnText: Strings.kSignUp,
+                  btnColor: AppColors.kBlue,
+                  horizontal: 133),
             ],
           ),
         ),
@@ -227,7 +205,8 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: TextFormField(
                       style: AppCommon.fieldTextStyle(),
-                      decoration: AppCommon.textFiledDecoration(hintText: Strings.kEnterEmail),
+                      decoration: AppCommon.textFiledDecoration(
+                          hintText: Strings.kEnterEmail),
                     ),
                   ),
                   SizedBox(
@@ -248,20 +227,23 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: TextFormField(
                       obscureText: _isObscure,
-                        obscuringCharacter:'*',
+                      obscuringCharacter: '*',
                       style: AppCommon.fieldTextStyle(),
                       decoration: AppCommon.textFiledDecoration(
-                          hintText: Strings.kEnterPassword,
-                      Suffix:InkWell(
-                        child: Icon(
-                          _isObscure ? Icons.visibility : Icons.visibility_off,
+                        hintText: Strings.kEnterPassword,
+                        Suffix: InkWell(
+                          child: Icon(
+                            _isObscure
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                          ),
+                          onTap: () {
+                            setState(() {
+                              _isObscure = !_isObscure;
+                            });
+                          },
                         ),
-                        onTap: () {
-                          setState(() {
-                            _isObscure = !_isObscure;
-                          });
-                        },
-                      ), ),
+                      ),
                     ),
                   ),
                   Padding(
@@ -307,33 +289,22 @@ class _HomePageState extends State<HomePage> {
               bottom: 35,
               child: Padding(
                 padding: const EdgeInsets.only(left: 32, right: 32),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => MainMap()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 10, horizontal: 140),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0)),
-                    textStyle: const TextStyle(
-                        fontFamily: 'Baloo2SemiBold',
-                        fontSize: 16,
-                        color: AppColors.kWhite),
-                    primary: AppColors.kOrange,
-                  ),
-                  //icon: Icon(Icons.add, size: 18),
-                  child: const Text(Strings.kLogIn),
-                ),
+                child: AppCommon.appButton(
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MainMap()),
+                      );
+                    },
+                    btnText:Strings.kLogIn,
+                    btnColor:AppColors.kOrange,
+                    horizontal: 140 ),
               ),
             )
           ],
         ),
-      );}
-    );
+      );
+    });
   }
 
   Widget SignUpPopUp() {
@@ -342,7 +313,7 @@ class _HomePageState extends State<HomePage> {
         return Scaffold(
           resizeToAvoidBottomInset: false,
           body: Stack(
-           // fit: StackFit.expand,
+            // fit: StackFit.expand,
             children: [
               Padding(
                 padding: const EdgeInsets.all(22.0),
@@ -409,7 +380,7 @@ class _HomePageState extends State<HomePage> {
                     Padding(
                       padding: const EdgeInsets.only(left: 10, right: 10),
                       child: IntlPhoneField(
-                        disableLengthCheck:true,
+                        disableLengthCheck: true,
                         style: AppCommon.fieldTextStyle(),
                         decoration: AppCommon.textFiledDecoration(),
                         initialCountryCode: 'RS',
@@ -469,7 +440,8 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.only(left: 10, right: 10),
                       child: TextFormField(
                         style: AppCommon.fieldTextStyle(),
-                        decoration: AppCommon.textFiledDecoration(hintText: Strings.kEnterEmail),
+                        decoration: AppCommon.textFiledDecoration(
+                            hintText: Strings.kEnterEmail),
                       ),
                     ),
                     Padding(
@@ -558,38 +530,51 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(bottom: 20.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                         children: [
-                           Icon(Icons.circle,size: 10,color: AppColors.kBlue,),
-                           SizedBox(width: 20,),
-                           Icon(Icons.circle,size: 10,color: AppColors.kGrey,),
-                           SizedBox(width: 20,),
-                           Icon(Icons.circle,size: 10,color: AppColors.kGrey,),
-                           SizedBox(width: 20,),
-                           Icon(Icons.circle,size: 10,color: AppColors.kGrey,),
-                         ],
+                          children: [
+                            Icon(
+                              Icons.circle,
+                              size: 10,
+                              color: AppColors.kBlue,
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Icon(
+                              Icons.circle,
+                              size: 10,
+                              color: AppColors.kGrey,
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Icon(
+                              Icons.circle,
+                              size: 10,
+                              color: AppColors.kGrey,
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Icon(
+                              Icons.circle,
+                              size: 10,
+                              color: AppColors.kGrey,
+                            ),
+                          ],
                         ),
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const Verification_page()),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 136),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0)),
-                          textStyle: const TextStyle(
-                              fontFamily: 'Baloo2SemiBold',
-                              fontSize: 16,
-                              color: AppColors.kWhite),
-                          primary: AppColors.kBlue,
-                        ),
-                        //icon: Icon(Icons.add, size: 18),
-                        child: const Text(Strings.kSignUp),
-                      ),
+                      AppCommon.appButton(
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                  const Verification_page()),
+                            );
+                          },
+                          btnText:Strings.kSignUp,
+                          btnColor:AppColors.kBlue,
+                          horizontal: 136 ),
                     ],
                   ),
                 ),

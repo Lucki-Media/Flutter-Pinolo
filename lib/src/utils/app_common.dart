@@ -43,28 +43,24 @@ class AppCommon {
       fontFamily: 'Baloo2Regular',
     );
   }
-  // static ScaffoldFeatureController showSnackBar(
-  //     {required BuildContext context, required String text}) {
-  //   return ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-  //     content: Text(
-  //       text,
-  //       style: TextStyle(color: Colors.white),
-  //     ),
-  //     backgroundColor: Colors.red,
-  //   ));
-  // }
-  //
-  // static showToast(String msg) {
-  //   Fluttertoast.showToast(
-  //     msg: msg.split("||").join("\n"),
-  //     toastLength: Toast.LENGTH_SHORT,
-  //     gravity: ToastGravity.BOTTOM,
-  //     timeInSecForIosWeb: 1,
-  //     backgroundColor: Colors.black.withOpacity(.90),
-  //     textColor: Colors.white,
-  //     fontSize: 16.0,
-  //   );
-  //
-  // }
+
+  static ElevatedButton appButton({onPressed , required String btnText, required Color btnColor,required double horizontal}){
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        padding:
+        EdgeInsets.symmetric(vertical: 10, horizontal: horizontal),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0)),
+        textStyle: const TextStyle(
+            fontFamily: 'Baloo2SemiBold',
+            fontSize: 16,
+            color: AppColors.kWhite),
+        primary: btnColor,
+      ),
+      //icon: Icon(Icons.add, size: 18),
+      child:  Text(btnText),
+    );
+  }
 
 }

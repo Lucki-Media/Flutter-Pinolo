@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinolo/src/ui/personal_info.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
+import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 class Verification_page extends StatefulWidget {
@@ -146,27 +147,16 @@ class _Verification_pageState extends State<Verification_page> {
                   ],
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) =>  PersonalInfo()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  padding:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 145),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0)),
-                  textStyle: const TextStyle(
-                      fontFamily: 'Baloo2SemiBold',
-                      fontSize: 16,
-                      color: AppColors.kWhite),
-                  primary: AppColors.kBlue,
-                ),
-                //icon: Icon(Icons.add, size: 18),
-                child: const Text(Strings.kNext),
-              ),
+              AppCommon.appButton(
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  PersonalInfo()),
+                    );
+                  },
+                  btnText:Strings.kNext,
+                  btnColor:AppColors.kBlue,
+                  horizontal: 145 ),
             ],
           ),
         ),
