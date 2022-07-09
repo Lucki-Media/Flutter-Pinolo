@@ -56,5 +56,8 @@ class Strings {
   static const String kEnterRegiNo = 'Enter your registration number';
   static const String kParkOut = 'Park Out';
   static const String kMyBids = 'My Bids';
+  static const String kAll = 'All';
+  static const String kWinning = 'Winning';
+  static const String kLosing = 'Losing';
 
 }

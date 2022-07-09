@@ -123,52 +123,91 @@ Widget MyBidsPopUp(){
         length: 3,
         child: Scaffold(
           appBar: AppBar(
+            shadowColor: AppColors.kShadowGrey,
+            elevation: 5,
+            leadingWidth:35,
             leading: GestureDetector(
               onTap: () {
                 Navigator.of(context).pop();
               },
               child: CircleAvatar(
-                radius: 16.0,
+                //radius: 10.0,
                 backgroundColor: AppColors.kGrey,
                 child: Icon(Icons.close, color: AppColors.kBlack),
               ),
             ),
             backgroundColor:AppColors.kWhite,
-            foregroundColor: AppColors.kBlue,
-            title:  Center(
-              child: const Text(
-              Strings.kMyBids,
-              style: TextStyle(
-                fontSize: 18,
-                color: AppColors.kBlack,
-                fontFamily: 'Baloo2SemiBold',
-              ),
-          ),
+            //foregroundColor: AppColors.kBlue,
+            centerTitle: true,
+            title:  const Text(
+            Strings.kMyBids,
+            style: TextStyle(
+              fontSize: 18,
+              color: AppColors.kBlack,
+              fontFamily: 'Baloo2SemiBold',
             ),
-            bottom: const TabBar(
+          ),
+            bottom:  TabBar(
+              labelColor: AppColors.kBlue,
+              labelStyle: TextStyle(
+                fontSize: 16,
+                fontFamily: 'Baloo2Medium',
+              ),
+              unselectedLabelColor: AppColors.kBlack.withOpacity(.4),
+              indicatorColor: AppColors.kBlue,
               tabs: <Widget>[
                 Tab(
-                  child: Text('All',style: TextStyle(color: AppColors.kBlack),),
+                  text: Strings.kAll,
                 ),
                 Tab(
-                  child: Text('Winning',style: TextStyle(color: AppColors.kBlack),),
+                  text: Strings.kWinning,
                 ),
                 Tab(
-                  child: Text('Losing',style: TextStyle(color: AppColors.kBlack),),
+                  text: Strings.kLosing,
                 ),
               ],
             ),
           ),
-          body: const TabBarView(
+          body: TabBarView(
             children: <Widget>[
               Center(
-                child: Text("It's cloudy here"),
+                child: ListView.builder(
+                    itemCount: 5,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListTile(
+                          leading: const Icon(Icons.list),
+                          trailing: const Text(
+                            "GFG",
+                            style: TextStyle(color: Colors.green, fontSize: 15),
+                          ),
+                          title: Text("List item $index"));
+                    }),
               ),
               Center(
-                child: Text("It's rainy here"),
+                child: ListView.builder(
+                    itemCount: 5,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListTile(
+                          leading: const Icon(Icons.list),
+                          trailing: const Text(
+                            "GFG",
+                            style: TextStyle(color: Colors.green, fontSize: 15),
+                          ),
+                          title: Text("List item $index"));
+                    }),
               ),
               Center(
-                child: Text("It's sunny here"),
+                child: ListView.builder(
+                    itemCount: 5,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListTile(
+                          leading: const Icon(Icons.list),
+                          trailing: const Text(
+                            "GFG",
+                            style: TextStyle(color: Colors.green, fontSize: 15),
+                          ),
+                          title: Text("List item $index"));
+                    }),
               ),
             ],
           ),
