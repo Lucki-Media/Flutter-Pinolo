@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:pinolo/src/ui/auction_completed_page.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
@@ -168,138 +169,146 @@ Widget MyBidsPopUp() {
           body: TabBarView(
             children: <Widget>[
               Center(
-                child: ListView.builder(
-                    itemCount: 5,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(18.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Text(
-                                          '3:14',
-                                          style: TextStyle(
-                                              color:
-                                                  AppColors.kBlack.withOpacity(.6),
-                                              fontFamily: 'Baloo2SemiBold',
-                                              fontSize: 20),
-                                        ),
-                                        Image.asset(
-                                          'assets/images/timer.png',
-                                          height: 23,
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      '250 rsd',
-                                      style: TextStyle(
-                                          color: AppColors.kBlack.withOpacity(.9),
-                                          fontFamily: 'Baloo2Medium',
-                                          fontSize: 20),
-                                    ),
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    Container(
-                                        height: 45,
-                                        width: 130,
-                                        child: Center(
-                                            child: Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                              children: [
-                                                CircleAvatar(
-                                                  backgroundColor: Colors.white,
-                                                  radius: 14,
-                                                  child: Icon(Icons.add, color: AppColors.kOrange,),
-                                                ),
-                                                Text("999 rsd",
-                                                    style: TextStyle(
-                                                        color: AppColors.kOrange
-                                                            .withOpacity(.7),
-                                                        fontFamily: 'Baloo2Medium',
-                                                        fontSize: 14)),
-                                                CircleAvatar(
-                                                  backgroundColor: Colors.white,
-                                                  radius: 14,
-                                                  child: Icon(Icons.remove, color: AppColors.kOrange,),
-                                                ),
-                                              ],
-                                            )),
-                                        decoration: BoxDecoration(
-                                            color: AppColors.kOrange.withOpacity(.3),
-                                          borderRadius: BorderRadius.circular(10),
-                                          // radius of 10
-                                        )),
-                                    Text("min. 59 rsd - max. 999 rsd",
-                                        style: TextStyle(
-                                            color: AppColors.kBlack
-                                                .withOpacity(.3),
-                                            fontFamily: 'Baloo2Regular',
-                                            fontSize: 12))
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    Container(
-                                        height: 45,
-                                        width: 114,
-                                        child: Center(
-                                            child: Column(
-                                          children: [
-                                            Text("bid for:",
-                                                style: TextStyle(
-                                                    color: AppColors.kWhite,
-                                                    fontFamily: 'Baloo2Medium',
-                                                    fontSize: 14)),
-                                            Text("999 rsd",
-                                                style: TextStyle(
-                                                    color: AppColors.kWhite,
-                                                    fontFamily: 'Baloo2Regular',
-                                                    fontSize: 14)),
-                                          ],
-                                        )),
-                                        decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(
-                                                10), // radius of 10
-                                            color: AppColors
-                                                .kOrange // green as background color
-                                            )),
-                                    Row(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(3.0),
-                                          child: Image.asset('assets/images/bank.png', height: 16,),
-                                        ),
-                                        Text("Pay with Balance",
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  AuctionCompletedPage()),
+                    );
+                  },
+                  child: ListView.builder(
+                      itemCount: 5,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(18.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text(
+                                            '3:14',
                                             style: TextStyle(
-                                                color: AppColors.kBlack
-                                                    .withOpacity(.8),
-                                                fontFamily: 'Baloo2Medium',
-                                                fontSize: 10))
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ],
+                                                color:
+                                                    AppColors.kBlack.withOpacity(.6),
+                                                fontFamily: 'Baloo2SemiBold',
+                                                fontSize: 20),
+                                          ),
+                                          Image.asset(
+                                            'assets/images/timer.png',
+                                            height: 23,
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        '250 rsd',
+                                        style: TextStyle(
+                                            color: AppColors.kBlack.withOpacity(.9),
+                                            fontFamily: 'Baloo2Medium',
+                                            fontSize: 20),
+                                      ),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      Container(
+                                          height: 45,
+                                          width: 130,
+                                          child: Center(
+                                              child: Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                children: [
+                                                  CircleAvatar(
+                                                    backgroundColor: Colors.white,
+                                                    radius: 14,
+                                                    child: Icon(Icons.add, color: AppColors.kOrange,),
+                                                  ),
+                                                  Text("999 rsd",
+                                                      style: TextStyle(
+                                                          color: AppColors.kOrange
+                                                              .withOpacity(.7),
+                                                          fontFamily: 'Baloo2Medium',
+                                                          fontSize: 14)),
+                                                  CircleAvatar(
+                                                    backgroundColor: Colors.white,
+                                                    radius: 14,
+                                                    child: Icon(Icons.remove, color: AppColors.kOrange,),
+                                                  ),
+                                                ],
+                                              )),
+                                          decoration: BoxDecoration(
+                                              color: AppColors.kOrange.withOpacity(.3),
+                                            borderRadius: BorderRadius.circular(10),
+                                            // radius of 10
+                                          )),
+                                      Text("min. 59 rsd - max. 999 rsd",
+                                          style: TextStyle(
+                                              color: AppColors.kBlack
+                                                  .withOpacity(.3),
+                                              fontFamily: 'Baloo2Regular',
+                                              fontSize: 12))
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      Container(
+                                          height: 45,
+                                          width: 114,
+                                          child: Center(
+                                              child: Column(
+                                            children: [
+                                              Text("bid for:",
+                                                  style: TextStyle(
+                                                      color: AppColors.kWhite,
+                                                      fontFamily: 'Baloo2Medium',
+                                                      fontSize: 14)),
+                                              Text("999 rsd",
+                                                  style: TextStyle(
+                                                      color: AppColors.kWhite,
+                                                      fontFamily: 'Baloo2Regular',
+                                                      fontSize: 14)),
+                                            ],
+                                          )),
+                                          decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(
+                                                  10), // radius of 10
+                                              color: AppColors
+                                                  .kOrange // green as background color
+                                              )),
+                                      Row(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.all(3.0),
+                                            child: Image.asset('assets/images/bank.png', height: 16,),
+                                          ),
+                                          Text("Pay with Balance",
+                                              style: TextStyle(
+                                                  color: AppColors.kBlack
+                                                      .withOpacity(.8),
+                                                  fontFamily: 'Baloo2Medium',
+                                                  fontSize: 10))
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                          Divider(
-                            color: AppColors.kBlack.withOpacity(.2), //color of divider
-                            height: 1, //height spacing of divider
-                            thickness: 1, //thickness of divier line
-                            indent: 25, //spacing at the start of divider
-                            //endIndent: 25, //spacing at the end of divider
-                          )
-                        ],
-                      );
-                    }),
+                            Divider(
+                              color: AppColors.kBlack.withOpacity(.2), //color of divider
+                              height: 1, //height spacing of divider
+                              thickness: 1, //thickness of divier line
+                              indent: 25, //spacing at the start of divider
+                              //endIndent: 25, //spacing at the end of divider
+                            )
+                          ],
+                        );
+                      }),
+                ),
               ),
               Center(
                 child: ListView.builder(

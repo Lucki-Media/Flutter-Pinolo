@@ -298,7 +298,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     btnText:Strings.kLogIn,
                     btnColor:AppColors.kOrange,
-                    horizontal: 140 ),
+                    horizontal: 150 ),
               ),
             )
           ],
@@ -574,7 +574,7 @@ class _HomePageState extends State<HomePage> {
                           },
                           btnText:Strings.kSignUp,
                           btnColor:AppColors.kBlue,
-                          horizontal: 136 ),
+                          horizontal: 145 ),
                     ],
                   ),
                 ),

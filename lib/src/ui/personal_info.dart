@@ -167,7 +167,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                       },
                       btnText:Strings.kNext,
                       btnColor:AppColors.kBlue,
-                      horizontal: 145 ),
+                      horizontal: 153 ),
                 ],
               ),
             ),

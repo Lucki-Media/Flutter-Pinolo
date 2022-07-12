@@ -59,5 +59,13 @@ class Strings {
   static const String kAll = 'All';
   static const String kWinning = 'Winning';
   static const String kLosing = 'Losing';
-
+  static const String kAucComplt ='Auction completed';
+  static const String kBidMost ='You Bidded the most and got the spot';
+  static const String kLetsGo = 'Let’s Go';
+  static const String kAuctioneerWaiting = 'Your auctioneer is waiting for you at ';
+  static const String kParkingComplt ='Parking completed';
+  static const String kSubtotal ='Subtotal ';
+  static const String kAwsm ='Awesome';
+  static const String kEveryTrans ='Every transaction plant’s a tree';
+  static const String kRateAuctioneer ='Rate Auctioneer';
 }
