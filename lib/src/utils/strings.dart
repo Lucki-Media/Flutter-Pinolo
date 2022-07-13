@@ -65,7 +65,16 @@ class Strings {
   static const String kAuctioneerWaiting = 'Your auctioneer is waiting for you at ';
   static const String kParkingComplt ='Parking completed';
   static const String kSubtotal ='Subtotal ';
+  static const String kExpires ='Expires ';
+  static const String kPaidByBalance ='Paid by balance ';
+  static const String kDiscount ='Discount ';
+  static const String kPDV ='PDV ';
+  static const String kForTrees ='For trees  ';
+  static const String kTotal ='Total ';
+  static const String krsd ='rsd';
   static const String kAwsm ='Awesome';
   static const String kEveryTrans ='Every transaction plant’s a tree';
   static const String kRateAuctioneer ='Rate Auctioneer';
+  static const String kTellUsMore ='Tell us more';
+  static const String kLater ='Later';
 }

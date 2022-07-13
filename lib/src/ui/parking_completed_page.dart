@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
 
 class ParkingCompletedPage extends StatefulWidget {
   const ParkingCompletedPage({Key? key}) : super(key: key);
@@ -47,7 +49,7 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                             ),
                           ),
                           Text(
-                            '1000, 00 rsd',
+                            '1000, 00 ${Strings.krsd}',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -57,20 +59,37 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            '${Strings.kSubtotal}:',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: AppColors.kBlack.withOpacity(.5),
-                              fontFamily: 'Baloo2Regular',
-                            ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Visa',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: AppColors.kBlack.withOpacity(.5),
+                                  fontFamily: 'Baloo2Regular',
+                                ),
+                              ),
+                              Text(
+                                '**** **** **** 4255. ${Strings.kExpires}: 04/24',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: AppColors.kBlack.withOpacity(.5),
+                                  fontFamily: 'Baloo2Regular',
+                                ),
+                              ),
+                            ],
                           ),
                           Text(
-                            '1000, 00 rsd',
+                            ' 700, 00 ${Strings.krsd}',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -80,11 +99,14 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '${Strings.kSubtotal}:',
+                            '${Strings.kPaidByBalance}:',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -93,7 +115,7 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                             ),
                           ),
                           Text(
-                            '1000, 00 rsd',
+                            '300, 00 ${Strings.krsd}',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -103,11 +125,14 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '${Strings.kSubtotal}:',
+                            '${Strings.kDiscount}(7%):',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -116,7 +141,7 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                             ),
                           ),
                           Text(
-                            '1000, 00 rsd',
+                            '-21,00 ${Strings.krsd}',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -126,11 +151,14 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '${Strings.kSubtotal}:',
+                            '${Strings.kPDV}(20%):',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -139,7 +167,7 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                             ),
                           ),
                           Text(
-                            '1000, 00 rsd',
+                            '195, 80 ${Strings.krsd}',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -149,11 +177,14 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '${Strings.kSubtotal}:',
+                            '${Strings.kForTrees}(2%):',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -162,7 +193,7 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                             ),
                           ),
                           Text(
-                            '1000, 00 rsd',
+                            '20, 00 ${Strings.krsd}',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -172,11 +203,14 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 22,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '${Strings.kSubtotal}:',
+                            '${Strings.kTotal}:',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -185,7 +219,7 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                             ),
                           ),
                           Text(
-                            '1000, 00 rsd',
+                            '979, 00 ${Strings.krsd}',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -227,13 +261,102 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                 const SizedBox(
                   height: 30,
                 ),
-                Text(
-                  Strings.kRateAuctioneer,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: AppColors.kBlack.withOpacity(.9),
-                    fontFamily: 'Baloo2Regular',
+                GestureDetector(
+                  onTap: (){
+                    showDialog(
+                      context: context,
+                      barrierColor: Colors.transparent,
+                      builder: (BuildContext context) {
+                        return Dialog(
+                           // contentPadding:const EdgeInsets.all(0),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(30.0))),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text(
+                                Strings.kRateAuctioneer,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: AppColors.kBlack,
+                                  fontFamily: 'Baloo2Medium',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 40,
+                              ),
+                              RatingBar.builder(
+                                initialRating: 3,
+                                minRating: 1,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                                itemBuilder: (context, _) => Icon(
+                                  Icons.star,
+                                  color: Colors.amber,
+                                ),
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              ),
+                              SizedBox(
+                                height: 40,
+                              ),
+                              Divider(
+                                color: AppColors.kBlack.withOpacity(.2), //color of divider
+                                height: 20, //height spacing of divider
+                                thickness: 1, //thickness of divier line
+                               // indent: 25, //spacing at the start of divider
+                                //endIndent: 25, //spacing at the end of divider
+                              ),
+                              Text(
+                                Strings.kTellUsMore,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: AppColors.kBlack,
+                                  fontFamily: 'Baloo2Regular',
+                                ),
+                              ),
+                              Divider(
+                                color: AppColors.kBlack.withOpacity(.2), //color of divider
+                                height: 20, //height spacing of divider
+                                thickness: 1, //thickness of divier line
+                               // indent: 25, //spacing at the start of divider
+                                //endIndent: 25, //spacing at the end of divider
+                              ),
+                              Text(
+                                Strings.kLater,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: AppColors.kBlack,
+                                  fontFamily: 'Baloo2Regular',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: Text(
+                    Strings.kRateAuctioneer,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: AppColors.kBlack.withOpacity(.9),
+                      fontFamily: 'Baloo2Regular',
+                    ),
                   ),
                 ),
                 const SizedBox(
