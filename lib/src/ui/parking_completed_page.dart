@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinolo/src/ui/report_user_page.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
@@ -250,7 +251,7 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                             SizedBox(
                               width: 10,
                             ),
-                            Image.asset('assets/images/treefn.png',height: 41,),
+                            Image.asset('assets/images/tree_nature.png',height: 41,),
                           ],
                         )),
                     decoration: BoxDecoration(
@@ -366,7 +367,7 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) =>  ParkingCompletedPage()),
+                        MaterialPageRoute(builder: (context) =>  ReportUserPage()),
                       );
                     },
                     btnText: '${Strings.kAwsm}!',
@@ -380,13 +381,20 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
           ),
         ),
         Positioned(
-          top: 60,
-          child: const Text(
-            '${Strings.kParkingComplt}!',
-            style: TextStyle(
-              fontSize: 24,
-              color: AppColors.kBlack,
-              fontFamily: 'Baloo2SemiBold',
+          top: 0,
+          child: Container(
+            height: 130,
+          width: MediaQuery.of(context).size.width,
+          color:Colors. grey[50],
+            child: Center(
+              child: const Text(
+                '${Strings.kParkingComplt}!',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: AppColors.kBlack,
+                  fontFamily: 'Baloo2SemiBold',
+                ),
+              ),
             ),
           ),
         ),

@@ -77,4 +77,15 @@ class Strings {
   static const String kRateAuctioneer ='Rate Auctioneer';
   static const String kTellUsMore ='Tell us more';
   static const String kLater ='Later';
+  static const String kOops ='Oops';
+  static const String kLooksLike ='Looks like your Auctioneer has broken one of Pinolo’s rules. . .';
+  static const String kIfYouHave ='If you haven’t realised your parking, report this user and we will investigate the problem.';
+  static const String kReportUser ='Report User';
+  static const String kOkay ='Okay';
+  static const String kThankYou ='Thank you';
+  static const String kDontWorry ='Don’t worry, Pinolo has received your report, you will get the feedback as soon as possible.';
+  static const String kLetsKeepOur ='Let’s keep our';
+  static const String kNature ='Nature';
+  static const String kEveryTimeYouPark ='Every time you park, Pinolo will donate part of his earnings to tree planting foundation.';
+  static const String kLearnMore ='Learn More';
 }
