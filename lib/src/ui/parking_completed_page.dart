@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pinolo/src/ui/report_user_page.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
@@ -299,7 +300,7 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                                 itemCount: 5,
                                 itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
                                 itemBuilder: (context, _) => Icon(
-                                  Icons.star,
+                                  FontAwesomeIcons.solidStar,
                                   color: Colors.amber,
                                 ),
                                 onRatingUpdate: (rating) {

@@ -169,17 +169,17 @@ Widget MyBidsPopUp() {
           body: TabBarView(
             children: <Widget>[
               Center(
-                child: GestureDetector(
-                  onTap: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) =>  AuctionCompletedPage()),
-                    );
-                  },
-                  child: ListView.builder(
-                      itemCount: 5,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Column(
+                child: ListView.builder(
+                    itemCount: 5,
+                    itemBuilder: (BuildContext context, int index) {
+                      return GestureDetector(
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) =>  AuctionCompletedPage()),
+                          );
+                        },
+                        child: Column(
                           children: [
                             Padding(
                               padding: const EdgeInsets.all(18.0),
@@ -306,9 +306,9 @@ Widget MyBidsPopUp() {
                               //endIndent: 25, //spacing at the end of divider
                             )
                           ],
-                        );
-                      }),
-                ),
+                        ),
+                      );
+                    }),
               ),
               Center(
                 child: ListView.builder(

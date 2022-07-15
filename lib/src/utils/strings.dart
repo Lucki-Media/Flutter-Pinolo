@@ -88,4 +88,8 @@ class Strings {
   static const String kNature ='Nature';
   static const String kEveryTimeYouPark ='Every time you park, Pinolo will donate part of his earnings to tree planting foundation.';
   static const String kLearnMore ='Learn More';
+  static const String kMyHistory ='My History';
+  static const String kParkedOut ='Parked Out';
+  static const String kPayout ='Payout';
+  static const String kParkedIn ='Parked In';
 }
