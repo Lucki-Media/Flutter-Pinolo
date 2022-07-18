@@ -92,4 +92,13 @@ class Strings {
   static const String kParkedOut ='Parked Out';
   static const String kPayout ='Payout';
   static const String kParkedIn ='Parked In';
+  static const String kYouParkedOut ='You Parked Out';
+  static const String kYouParkedIn ='You Parked In';
+  static const String kStatus ='Status';
+  static const String kCancelled ='Cancelled';
+  static const String kPending ='Pending';
+  static const String kCompleted ='Completed';
+  static const String kReferNo ='Reference Number';
+  static const String kTransID ='Transaction ID';
+  static const String kBankAccID ='Bank Account ID';
 }
