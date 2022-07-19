@@ -101,7 +101,7 @@ class _PayoutHistoryState extends State<PayoutHistory> {
                     Strings.kCompleted,
                     style: TextStyle(
                       fontSize: 16,
-                      color: AppColors.kDarkGreen,
+                      color: AppColors.kFontGreen,
                       fontFamily: 'Baloo2Medium',
                     ),
                   ),

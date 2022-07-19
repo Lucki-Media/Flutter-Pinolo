@@ -185,14 +185,22 @@ class _ParkingCompletedPageState extends State<ParkingCompletedPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            '${Strings.kForTrees}(2%):',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: AppColors.kBlack.withOpacity(.5),
-                              fontFamily: 'Baloo2Regular',
-                            ),
+                          Row(
+                            children: [
+                              Text(
+                                '${Strings.kForTrees}(2%):',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: AppColors.kBlack.withOpacity(.5),
+                                  fontFamily: 'Baloo2Regular',
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Image.asset('assets/images/tree_nature.png',height: 17,),
+                            ],
                           ),
                           Text(
                             '20, 00 ${Strings.krsd}',

@@ -101,4 +101,13 @@ class Strings {
   static const String kReferNo ='Reference Number';
   static const String kTransID ='Transaction ID';
   static const String kBankAccID ='Bank Account ID';
+  static const String kReceipt ='Receipt';
+  static const String kAuctioneer = 'Auctioneer';
+  static const String kLocation= 'Location';
+  static const String kRateUser= 'Rate this user';
+  static const String kAt= 'at';
+  static const String kBalChange = 'Balance change';
+  static const String kAmtBidded= 'Amount bidded';
+  static const String kParkOutTime= 'Park Out time';
+  static const String kBidder= 'Bidder';
 }
