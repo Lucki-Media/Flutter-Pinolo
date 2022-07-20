@@ -61,8 +61,7 @@ class _PayoutHistoryState extends State<PayoutHistory> {
               ),
             ),
             Divider(
-              color: AppColors.kBlack
-                  .withOpacity(.2), //color of divider
+              color: AppColors.kDividerGrey, //color of divider
               height: 20, //height spacing of divider
               thickness: 1, //thickness of divier line
               indent: 13, //spacing at the start of divider
@@ -109,8 +108,7 @@ class _PayoutHistoryState extends State<PayoutHistory> {
               ),
             ),
             Divider(
-              color: AppColors.kBlack
-                  .withOpacity(.2), //color of divider
+              color: AppColors.kDividerGrey, //color of divider
               height: 20, //height spacing of divider
               thickness: 1, //thickness of divier line
               indent: 13, //spacing at the start of divider
@@ -133,8 +131,7 @@ class _PayoutHistoryState extends State<PayoutHistory> {
               ),
             ),
             Divider(
-              color: AppColors.kBlack
-                  .withOpacity(.2), //color of divider
+              color: AppColors.kDividerGrey, //color of divider
               height: 20, //height spacing of divider
               thickness: 1, //thickness of divier line
               indent: 13, //spacing at the start of divider
@@ -157,8 +154,7 @@ class _PayoutHistoryState extends State<PayoutHistory> {
               ),
             ),
             Divider(
-              color: AppColors.kBlack
-                  .withOpacity(.2), //color of divider
+              color: AppColors.kDividerGrey, //color of divider
               height: 20, //height spacing of divider
               thickness: 1, //thickness of divier line
               indent: 13, //spacing at the start of divider
@@ -181,8 +177,7 @@ class _PayoutHistoryState extends State<PayoutHistory> {
               ),
             ),
             Divider(
-              color: AppColors.kBlack
-                  .withOpacity(.2), //color of divider
+              color: AppColors.kDividerGrey, //color of divider
               height: 20, //height spacing of divider
               thickness: 1, //thickness of divier line
               indent: 13, //spacing at the start of divider
@@ -205,8 +200,7 @@ class _PayoutHistoryState extends State<PayoutHistory> {
               ),
             ),
             Divider(
-              color: AppColors.kBlack
-                  .withOpacity(.2), //color of divider
+              color: AppColors.kDividerGrey, //color of divider
               height: 20, //height spacing of divider
               thickness: 1, //thickness of divier line
               indent: 13, //spacing at the start of divider

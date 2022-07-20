@@ -110,4 +110,12 @@ class Strings {
   static const String kAmtBidded= 'Amount bidded';
   static const String kParkOutTime= 'Park Out time';
   static const String kBidder= 'Bidder';
+  static const String kMyVehicles = 'My Vehicles';
+  static const String kMyCards= 'My Cards';
+  static const String kSettings= 'Settings';
+  static const String kTreePlanting= 'Tree planting';
+  static const String kFAQ = 'FAQ';
+  static const String kSupport= 'Support';
+  static const String kLogOut= 'Log Out';
+  static const String kBalance= 'Balance';
 }

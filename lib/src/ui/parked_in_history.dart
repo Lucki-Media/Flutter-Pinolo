@@ -67,7 +67,7 @@ class _ParkedInHistoryState extends State<ParkedInHistory> {
               ),
             ),
             Divider(
-              color: AppColors.kBlack.withOpacity(.2), //color of divider
+              color: AppColors.kDividerGrey, //color of divider
               height: 20, //height spacing of divider
               thickness: 1, //thickness of divier line
               indent: 15, //spacing at the start of divider
@@ -291,7 +291,7 @@ class _ParkedInHistoryState extends State<ParkedInHistory> {
               ),
             ),
             Divider(
-              color: AppColors.kBlack.withOpacity(.2), //color of divider
+              color: AppColors.kDividerGrey, //color of divider
               height: 20, //height spacing of divider
               thickness: 1, //thickness of divier line
               indent: 15, //spacing at the start of divider
@@ -340,7 +340,7 @@ class _ParkedInHistoryState extends State<ParkedInHistory> {
           child:  Text(Strings.kRateUser),
         ),
             Divider(
-              color: AppColors.kBlack.withOpacity(.2), //color of divider
+              color: AppColors.kDividerGrey, //color of divider
               height: 20, //height spacing of divider
               thickness: 1, //thickness of divier line
               indent: 15, //spacing at the start of divider
