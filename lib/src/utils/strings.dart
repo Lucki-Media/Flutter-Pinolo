@@ -118,4 +118,17 @@ class Strings {
   static const String kSupport= 'Support';
   static const String kLogOut= 'Log Out';
   static const String kBalance= 'Balance';
+  static const String kMyProfile= 'My Profile';
+  static const String kYourName= 'Your Name';
+  static const String kYourLastName= 'Your Last Name';
+  static const String kYourEmail= 'Your Email';
+  static const String kChangePW= 'Change your password';
+  static const String kCurrentPW= 'Current password';
+  static const String kNewPW= 'New password';
+  static const String kEnterCurrentPW= 'Enter your current password';
+  static const String kEnterNewPW= 'Enter your new password';
+  static const String kYourPhoneNo= 'Your phone number';
+  static const String kAccPhoneNo= 'Your Account is bined to your phone number, to change your phone number go to the ';
+  static const String kSave= 'Save';
+  static const String klink = 'link';
 }

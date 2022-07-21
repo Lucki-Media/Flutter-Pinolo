@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pinolo/src/ui/my_bids.dart';
+import 'package:pinolo/src/ui/my_history.dart';
+import 'package:pinolo/src/ui/my_profile.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
@@ -325,11 +327,15 @@ class _MainMapState extends State<MainMap> {
                           ),
                           GestureDetector(
                             onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  MyProfile()),
+                              );
                             },
                             child: CircleAvatar(
                               radius: 16.0,
                               backgroundColor: AppColors.kGrey,
-                              child: Icon(FontAwesomeIcons.pen, color: AppColors.kBlack,size: 18,),
+                              child: Image.asset('assets/images/edit_pen.png',height: 18,),
                             ),
                           ),
                         ],
@@ -395,7 +401,7 @@ class _MainMapState extends State<MainMap> {
                           children: [
                             Row(
                               children: [
-                                Icon(FontAwesomeIcons.car,size: 20,),
+                                Image.asset('assets/images/car.png',height: 22,),
                                 SizedBox(width: 10,),
                                 const Text(
                                   Strings.kMyVehicles,
@@ -438,7 +444,7 @@ class _MainMapState extends State<MainMap> {
                           children: [
                             Row(
                               children: [
-                                Icon(FontAwesomeIcons.car,size: 20,),
+                                Image.asset('assets/images/credit_card.png',height: 20,),
                                 SizedBox(width: 10,),
                                 const Text(
                                   Strings.kMyCards,
@@ -476,40 +482,48 @@ class _MainMapState extends State<MainMap> {
                           //endIndent: 25, //spacing at the end of divider
                         ),
                         SizedBox(height: 15,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(FontAwesomeIcons.car,size: 20,),
-                                SizedBox(width: 10,),
-                                const Text(
-                                  Strings.kMyHistory,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: AppColors.kBlack,
-                                    fontFamily: 'Baloo2Regular',
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) =>  MyHistory()),
+                            );
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Image.asset('assets/images/history.png',height: 18,),
+                                  SizedBox(width: 10,),
+                                  const Text(
+                                    Strings.kMyHistory,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: AppColors.kBlack,
+                                      fontFamily: 'Baloo2Regular',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 20.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) =>  MyHistory()),
+                                    );
+                                  },
+                                  child: Icon(
+                                    FontAwesomeIcons.chevronRight,
+                                    size: 22,
+                                    color: AppColors.kDividerGrey,
                                   ),
                                 ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 20.0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
-                                  // );
-                                },
-                                child: Icon(
-                                  FontAwesomeIcons.chevronRight,
-                                  size: 22,
-                                  color: AppColors.kDividerGrey,
-                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                         Divider(
                           color: AppColors.kDividerGrey, //color of divider
@@ -524,7 +538,7 @@ class _MainMapState extends State<MainMap> {
                           children: [
                             Row(
                               children: [
-                                Icon(FontAwesomeIcons.car,size: 20,),
+                                Image.asset('assets/images/setting.png',height: 20,),
                                 SizedBox(width: 10,),
                                 const Text(
                                   Strings.kSettings,
@@ -567,8 +581,8 @@ class _MainMapState extends State<MainMap> {
                           children: [
                             Row(
                               children: [
-                                Image.asset('assets/images/tree_nature.png',height: 26,),
-                                SizedBox(width: 10,),
+                                Image.asset('assets/images/tree_nature.png',height: 22,),
+                                SizedBox(width: 8,),
                                 const Text(
                                   Strings.kTreePlanting,
                                   style: TextStyle(
@@ -610,7 +624,7 @@ class _MainMapState extends State<MainMap> {
                           children: [
                             Row(
                               children: [
-                                Icon(FontAwesomeIcons.car,size: 20,),
+                                Image.asset('assets/images/term_condition.png',height: 20,),
                                 SizedBox(width: 10,),
                                 Text(
                                   Strings.kTermsConditions,
@@ -653,7 +667,7 @@ class _MainMapState extends State<MainMap> {
                           children: [
                             Row(
                               children: [
-                                Icon(FontAwesomeIcons.car,size: 20,),
+                                Image.asset('assets/images/privacy.png',height: 22,),
                                 SizedBox(width: 10,),
                                 Text(
                                   Strings.kPrivacyPolicy,
@@ -696,7 +710,7 @@ class _MainMapState extends State<MainMap> {
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.help_outline,size: 25,),
+                                Image.asset('assets/images/faq.png',height: 22,),
                                 SizedBox(width: 10,),
                                 Text(
                                   Strings.kFAQ,
@@ -739,7 +753,7 @@ class _MainMapState extends State<MainMap> {
                           children: [
                             Row(
                               children: [
-                                Icon(FontAwesomeIcons.car,size: 20,),
+                                Image.asset('assets/images/support.png',height: 22,),
                                 SizedBox(width: 10,),
                                 Text(
                                   Strings.kSupport,
@@ -782,7 +796,7 @@ class _MainMapState extends State<MainMap> {
                           children: [
                             Row(
                               children: [
-                                Icon(FontAwesomeIcons.arrowRightFromBracket,size: 20,),
+                                Image.asset('assets/images/logout.png',height: 22,),
                                 SizedBox(width: 10,),
                                 Text(
                                   Strings.kLogOut,

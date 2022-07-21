@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pinolo/src/ui/my_history.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
@@ -73,10 +72,7 @@ class KeepNature extends StatelessWidget {
             ),
             AppCommon.appButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) =>  MyHistory()),
-                  );
+
                 },
                 btnText: Strings.kLearnMore,
                 btnColor: AppColors.kDarkGreen,
