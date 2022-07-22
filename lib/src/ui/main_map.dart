@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pinolo/src/ui/my_bids.dart';
 import 'package:pinolo/src/ui/my_history.dart';
 import 'package:pinolo/src/ui/my_profile.dart';
+import 'package:pinolo/src/ui/my_vehicles.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
@@ -396,40 +397,48 @@ class _MainMapState extends State<MainMap> {
                     padding: const EdgeInsets.only(top: 20.0,left: 25),
                     child: Column(
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset('assets/images/car.png',height: 22,),
-                                SizedBox(width: 10,),
-                                const Text(
-                                  Strings.kMyVehicles,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: AppColors.kBlack,
-                                    fontFamily: 'Baloo2Regular',
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) =>  MyVehicles()),
+                            );
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Image.asset('assets/images/car.png',height: 22,),
+                                  SizedBox(width: 10,),
+                                  const Text(
+                                    Strings.kMyVehicles,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: AppColors.kBlack,
+                                      fontFamily: 'Baloo2Regular',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 20.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) =>  MyVehicles()),
+                                    );
+                                  },
+                                  child: Icon(
+                                    FontAwesomeIcons.chevronRight,
+                                    size: 22,
+                                    color: AppColors.kDividerGrey,
                                   ),
                                 ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 20.0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
-                                  // );
-                                },
-                                child: Icon(
-                                  FontAwesomeIcons.chevronRight,
-                                  size: 22,
-                                  color: AppColors.kDividerGrey,
-                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                         Divider(
                           color: AppColors.kDividerGrey, //color of divider
