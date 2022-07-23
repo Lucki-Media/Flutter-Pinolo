@@ -131,4 +131,7 @@ class Strings {
   static const String kAccPhoneNo= 'Your Account is bined to your phone number, to change your phone number go to the ';
   static const String kSave= 'Save';
   static const String klink = 'link';
+  static const String kAddNewVehicle= 'Add new vehicle';
+  static const String kDone= 'Done';
+  static const String kYouCanEnter = 'You can enter multipe vehicles and add vehicle information or swipe to delete them in My Vehicle section.';
 }
