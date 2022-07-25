@@ -5,6 +5,7 @@ import 'package:pinolo/src/ui/edit_vehicle_info.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
+
 class MyVehicles extends StatefulWidget {
   const MyVehicles({Key? key}) : super(key: key);
 
@@ -16,9 +17,11 @@ class _MyVehiclesState extends State<MyVehicles> {
   final TextEditingController _VehicleMakeController = TextEditingController();
   final TextEditingController _VehicleModelController = TextEditingController();
   final TextEditingController _VehicleBodyController = TextEditingController();
-  final TextEditingController _VehicleRegiNoController = TextEditingController();
+  final TextEditingController _VehicleRegiNoController =
+      TextEditingController();
   TextEditingController _VehicleColorController = TextEditingController();
   Color currentColor = Color(0xff443a49);
+  final items = List<String>.generate(3, (i) => "Item ${i + 1}");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,111 +68,132 @@ class _MyVehiclesState extends State<MyVehicles> {
       body: Stack(
         children: [
           ListView.builder(
-              itemCount: 3,
+              itemCount: items.length,
               itemBuilder: (BuildContext context, int index) {
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => EditVehicleInfo()),
-                    );
+                final item = items[index];
+                return Dismissible(
+                  direction: DismissDirection.endToStart,
+                  key: Key(item),
+                  onDismissed: (direction) {
+                    // Removes that item the list on swipwe
+                    setState(() {
+                      items.removeAt(index);
+                    });
+                    // Shows the information on Snackbar
+                    Scaffold.of(context).showSnackBar(
+                        SnackBar(content: Text("$item dismissed")));
                   },
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            left: 18.0, top: 25, right: 22, bottom: 5),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 20),
-                              child: Text(
-                                'Volkswagen Passat',
-                                style: TextStyle(
-                                    color: AppColors.kBlack,
-                                    fontFamily: 'Baloo2Regular',
-                                    fontSize: 16),
+                  background: Container(color: Colors.red),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => EditVehicleInfo()),
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 18.0, top: 25, right: 22, bottom: 5),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 20),
+                                child: Text(
+                                  'Volkswagen Passat',
+                                  style: TextStyle(
+                                      color: AppColors.kBlack,
+                                      fontFamily: 'Baloo2Regular',
+                                      fontSize: 16),
+                                ),
                               ),
-                            ),
-                            GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            EditVehicleInfo()),
-                                  );
-                                },
-                                child: Icon(
-                                  FontAwesomeIcons.chevronRight,
-                                  size: 22,
-                                  color: AppColors.kShadowGrey,
-                                )),
-                          ],
+                              GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              EditVehicleInfo()),
+                                    );
+                                  },
+                                  child: Icon(
+                                    FontAwesomeIcons.chevronRight,
+                                    size: 22,
+                                    color: AppColors.kShadowGrey,
+                                  )),
+                            ],
+                          ),
                         ),
-                      ),
-                      Divider(
-                        color: AppColors.kDividerGrey, //color of divider
-                        height: 20, //height spacing of divider
-                        thickness: 1, //thickness of divier line
-                        indent: 25, //spacing at the start of divider
-                        //endIndent: 25, //spacing at the end of divider
-                      )
-                    ],
+                        Divider(
+                          color: AppColors.kDividerGrey, //color of divider
+                          height: 20, //height spacing of divider
+                          thickness: 1, //thickness of divier line
+                          indent: 25, //spacing at the start of divider
+                          //endIndent: 25, //spacing at the end of divider
+                        )
+                      ],
+                    ),
                   ),
                 );
               }),
           Positioned(
             bottom: 30,
-              left: 50,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FloatingActionButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                        context: context,
-                        isScrollControlled: true,
-                        builder: (builder) {
-                          return AddVehiclePopUp();
-                        },
-                      );
-                    },
-                    child: Icon(Icons.add, color: Colors.white, size: 30,),
-                    backgroundColor: AppColors.kBlue,
-                    //tooltip: '',
-                    elevation: 5,
-                    splashColor: Colors.grey,
+            left: 50,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FloatingActionButton(
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      builder: (builder) {
+                        return AddVehiclePopUp();
+                      },
+                    );
+                  },
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                    size: 30,
                   ),
-                  Text(
-                    Strings.kAddNewVehicle,
+                  backgroundColor: AppColors.kBlue,
+                  //tooltip: '',
+                  elevation: 5,
+                  splashColor: Colors.grey,
+                ),
+                Text(
+                  Strings.kAddNewVehicle,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: AppColors.kBlack,
+                    fontFamily: 'Baloo2SemiBold',
+                  ),
+                ),
+                SizedBox(
+                  width: 310,
+                  child: Text(
+                    Strings.kYouCanEnter,
+                    textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 16,
-                      color: AppColors.kBlack,
-                      fontFamily: 'Baloo2SemiBold',
+                      fontSize: 12,
+                      color: AppColors.kBlack.withOpacity(.3),
+                      fontFamily: 'Baloo2Regular',
                     ),
                   ),
-                  SizedBox(
-                    width: 310,
-                    child: Text(
-                      Strings.kYouCanEnter,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: AppColors.kBlack.withOpacity(.3),
-                        fontFamily: 'Baloo2Regular',
-                      ),
-                    ),
-                  ),
-                ],
-              ),)
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
   }
+
   Widget AddVehiclePopUp() {
     return StatefulBuilder(
       builder: (BuildContext context, StateSetter setState) {
@@ -304,10 +328,12 @@ class _MyVehiclesState extends State<MyVehicles> {
                                     builder: (BuildContext context) {
                                       return AlertDialog(
                                         shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.all(Radius.circular(30.0))),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(30.0))),
                                         content: BlockPicker(
                                           pickerColor: currentColor,
-                                          layoutBuilder: (context, colors, child) {
+                                          layoutBuilder:
+                                              (context, colors, child) {
                                             return Container(
                                               //color: Colors.white,
                                               width: 400,
@@ -316,14 +342,19 @@ class _MyVehiclesState extends State<MyVehicles> {
                                                 crossAxisCount: 6,
                                                 crossAxisSpacing: 5,
                                                 mainAxisSpacing: 5,
-                                                children: [for (Color color in colors) child(color)],
+                                                children: [
+                                                  for (Color color in colors)
+                                                    child(color)
+                                                ],
                                               ),
                                             );
                                           },
-                                          onColorChanged: (Color color){
-                                            setState(() => currentColor = color);
+                                          onColorChanged: (Color color) {
+                                            setState(
+                                                () => currentColor = color);
                                             print(color);
-                                            Navigator.pop(context);//on color picked
+                                            Navigator.pop(
+                                                context); //on color picked
                                           },
                                         ),
                                       );
@@ -359,19 +390,21 @@ class _MyVehiclesState extends State<MyVehicles> {
                     ],
                   ),
                 ),
-                SizedBox(height: 185,),
+                SizedBox(
+                  height: 185,
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 32, right: 32),
                   child: AppCommon.appButton(
-                      onPressed: (){
+                      onPressed: () {
                         // Navigator.push(
                         //   context,
                         //   MaterialPageRoute(builder: (context) => MainMap()),
                         // );
                       },
-                      btnText:Strings.kDone,
-                      btnColor:AppColors.kBlue,
-                      horizontal: 152 ),
+                      btnText: Strings.kDone,
+                      btnColor: AppColors.kBlue,
+                      horizontal: 152),
                 )
               ],
             ),

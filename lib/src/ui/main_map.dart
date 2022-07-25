@@ -4,6 +4,7 @@ import 'package:pinolo/src/ui/my_bids.dart';
 import 'package:pinolo/src/ui/my_history.dart';
 import 'package:pinolo/src/ui/my_profile.dart';
 import 'package:pinolo/src/ui/my_vehicles.dart';
+import 'package:pinolo/src/ui/settings.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
@@ -542,40 +543,48 @@ class _MainMapState extends State<MainMap> {
                           //endIndent: 25, //spacing at the end of divider
                         ),
                         SizedBox(height: 15,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset('assets/images/setting.png',height: 20,),
-                                SizedBox(width: 10,),
-                                const Text(
-                                  Strings.kSettings,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: AppColors.kBlack,
-                                    fontFamily: 'Baloo2Regular',
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) =>  Settings()),
+                            );
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Image.asset('assets/images/setting.png',height: 20,),
+                                  SizedBox(width: 10,),
+                                  const Text(
+                                    Strings.kSettings,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: AppColors.kBlack,
+                                      fontFamily: 'Baloo2Regular',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 20.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) =>  Settings()),
+                                    );
+                                  },
+                                  child: Icon(
+                                    FontAwesomeIcons.chevronRight,
+                                    size: 22,
+                                    color: AppColors.kDividerGrey,
                                   ),
                                 ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 20.0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
-                                  // );
-                                },
-                                child: Icon(
-                                  FontAwesomeIcons.chevronRight,
-                                  size: 22,
-                                  color: AppColors.kDividerGrey,
-                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                         Divider(
                           color: AppColors.kDividerGrey, //color of divider

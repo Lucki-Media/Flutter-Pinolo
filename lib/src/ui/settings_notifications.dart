@@ -1,0 +1,224 @@
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pinolo/src/utils/app_colors.dart';
+import 'package:pinolo/src/utils/strings.dart';
+
+class SettingsNotifications extends StatefulWidget {
+  const SettingsNotifications({Key? key}) : super(key: key);
+
+  @override
+  State<SettingsNotifications> createState() => _SettingsNotificationsState();
+}
+
+class _SettingsNotificationsState extends State<SettingsNotifications> {
+  bool isSwitched = false;
+
+  void toggleSwitch(bool value) {
+
+    if(isSwitched == false)
+    {
+      setState(() {
+        isSwitched = true;
+      });
+      print('Switch Button is ON');
+    }
+    else
+    {
+      setState(() {
+        isSwitched = false;
+      });
+      print('Switch Button is OFF');
+    }
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 100.0,
+        shadowColor: AppColors.kShadowGrey,
+        automaticallyImplyLeading: false,
+        elevation: 5,
+        backgroundColor: AppColors.kWhite,
+        //foregroundColor: AppColors.kBlue,
+        //centerTitle: true,
+        title: Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: Row(
+            children: [
+              IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: CircleAvatar(
+                  backgroundColor: AppColors.kGrey,
+                  child: Icon(
+                    FontAwesomeIcons.arrowLeft,
+                    color: AppColors.kBlack,
+                    size: 18,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 100,
+              ),
+              const Text(
+                Strings.kNotifications,
+                style: TextStyle(
+                  fontSize: 18,
+                  color: AppColors.kBlack,
+                  fontFamily: 'Baloo2SemiBold',
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: Column(
+          children: [
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 18.0, top: 25, right: 22, bottom: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Text(
+                          Strings.kDailyNotify,
+                          style: TextStyle(
+                              color: AppColors.kBlack,
+                              fontFamily: 'Baloo2Regular',
+                              fontSize: 16),
+                        ),
+                      ),
+                      Container(
+                        height: 20,
+                        width: 50,
+                        child: Transform.scale(
+                          scale: 1.3,
+                          child: Switch(
+                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            onChanged: toggleSwitch,
+                            value: isSwitched,
+                            activeColor: AppColors.kBlue,
+                            activeTrackColor: AppColors.kOrange,
+                            inactiveThumbColor: AppColors.kToggleLGrey,
+                            inactiveTrackColor:AppColors.kToggleDGrey ,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Divider(
+                  color: AppColors.kDividerGrey, //color of divider
+                  height: 20, //height spacing of divider
+                  thickness: 1, //thickness of divier line
+                  indent: 25, //spacing at the start of divider
+                  //endIndent: 25, //spacing at the end of divider
+                )
+              ],
+            ),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 18.0, top: 25, right: 22, bottom: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Text(
+                          Strings.kParkInOutNotifications,
+                          style: TextStyle(
+                              color: AppColors.kBlack,
+                              fontFamily: 'Baloo2Regular',
+                              fontSize: 16),
+                        ),
+                      ),
+                      Container(
+                        height: 20,
+                        width: 50,
+                        child: Transform.scale(
+                          scale: 1.3,
+                          child: Switch(
+                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            onChanged: toggleSwitch,
+                            value: isSwitched,
+                            activeColor: AppColors.kBlue,
+                            activeTrackColor: AppColors.kOrange,
+                            inactiveThumbColor: AppColors.kToggleLGrey,
+                            inactiveTrackColor:AppColors.kToggleDGrey ,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Divider(
+                  color: AppColors.kDividerGrey, //color of divider
+                  height: 20, //height spacing of divider
+                  thickness: 1, //thickness of divier line
+                  indent: 25, //spacing at the start of divider
+                  //endIndent: 25, //spacing at the end of divider
+                )
+              ],
+            ),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 18.0, top: 25, right: 22, bottom: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Text(
+                          Strings.kPromotions,
+                          style: TextStyle(
+                              color: AppColors.kBlack,
+                              fontFamily: 'Baloo2Regular',
+                              fontSize: 16),
+                        ),
+                      ),
+                      Container(
+                        height: 20,
+                        width: 50,
+                        child: Transform.scale(
+                          scale: 1.3,
+                          child: Switch(
+                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            onChanged: toggleSwitch,
+                            value: isSwitched,
+                            activeColor: AppColors.kBlue,
+                            activeTrackColor: AppColors.kOrange,
+                            inactiveThumbColor: AppColors.kToggleLGrey,
+                            inactiveTrackColor:AppColors.kToggleDGrey ,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Divider(
+                  color: AppColors.kDividerGrey, //color of divider
+                  height: 20, //height spacing of divider
+                  thickness: 1, //thickness of divier line
+                  indent: 25, //spacing at the start of divider
+                  //endIndent: 25, //spacing at the end of divider
+                )
+              ],
+            ),
+          ]
+      ),
+    );
+  }
+
+}

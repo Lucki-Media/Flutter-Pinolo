@@ -134,4 +134,14 @@ class Strings {
   static const String kAddNewVehicle= 'Add new vehicle';
   static const String kDone= 'Done';
   static const String kYouCanEnter = 'You can enter multipe vehicles and add vehicle information or swipe to delete them in My Vehicle section.';
+  static const String kNotifications= 'Notifications';
+  static const String kFaceTouchID = 'Face / Touch ID';
+  static const String kDarkMode= 'Dark Mode';
+  static const String kDailyNotify = 'Daily notifications';
+  static const String kParkInOutNotifications= 'Park in/out notifications';
+  static const String kPromotions= 'Promotions';
+  static const String kActiveFaceTouchID = 'Active Face / Touch ID';
+  static const String kForLogIn= 'For Log In';
+  static const String kForPayments = ' For Payments';
+  static const String kDarkModeOnOff = 'Dark mode On/Off';
 }
