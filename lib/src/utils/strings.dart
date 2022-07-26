@@ -144,4 +144,6 @@ class Strings {
   static const String kForLogIn= 'For Log In';
   static const String kForPayments = ' For Payments';
   static const String kDarkModeOnOff = 'Dark mode On/Off';
+  static const String kAddNewCard = 'Add new card';
+  static const String kYouCanEnterMultiCards = 'You can enter multiple cards or swipe to delete them in My Cards section.';
 }

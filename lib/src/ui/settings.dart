@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pinolo/src/ui/settings_dark_mode.dart';
+import 'package:pinolo/src/ui/settings_face_touch_id.dart';
 import 'package:pinolo/src/ui/settings_notifications.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/strings.dart';
@@ -113,11 +115,11 @@ class _SettingsState extends State<Settings> {
                   ),
           GestureDetector(
             onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //       builder: (context) => EditVehicleInfo()),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => SettingsFaceTouchId()),
+              );
             },
             child: Column(
               children: [
@@ -140,12 +142,12 @@ class _SettingsState extends State<Settings> {
                       ),
                       GestureDetector(
                           onTap: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //       builder: (context) =>
-                            //           EditVehicleInfo()),
-                            // );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      SettingsFaceTouchId()),
+                            );
                           },
                           child: Icon(
                             FontAwesomeIcons.chevronRight,
@@ -167,11 +169,11 @@ class _SettingsState extends State<Settings> {
           ),
           GestureDetector(
             onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //       builder: (context) => EditVehicleInfo()),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => SettingsDarkMode()),
+              );
             },
             child: Column(
               children: [
@@ -194,12 +196,12 @@ class _SettingsState extends State<Settings> {
                       ),
                       GestureDetector(
                           onTap: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //       builder: (context) =>
-                            //           EditVehicleInfo()),
-                            // );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      SettingsDarkMode()),
+                            );
                           },
                           child: Icon(
                             FontAwesomeIcons.chevronRight,

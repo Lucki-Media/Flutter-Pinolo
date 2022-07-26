@@ -3,17 +3,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/strings.dart';
 
-class SettingsNotifications extends StatefulWidget {
-  const SettingsNotifications({Key? key}) : super(key: key);
+class SettingsFaceTouchId extends StatefulWidget {
+  const SettingsFaceTouchId({Key? key}) : super(key: key);
 
   @override
-  State<SettingsNotifications> createState() => _SettingsNotificationsState();
+  State<SettingsFaceTouchId> createState() => _SettingsFaceTouchIdState();
 }
 
-class _SettingsNotificationsState extends State<SettingsNotifications> {
-  bool isOnDailyNotifications = true;
-  bool isOnParkNotifications = true;
-  bool isOnPromotions = true;
+class _SettingsFaceTouchIdState extends State<SettingsFaceTouchId> {
+  bool isOnForLogin = false;
+  bool isOnForPayments = false;
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +43,10 @@ class _SettingsNotificationsState extends State<SettingsNotifications> {
                 ),
               ),
               SizedBox(
-                width: 100,
+                width: 80,
               ),
               const Text(
-                Strings.kNotifications,
+                Strings.kFaceTouchID,
                 style: TextStyle(
                   fontSize: 18,
                   color: AppColors.kBlack,
@@ -61,10 +60,22 @@ class _SettingsNotificationsState extends State<SettingsNotifications> {
       body: Column(
           children: [
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(
+                    Strings.kActiveFaceTouchID,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: AppColors.kBlack,
+                      fontFamily: 'Baloo2Medium',
+                    ),
+                  ),
+                ),
+                Padding(
                   padding: const EdgeInsets.only(
-                      left: 18.0, top: 25, right: 22, bottom: 5),
+                      left: 18.0, top: 15, right: 22, bottom: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -72,7 +83,7 @@ class _SettingsNotificationsState extends State<SettingsNotifications> {
                       Padding(
                         padding: const EdgeInsets.only(left: 20),
                         child: Text(
-                          Strings.kDailyNotify,
+                          Strings.kForLogIn,
                           style: TextStyle(
                               color: AppColors.kBlack,
                               fontFamily: 'Baloo2Regular',
@@ -88,10 +99,10 @@ class _SettingsNotificationsState extends State<SettingsNotifications> {
                             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             onChanged: (bool value){
                                 setState(() {
-                                  isOnDailyNotifications = value;
+                                  isOnForLogin = value;
                                 });
                             },
-                            value: isOnDailyNotifications,
+                            value: isOnForLogin,
                             activeColor: AppColors.kBlue,
                             activeTrackColor: AppColors.kOrange,
                             inactiveThumbColor: AppColors.kToggleLGrey,
@@ -123,7 +134,7 @@ class _SettingsNotificationsState extends State<SettingsNotifications> {
                       Padding(
                         padding: const EdgeInsets.only(left: 20),
                         child: Text(
-                          Strings.kParkInOutNotifications,
+                          Strings.kForPayments,
                           style: TextStyle(
                               color: AppColors.kBlack,
                               fontFamily: 'Baloo2Regular',
@@ -139,61 +150,10 @@ class _SettingsNotificationsState extends State<SettingsNotifications> {
                             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             onChanged: (bool value){
                                 setState(() {
-                                  isOnParkNotifications = value;
+                                  isOnForPayments = value;
                                 });
                             },
-                            value: isOnParkNotifications,
-                            activeColor: AppColors.kBlue,
-                            activeTrackColor: AppColors.kOrange,
-                            inactiveThumbColor: AppColors.kToggleLGrey,
-                            inactiveTrackColor:AppColors.kToggleDGrey ,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Divider(
-                  color: AppColors.kDividerGrey, //color of divider
-                  height: 20, //height spacing of divider
-                  thickness: 1, //thickness of divier line
-                  indent: 25, //spacing at the start of divider
-                  //endIndent: 25, //spacing at the end of divider
-                )
-              ],
-            ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: 18.0, top: 25, right: 22, bottom: 5),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20),
-                        child: Text(
-                          Strings.kPromotions,
-                          style: TextStyle(
-                              color: AppColors.kBlack,
-                              fontFamily: 'Baloo2Regular',
-                              fontSize: 16),
-                        ),
-                      ),
-                      Container(
-                        height: 20,
-                        width: 50,
-                        child: Transform.scale(
-                          scale: 1.2,
-                          child: Switch(
-                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            onChanged: (bool value){
-                                setState(() {
-                                  isOnPromotions = value;
-                                });
-                            },
-                            value: isOnPromotions,
+                            value: isOnForPayments,
                             activeColor: AppColors.kBlue,
                             activeTrackColor: AppColors.kOrange,
                             inactiveThumbColor: AppColors.kToggleLGrey,
