@@ -146,4 +146,12 @@ class Strings {
   static const String kDarkModeOnOff = 'Dark mode On/Off';
   static const String kAddNewCard = 'Add new card';
   static const String kYouCanEnterMultiCards = 'You can enter multiple cards or swipe to delete them in My Cards section.';
+  static const String kCardType = 'Card type';
+  static const String kChooseCard  = 'Choose Card ';
+  static const String kCardInformation= 'Card information';
+  static const String kExpiration  = 'Expiration';
+  static const String kCard = 'Card';
+  static const String kSecurityCode  = 'Security code';
+  static const String kTypeInfoInBox = 'To add new card, type information in the boxes. Only you will be able to see this information.';
+
 }

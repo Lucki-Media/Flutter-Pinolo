@@ -153,13 +153,13 @@ class _MyCardsState extends State<MyCards> {
               children: [
                 FloatingActionButton(
                   onPressed: () {
-                    // showModalBottomSheet(
-                    //   context: context,
-                    //   isScrollControlled: true,
-                    //   builder: (builder) {
-                    //     return AddCardPopUp();
-                    //   },
-                    // );
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      builder: (builder) {
+                        return AddCardPopUp();
+                      },
+                    );
                   },
                   child: Icon(
                     Icons.add,
@@ -242,13 +242,243 @@ class _MyCardsState extends State<MyCards> {
             ),
           ),
           resizeToAvoidBottomInset: true,
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 185,
+          body: Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 34),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          Strings.kCardType,
+                          textAlign: TextAlign.center,
+                          style: AppCommon.labelTextStyle(),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      child: TextFormField(
+                        style: AppCommon.fieldTextStyle(),
+                        decoration: AppCommon.textFiledDecoration(hintText: Strings.kChooseCard),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 24),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          Strings.kCardInformation,
+                          textAlign: TextAlign.center,
+                          style: AppCommon.labelTextStyle(),
+                        ),
+                      ),
+                    ),
+                    Container(
+                        height: 205,
+                        width: 365,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 15),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 24),
+                                child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Text(
+                                    Strings.kCard,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: AppColors.kWhite,
+                                      fontFamily: 'Baloo2Medium',
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              TextFormField(
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: AppColors.kBlack,
+                                  fontFamily: 'Baloo2Regular',
+                                ),
+                                decoration: InputDecoration(
+                                  filled: true, //<-- SEE HERE
+                                  fillColor: AppColors.kWhite,
+                                  contentPadding: const EdgeInsets.symmetric(
+                                          vertical: 0, horizontal: 25),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                            color: AppColors.kBlue, width: 1.0),
+                                        borderRadius: BorderRadius.circular(30.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: AppColors.kBlack.withOpacity(0.2),
+                                            width: 1.0),
+                                        borderRadius: BorderRadius.circular(30.0),
+                                      ),
+                                      hintText: '**** **** **** ****',
+                                      hintStyle: TextStyle(
+                                        fontSize: 18,
+                                        color: AppColors.kBlack.withOpacity(.5),
+                                        fontFamily: 'Baloo2Regular',
+                                      ),
+                                      //suffixIcon: Suffix
+                                    //labelText: ,
+                                  ),
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 24),
+                                          child: Align(
+                                            alignment: Alignment.topLeft,
+                                            child: Text(
+                                              Strings.kExpiration,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: AppColors.kWhite,
+                                                fontFamily: 'Baloo2Medium',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        TextFormField(
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            color: AppColors.kBlack,
+                                            fontFamily: 'Baloo2Regular',
+                                          ),
+                                          decoration: InputDecoration(
+                                            filled: true, //<-- SEE HERE
+                                            fillColor: AppColors.kWhite,
+                                            contentPadding: const EdgeInsets.symmetric(
+                                                vertical: 0, horizontal: 25),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: AppColors.kBlue, width: 1.0),
+                                              borderRadius: BorderRadius.circular(30.0),
+                                            ),
+                                            enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: AppColors.kBlack.withOpacity(0.2),
+                                                  width: 1.0),
+                                              borderRadius: BorderRadius.circular(30.0),
+                                            ),
+                                            hintText: '00/00',
+                                            hintStyle: TextStyle(
+                                              fontSize: 18,
+                                              color: AppColors.kBlack.withOpacity(.5),
+                                              fontFamily: 'Baloo2Regular',
+                                            ),
+                                            //suffixIcon: Suffix
+                                            //labelText: ,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 24),
+                                          child: Align(
+                                            alignment: Alignment.topLeft,
+                                            child: Text(
+                                              Strings.kSecurityCode,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: AppColors.kWhite,
+                                                fontFamily: 'Baloo2Medium',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        TextFormField(
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            color: AppColors.kBlack,
+                                            fontFamily: 'Baloo2Regular',
+                                          ),
+                                          decoration: InputDecoration(
+                                            filled: true, //<-- SEE HERE
+                                            fillColor: AppColors.kWhite,
+                                            contentPadding: const EdgeInsets.symmetric(
+                                                vertical: 0, horizontal: 25),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: AppColors.kBlue, width: 1.0),
+                                              borderRadius: BorderRadius.circular(14.0),
+                                            ),
+                                            enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: AppColors.kBlack.withOpacity(0.2),
+                                                  width: 1.0),
+                                              borderRadius: BorderRadius.circular(14.0),
+                                            ),
+                                            hintText: '***',
+                                            hintStyle: TextStyle(
+                                              fontSize: 18,
+                                              color: AppColors.kBlack.withOpacity(.5),
+                                              fontFamily: 'Baloo2Regular',
+                                            ),
+                                            //suffixIcon: Suffix
+                                            //labelText: ,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.kBlue,
+                          borderRadius: BorderRadius.circular(30),
+                          // radius of 10
+                        )),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    SizedBox(
+                      width: 310,
+                      child: Text(
+                        Strings.kTypeInfoInBox,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.kBlack.withOpacity(.3),
+                          fontFamily: 'Baloo2Regular',
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                Padding(
+              ),
+              Positioned(
+                bottom: 35,
+                child: Padding(
                   padding: const EdgeInsets.only(left: 32, right: 32),
                   child: AppCommon.appButton(
                       onPressed: () {
@@ -260,9 +490,9 @@ class _MyCardsState extends State<MyCards> {
                       btnText: Strings.kDone,
                       btnColor: AppColors.kBlue,
                       horizontal: 152),
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
         );
       },
