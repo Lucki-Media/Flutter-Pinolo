@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pinolo/src/ui/card_info.dart';
-import 'package:pinolo/src/ui/empty_cards.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
 
-class MyCards extends StatefulWidget {
-  const MyCards({Key? key}) : super(key: key);
+class EmptyCards extends StatefulWidget {
+  const EmptyCards({Key? key}) : super(key: key);
 
   @override
-  State<MyCards> createState() => _MyCardsState();
+  State<EmptyCards> createState() => _EmptyCardsState();
 }
 
-class _MyCardsState extends State<MyCards> {
-  final items = List<String>.generate(3, (i) => "Item ${i + 1}");
+class _EmptyCardsState extends State<EmptyCards> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,91 +59,45 @@ class _MyCardsState extends State<MyCards> {
       ),
       body: Stack(
         children: [
-          ListView.builder(
-              itemCount: items.length,
-              itemBuilder: (BuildContext context, int index) {
-                final item = items[index];
-                return Dismissible(
-                  direction: DismissDirection.endToStart,
-                  key: Key(item),
-                  onDismissed: (direction) {
-                    // Removes that item the list on swipwe
-                    setState(() {
-                      items.removeAt(index);
-                    });
-                    // Shows the information on Snackbar
-                    Scaffold.of(context).showSnackBar(
-                        SnackBar(content: Text("$item dismissed")));
-                  },
-                  background: Container(color: Colors.red),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => CardInfo()),
-                      );
-                    },
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 18.0, top: 25, right: 22, bottom: 5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            //crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 20),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Visa',
-                                      style: TextStyle(
-                                          color: AppColors.kBlack,
-                                          fontFamily: 'Baloo2Regular',
-                                          fontSize: 16),
-                                    ),
-                                    Text(
-                                      '**** **** **** 4255. Expires: 04/24',
-                                      style: TextStyle(
-                                          color: AppColors.kBlack.withOpacity(.4),
-                                          fontFamily: 'Baloo2Regular',
-                                          fontSize: 14),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              CardInfo()),
-                                    );
-                                  },
-                                  child: Icon(
-                                    FontAwesomeIcons.chevronRight,
-                                    size: 22,
-                                    color: AppColors.kShadowGrey,
-                                  )),
-                            ],
-                          ),
-                        ),
-                        Divider(
-                          color: AppColors.kDividerGrey, //color of divider
-                          height: 0, //height spacing of divider
-                          thickness: 1, //thickness of divier line
-                          indent: 25, //spacing at the start of divider
-                          //endIndent: 25, //spacing at the end of divider
-                        )
-                      ],
+          Center(
+            child: Column(
+              children:   [
+                const SizedBox(
+                  height: 60,
+                ),
+                Image.asset(
+                  'assets/images/welcome_logo.png',
+                  height: 300,
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                const Text(
+                  Strings.kThereIsNoInfo,
+                  style: TextStyle(
+                    fontSize: 22,
+                    color: AppColors.kBlack,
+                    fontFamily: 'Baloo2SemiBold',
+                  ),
+                ),
+                SizedBox(
+                  width: 255,
+                  child: Text(
+                    Strings.kNotAddAnyCardYet,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: AppColors.kBlack.withOpacity(.4),
+                      fontFamily: 'Baloo2Regular',
                     ),
                   ),
-                );
-              }),
+                ),
+                const SizedBox(
+                  height: 100,
+                ),
+              ],
+            ),
+          ),
           Positioned(
             bottom: 30,
             left: 80,
@@ -312,27 +265,27 @@ class _MyCardsState extends State<MyCards> {
                                   filled: true, //<-- SEE HERE
                                   fillColor: AppColors.kWhite,
                                   contentPadding: const EdgeInsets.symmetric(
-                                          vertical: 0, horizontal: 25),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                            color: AppColors.kBlue, width: 1.0),
-                                        borderRadius: BorderRadius.circular(30.0),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: AppColors.kBlack.withOpacity(0.2),
-                                            width: 1.0),
-                                        borderRadius: BorderRadius.circular(30.0),
-                                      ),
-                                      hintText: '**** **** **** ****',
-                                      hintStyle: TextStyle(
-                                        fontSize: 18,
-                                        color: AppColors.kBlack.withOpacity(.5),
-                                        fontFamily: 'Baloo2Regular',
-                                      ),
-                                      //suffixIcon: Suffix
-                                    //labelText: ,
+                                      vertical: 0, horizontal: 25),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: AppColors.kBlue, width: 1.0),
+                                    borderRadius: BorderRadius.circular(30.0),
                                   ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: AppColors.kBlack.withOpacity(0.2),
+                                        width: 1.0),
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                  hintText: '**** **** **** ****',
+                                  hintStyle: TextStyle(
+                                    fontSize: 18,
+                                    color: AppColors.kBlack.withOpacity(.5),
+                                    fontFamily: 'Baloo2Regular',
+                                  ),
+                                  //suffixIcon: Suffix
+                                  //labelText: ,
+                                ),
                               ),
                               SizedBox(
                                 height: 15,
@@ -482,10 +435,10 @@ class _MyCardsState extends State<MyCards> {
                   padding: const EdgeInsets.only(left: 32, right: 32),
                   child: AppCommon.appButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => EmptyCards()),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => MainMap()),
+                        // );
                       },
                       btnText: Strings.kDone,
                       btnColor: AppColors.kBlue,

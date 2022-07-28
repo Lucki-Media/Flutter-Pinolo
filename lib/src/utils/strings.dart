@@ -153,5 +153,7 @@ class Strings {
   static const String kCard = 'Card';
   static const String kSecurityCode  = 'Security code';
   static const String kTypeInfoInBox = 'To add new card, type information in the boxes. Only you will be able to see this information.';
-
+  static const String kCardInfo= 'Card info';
+  static const String kThereIsNoInfo = 'There is no information!';
+  static const String kNotAddAnyCardYet  = 'You didn’t add any cads yet. Click on the add new card to provide card information.';
 }
