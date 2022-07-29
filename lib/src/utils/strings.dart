@@ -155,5 +155,9 @@ class Strings {
   static const String kTypeInfoInBox = 'To add new card, type information in the boxes. Only you will be able to see this information.';
   static const String kCardInfo= 'Card info';
   static const String kThereIsNoInfo = 'There is no information!';
+  static const String kDidNotAddAcc= 'You didn’t add any bank accounts yet.';
+  static const String kAddNewBankAcc  = 'Add new bank account';
+  static const String kCanAddMultiAcc = 'You can enter multiple bank accounts.';
+  static const String kYouHaveNotParked = 'You haven’t Parked In or Parked Out yet. Go to the map and find a spot to park, or Park Out and get paid.';
   static const String kNotAddAnyCardYet  = 'You didn’t add any cads yet. Click on the add new card to provide card information.';
 }

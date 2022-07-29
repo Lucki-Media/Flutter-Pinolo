@@ -5,6 +5,7 @@ import 'package:pinolo/src/ui/my_cards.dart';
 import 'package:pinolo/src/ui/my_history.dart';
 import 'package:pinolo/src/ui/my_profile.dart';
 import 'package:pinolo/src/ui/my_vehicles.dart';
+import 'package:pinolo/src/ui/payout_page.dart';
 import 'package:pinolo/src/ui/settings.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
@@ -363,7 +364,12 @@ class _MainMapState extends State<MainMap> {
                         ),
                       ),
                   ElevatedButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  PayoutPage()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       padding:
                       EdgeInsets.symmetric(vertical: 10, horizontal: 40),
