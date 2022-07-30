@@ -160,4 +160,9 @@ class Strings {
   static const String kCanAddMultiAcc = 'You can enter multiple bank accounts.';
   static const String kYouHaveNotParked = 'You haven’t Parked In or Parked Out yet. Go to the map and find a spot to park, or Park Out and get paid.';
   static const String kNotAddAnyCardYet  = 'You didn’t add any cads yet. Click on the add new card to provide card information.';
+  static const String kChooseYourBank = 'Choose your bank';
+  static const String kBankAccNo= 'Bank account number';
+  static const String kEnterNumber = 'Enter Number';
+  static const String kChooseBank  = 'Choose Bank';
+  static const String kAccNoWillUsed = 'This Account Number will only be used when you request your Payout throughout Pinolo.';
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pinolo/src/ui/add_bank_account.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/strings.dart';
 
@@ -43,7 +44,7 @@ class _PayoutPageState extends State<PayoutPage> {
                 ),
               ),
               SizedBox(
-                width: 100,
+                width: 120,
               ),
               const Text(
                 Strings.kPayout,
@@ -152,13 +153,11 @@ class _PayoutPageState extends State<PayoutPage> {
               children: [
                 FloatingActionButton(
                   onPressed: () {
-                    // showModalBottomSheet(
-                    //   context: context,
-                    //   isScrollControlled: true,
-                    //   builder: (builder) {
-                    //     return AddCardPopUp();
-                    //   },
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AddBankAccount()),
+                    );
                   },
                   child: Icon(
                     Icons.add,

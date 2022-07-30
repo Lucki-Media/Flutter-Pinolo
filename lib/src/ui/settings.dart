@@ -43,7 +43,7 @@ class _SettingsState extends State<Settings> {
                 ),
               ),
               SizedBox(
-                width: 100,
+                width: 110,
               ),
               const Text(
                 Strings.kSettings,
