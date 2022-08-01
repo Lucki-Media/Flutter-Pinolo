@@ -164,5 +164,14 @@ class Strings {
   static const String kBankAccNo= 'Bank account number';
   static const String kEnterNumber = 'Enter Number';
   static const String kChooseBank  = 'Choose Bank';
+  static const String kChooseYourAmt= 'Choose your amount';
+  static const String kChooseDiffAmt = 'Choose different amount';
+  static const String kEnterAmt  = 'Enter amount';
   static const String kAccNoWillUsed = 'This Account Number will only be used when you request your Payout throughout Pinolo.';
+  static const String kSwipeToPayout  = '>> Swipe to Payout';
+  static const String kMinRsd = 'min. 1000 rsd';
+  static const String kYouReciPayment  = 'You will receive your payment within 24 hours.';
+  static const String kFavorites = 'Favorites';
+  static const String kAddNewFavorites = 'Add new favorites';
+  static const String kYouCanCreateMultiFav = 'You can create multiple favorites or swipe to delete them.';
 }

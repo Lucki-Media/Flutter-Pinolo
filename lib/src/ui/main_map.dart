@@ -371,8 +371,7 @@ class _MainMapState extends State<MainMap> {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      padding:
-                      EdgeInsets.symmetric(vertical: 10, horizontal: 40),
+                      padding: EdgeInsets.zero,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0)),
                       textStyle: const TextStyle(
@@ -382,7 +381,20 @@ class _MainMapState extends State<MainMap> {
                       primary: AppColors.kOrange,
                     ),
                     //icon: Icon(Icons.add, size: 18),
-                    child:  Text(Strings.kPayout),
+                    child:  Ink(
+                        decoration: BoxDecoration(
+                            gradient:
+                            LinearGradient(
+                                begin: FractionalOffset.topLeft,
+                                end: FractionalOffset.bottomRight,
+                                colors: [Color(0xffFF9433).withOpacity(.8), Color(0xffFFD4AE).withOpacity(.8), Color(0xffFF9433).withOpacity(.8)]),
+                            borderRadius: BorderRadius.circular(30)
+                        ),
+                        child: Container(
+                            width: 135,
+                            height: 50,
+                            alignment: Alignment.center,
+                            child: Text(Strings.kPayout))),
                   ),
                     ],
                   ),

@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pinolo/src/ui/add_bank_account.dart';
-import 'package:pinolo/src/ui/payput_info.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/strings.dart';
-
-class PayoutPage extends StatefulWidget {
-  const PayoutPage({Key? key}) : super(key: key);
+class FavoritesPage extends StatefulWidget {
+  const FavoritesPage({Key? key}) : super(key: key);
 
   @override
-  State<PayoutPage> createState() => _PayoutPageState();
+  State<FavoritesPage> createState() => _FavoritesPageState();
 }
 
-class _PayoutPageState extends State<PayoutPage> {
+class _FavoritesPageState extends State<FavoritesPage> {
 
   final items = List<String>.generate(3, (i) => "Item ${i + 1}");
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,10 +41,10 @@ class _PayoutPageState extends State<PayoutPage> {
                 ),
               ),
               SizedBox(
-                width: 120,
+                width: 100,
               ),
               const Text(
-                Strings.kPayout,
+                Strings.kFavorites,
                 style: TextStyle(
                   fontSize: 18,
                   color: AppColors.kBlack,
@@ -80,63 +76,73 @@ class _PayoutPageState extends State<PayoutPage> {
                   background: Container(color: Colors.red),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PayoutInfo()),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => EditVehicleInfo()),
+                      // );
                     },
                     child: Column(
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(
-                              left: 18.0, top: 25, right: 22,),
+                              left: 22.0, top: 25, right: 22, bottom: 5),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 20),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Raiffeisen Banka',
-                                      style: TextStyle(
-                                          color: AppColors.kBlack.withOpacity(.9),
-                                          fontFamily: 'Baloo2Regular',
-                                          fontSize: 14),
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/home.png',
+                                    height: 25,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 15),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Home',
+                                          style: TextStyle(
+                                              color: AppColors.kBlack.withOpacity(.9),
+                                              fontFamily: 'Baloo2Medium',
+                                              fontSize: 16),
+                                        ),
+                                        Text(
+                                          'Obilicev venac 18 - 20',
+                                          style: TextStyle(
+                                              color: AppColors.kBlack.withOpacity(.3),
+                                              fontFamily: 'Baloo2Medium',
+                                              fontSize: 14),
+                                        ),
+                                      ],
                                     ),
-                                    Text(
-                                      '12120392104912049102490',
-                                      style: TextStyle(
-                                          color: AppColors.kBlack.withOpacity(.4),
-                                          fontFamily: 'Baloo2Medium',
-                                          fontSize: 14),
-                                    ),
-                                  ],
-                                ),
+                                  )
+                                ],
                               ),
-                              GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              PayoutInfo()),
-                                    );
-                                  },
-                                  child: Icon(
-                                    FontAwesomeIcons.chevronRight,
-                                    size: 22,
-                                    color: AppColors.kShadowGrey,
-                                  )),
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 5.0),
+                                child: GestureDetector(
+                                    onTap: () {
+                                      // Navigator.push(
+                                      //   context,
+                                      //   MaterialPageRoute(
+                                      //       builder: (context) =>
+                                      //           EditVehicleInfo()),
+                                      // );
+                                    },
+                                    child: Image.asset(
+                                      'assets/images/edit.png',
+                                      height: 16,
+                                    ),),
+                              ),
                             ],
                           ),
                         ),
                         Divider(
                           color: AppColors.kDividerGrey, //color of divider
-                          height: 10, //height spacing of divider
+                          height: 0, //height spacing of divider
                           thickness: 1, //thickness of divier line
                           indent: 25, //spacing at the start of divider
                           //endIndent: 25, //spacing at the end of divider
@@ -148,17 +154,12 @@ class _PayoutPageState extends State<PayoutPage> {
               }),
           Positioned(
             bottom: 30,
-            left: 80,
+            left: 22,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FloatingActionButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AddBankAccount()),
-                    );
                   },
                   child: Icon(
                     Icons.add,
@@ -171,23 +172,20 @@ class _PayoutPageState extends State<PayoutPage> {
                   splashColor: Colors.grey,
                 ),
                 Text(
-                  Strings.kAddNewBankAcc,
+                  Strings.kAddNewFavorites,
                   style: TextStyle(
                     fontSize: 16,
                     color: AppColors.kBlack,
                     fontFamily: 'Baloo2SemiBold',
                   ),
                 ),
-                SizedBox(
-                  width: 260,
-                  child: Text(
-                    Strings.kCanAddMultiAcc,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: AppColors.kBlack.withOpacity(.3),
-                      fontFamily: 'Baloo2Regular',
-                    ),
+                Text(
+                  Strings.kYouCanCreateMultiFav,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: AppColors.kBlack.withOpacity(.3),
+                    fontFamily: 'Baloo2Regular',
                   ),
                 ),
               ],
@@ -197,5 +195,4 @@ class _PayoutPageState extends State<PayoutPage> {
       ),
     );
   }
-
 }
