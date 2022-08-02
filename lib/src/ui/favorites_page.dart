@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pinolo/src/ui/add_new_favorite.dart';
+import 'package:pinolo/src/ui/edit_favorites.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/strings.dart';
 class FavoritesPage extends StatefulWidget {
@@ -125,12 +127,12 @@ class _FavoritesPageState extends State<FavoritesPage> {
                                 padding: const EdgeInsets.only(bottom: 5.0),
                                 child: GestureDetector(
                                     onTap: () {
-                                      // Navigator.push(
-                                      //   context,
-                                      //   MaterialPageRoute(
-                                      //       builder: (context) =>
-                                      //           EditVehicleInfo()),
-                                      // );
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                EditFavorites()),
+                                      );
                                     },
                                     child: Image.asset(
                                       'assets/images/edit.png',
@@ -160,6 +162,10 @@ class _FavoritesPageState extends State<FavoritesPage> {
               children: [
                 FloatingActionButton(
                   onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  AddNewFavorite()),
+                    );
                   },
                   child: Icon(
                     Icons.add,
@@ -172,7 +178,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                   splashColor: Colors.grey,
                 ),
                 Text(
-                  Strings.kAddNewFavorites,
+                  Strings.kAddNewFavorite,
                   style: TextStyle(
                     fontSize: 16,
                     color: AppColors.kBlack,

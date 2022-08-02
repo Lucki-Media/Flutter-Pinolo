@@ -172,6 +172,18 @@ class Strings {
   static const String kMinRsd = 'min. 1000 rsd';
   static const String kYouReciPayment  = 'You will receive your payment within 24 hours.';
   static const String kFavorites = 'Favorites';
-  static const String kAddNewFavorites = 'Add new favorites';
+  static const String kAddNewFavorite = 'Add new favorite';
   static const String kYouCanCreateMultiFav = 'You can create multiple favorites or swipe to delete them.';
+  static const String kChooseIcon = 'Choose icon';
+  static const String kAddName = 'Add name';
+  static const String kAddAddress = 'Add address';
+  static const String kEnterFavName = 'Enter favorite name';
+  static const String kEnterAddress = 'Enter address';
+  static const String kSearching = 'Searching';
+  static const String kCancel = 'Cancel';
+  static const String kIfYouClickCancel = 'If you click Cancel you will stop the searching process';
+  static const String kPlzBePatient = 'Please be patient while Pinolo finds you your perfect parking spot!';
+  static const String kPaymentMethod = 'Payment method';
+  static const String kPayWithBal  = 'Pay with Balance';
+  static const String kUsePinoloCoins = 'Use Pinolo’s Coins';
 }

@@ -283,7 +283,7 @@ Widget MyBidsPopUp() {
                                         children: [
                                           Padding(
                                             padding: const EdgeInsets.all(3.0),
-                                            child: Image.asset('assets/images/bank.png', height: 16,),
+                                            child: Image.asset('assets/images/Bank_img.png', height: 16,),
                                           ),
                                           Text("Pay with Balance",
                                               style: TextStyle(
@@ -396,7 +396,7 @@ Widget MyBidsPopUp() {
                                       children: [
                                         Padding(
                                           padding: const EdgeInsets.all(3.0),
-                                          child: Image.asset('assets/images/bank.png', height: 16,),
+                                          child: Image.asset('assets/images/Bank_img.png', height: 16,),
                                         ),
                                         Text("Pay with Balance",
                                             style: TextStyle(
@@ -508,7 +508,7 @@ Widget MyBidsPopUp() {
                                       children: [
                                         Padding(
                                           padding: const EdgeInsets.all(3.0),
-                                          child: Image.asset('assets/images/bank.png', height: 16,),
+                                          child: Image.asset('assets/images/Bank_img.png', height: 16,),
                                         ),
                                         Text("Pay with Balance",
                                             style: TextStyle(

@@ -34,32 +34,41 @@ class _EditVehicleInfoState extends State<EditVehicleInfo> {
         //centerTitle: true,
         title: Padding(
           padding: const EdgeInsets.only(top: 20.0),
-          child: Row(
+          child: Column(
+            //mainAxisSize: MainAxisSize.min,
+            //crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                icon: CircleAvatar(
-                  backgroundColor: AppColors.kGrey,
-                  child: Icon(
-                    FontAwesomeIcons.arrowLeft,
-                    color: AppColors.kBlack,
-                    size: 18,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Center(
-                  child: const Text(
-                    'Volkswagen Passat',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: AppColors.kBlack,
-                      fontFamily: 'Baloo2SemiBold',
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: const Text(
+                      'Volkswagen Passat',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: AppColors.kBlack,
+                        fontFamily: 'Baloo2SemiBold',
+                      ),
                     ),
                   ),
-                ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      icon: CircleAvatar(
+                        backgroundColor: AppColors.kGrey,
+                        child: Icon(
+                          FontAwesomeIcons.arrowLeft,
+                          color: AppColors.kBlack,
+                          size: 18,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ],
           ),
