@@ -186,4 +186,13 @@ class Strings {
   static const String kPaymentMethod = 'Payment method';
   static const String kPayWithBal  = 'Pay with Balance';
   static const String kUsePinoloCoins = 'Use Pinolo’s Coins';
+  static const String kAvailable = 'Available';
+  static const String kCoins = 'coins';
+  static const String kFixedEarnings = 'Fixed earnings';
+  static const String kShare  = 'Share';
+  static const String kRateBidder = 'Rate Bidder';
+  static const String kLookLikeYourBidder = 'Looks like your Bidder has broken one of Pinolo’s rules';
+  static const String kYouFoundBidder  = 'You found your bidder and he is on his way';
+  static const String kWaitForHim = 'Wait for him, he will arrive as soon as possible';
+  static const String kAlright = 'Alright';
 }

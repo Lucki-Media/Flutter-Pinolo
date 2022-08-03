@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pinolo/src/ui/parking_completed_auctioneer.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
@@ -72,7 +73,10 @@ class KeepNature extends StatelessWidget {
             ),
             AppCommon.appButton(
                 onPressed: () {
-
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  ParkingCompletedAuctioneer()),
+                  );
                 },
                 btnText: Strings.kLearnMore,
                 btnColor: AppColors.kDarkGreen,

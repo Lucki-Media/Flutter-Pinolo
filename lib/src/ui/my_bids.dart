@@ -121,28 +121,49 @@ Widget MyBidsPopUp() {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
+            toolbarHeight: 70.0,
             shadowColor: AppColors.kShadowGrey,
+            automaticallyImplyLeading: false,
             elevation: 5,
-            leadingWidth: 35,
-            leading: GestureDetector(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-              child: CircleAvatar(
-                //radius: 10.0,
-                backgroundColor: AppColors.kGrey,
-                child: Icon(Icons.close, color: AppColors.kBlack),
-              ),
-            ),
             backgroundColor: AppColors.kWhite,
             //foregroundColor: AppColors.kBlue,
-            centerTitle: true,
-            title: const Text(
-              Strings.kMyBids,
-              style: TextStyle(
-                fontSize: 18,
-                color: AppColors.kBlack,
-                fontFamily: 'Baloo2SemiBold',
+            //centerTitle: true,
+            title: Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: Column(
+                //mainAxisSize: MainAxisSize.min,
+                //crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child: const Text(
+                          Strings.kMyBids,
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: AppColors.kBlack,
+                            fontFamily: 'Baloo2SemiBold',
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: CircleAvatar(
+                            //radius: 10.0,
+                            backgroundColor: AppColors.kGrey,
+                            child: Icon(Icons.close, color: AppColors.kBlack),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
               ),
             ),
             bottom: TabBar(

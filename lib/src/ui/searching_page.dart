@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pinolo/src/ui/payment_method.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
@@ -60,7 +61,12 @@ class SearchingPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 32, right: 32),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  PaymentMethod()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       side: BorderSide(
                         width: 1.0,

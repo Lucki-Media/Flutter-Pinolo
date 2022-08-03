@@ -79,6 +79,216 @@ class _PaymentMethodState extends State<PaymentMethod> {
           ),
         ),
       ),
+      body: Stack(
+        children: [
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 30.0,left: 30),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/images/Bank_img.png',
+                      height: 30,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          Strings.kPayWithBal,
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: AppColors.kBlack.withOpacity(.9),
+                            fontFamily: 'Baloo2SemiBold',
+                          ),
+                        ),
+                        Text(
+                          '${Strings.kAvailable}: 2350 ${Strings.krsd}',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.kBlack.withOpacity(.4),
+                            fontFamily: 'Baloo2Regular',
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: 140,
+                    ),
+                    Text(
+                      '7% Off',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.kBlack,
+                        fontFamily: 'Baloo2Regular',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Divider(
+                color: AppColors.kDividerGrey, //color of divider
+                height: 5, //height spacing of divider
+                thickness: 1, //thickness of divier line
+                indent: 25, //spacing at the start of divider
+                //endIndent: 25, //spacing at the end of divider
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0,left: 30),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/images/coin.png',
+                      height: 30,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          Strings.kUsePinoloCoins,
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: AppColors.kBlack.withOpacity(.9),
+                            fontFamily: 'Baloo2SemiBold',
+                          ),
+                        ),
+                        Text(
+                          '${Strings.kAvailable}: 1000 ${Strings.kCoins}',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.kBlack.withOpacity(.4),
+                            fontFamily: 'Baloo2Regular',
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: 132,
+                    ),
+                    Text(
+                      '2% Off',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.kBlack,
+                        fontFamily: 'Baloo2Regular',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Divider(
+                color: AppColors.kDividerGrey, //color of divider
+                height: 5, //height spacing of divider
+                thickness: 1, //thickness of divier line
+                indent: 25, //spacing at the start of divider
+                //endIndent: 25, //spacing at the end of divider
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30.0,left: 30),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 40,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Visa',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: AppColors.kBlack.withOpacity(.9),
+                            fontFamily: 'Baloo2SemiBold',
+                          ),
+                        ),
+                        Text(
+                          '**** **** **** 4255. Expires: 04/24',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.kBlack.withOpacity(.4),
+                            fontFamily: 'Baloo2Regular',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Divider(
+                color: AppColors.kDividerGrey, //color of divider
+                height: 5, //height spacing of divider
+                thickness: 1, //thickness of divier line
+                indent: 25, //spacing at the start of divider
+                //endIndent: 25, //spacing at the end of divider
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30.0,left: 30),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 40,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Mastercard',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: AppColors.kBlack.withOpacity(.9),
+                            fontFamily: 'Baloo2SemiBold',
+                          ),
+                        ),
+                        Text(
+                          '**** **** **** 4255. Expires: 04/24',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.kBlack.withOpacity(.4),
+                            fontFamily: 'Baloo2Regular',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Divider(
+                color: AppColors.kDividerGrey, //color of divider
+                height: 5, //height spacing of divider
+                thickness: 1, //thickness of divier line
+                indent: 25, //spacing at the start of divider
+                //endIndent: 25, //spacing at the end of divider
+              ),
+            ],
+          ),
+          Positioned(
+            bottom: 35,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 32, right: 32),
+              child: AppCommon.appButton(
+                  onPressed: (){
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) =>  VehicleInfo()),
+                    // );
+                  },
+                  btnText:'+${Strings.kAddNewCard}',
+                  btnColor:AppColors.kBlue,
+                  horizontal: 122 ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
