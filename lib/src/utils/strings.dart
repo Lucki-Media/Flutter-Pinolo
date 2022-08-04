@@ -195,4 +195,12 @@ class Strings {
   static const String kYouFoundBidder  = 'You found your bidder and he is on his way';
   static const String kWaitForHim = 'Wait for him, he will arrive as soon as possible';
   static const String kAlright = 'Alright';
+  static const String kPleaseBePatient = 'Please be patient while \nthe Auction is completed, Pinolo is searching for bidders . . .';
+  static const String kYourEarnings  = 'Your earnings';
+  static const String kIfClickCancelStopAuc = 'If you click Cancel you will stop the Auction.';
+  static const String kWaiting = 'Waiting . . .';
+  static const String kVehicle = 'Vehicle';
+  static const String kParkingType = 'Parking Type';
+  static const String kTime = 'Time';
+  static const String kNote  = 'Note';
 }

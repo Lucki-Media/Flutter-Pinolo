@@ -72,6 +72,7 @@ class _ReportUserAuctioneerState extends State<ReportUserAuctioneer> {
                 onPressed: () {
                   showDialog(
                     context: context,
+                    barrierDismissible: true ,
                     barrierColor: Colors.transparent,
                     builder: (BuildContext context) {
                       return Dialog(
