@@ -51,6 +51,7 @@ dependencies:
   url_launcher: ^6.1.5
   roundcheckbox: ^2.0.4+1
   flutter_timer_countdown: ^1.0.3
+  flutter_swipe_button: ^1.1.0
 
 dev_dependencies:
   flutter_test:

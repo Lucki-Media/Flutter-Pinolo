@@ -203,4 +203,6 @@ class Strings {
   static const String kParkingType = 'Parking Type';
   static const String kTime = 'Time';
   static const String kNote  = 'Note';
+  static const String kThisParkingSpot  = 'This parking spot is for small vehicle.';
+  static const String kSwipeToParkOut  = '>>Swipe to Park Out';
 }
