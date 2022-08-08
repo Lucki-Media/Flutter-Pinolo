@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_swipe_button/flutter_swipe_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
@@ -400,23 +401,27 @@ class _PayoutInfoState extends State<PayoutInfo> {
                 height: 160,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 35,right: 35.0),
-                child: ElevatedButton(
-                  onPressed: (){
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding:
-                    EdgeInsets.symmetric(vertical: 10, horizontal: 104),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0)),
-                    textStyle: const TextStyle(
-                        fontFamily: 'Baloo2SemiBold',
-                        fontSize: 16,
-                        color: AppColors.kWhite),
-                    primary: AppColors.kOrange,
+                padding: const EdgeInsets.only(left: 35.0, right: 35),
+                child: SwipeButton(
+                  borderRadius: BorderRadius.circular(8),
+                  activeTrackColor: AppColors.kOrange,
+                  height: 50,
+                  thumb: Container(
+                    color: AppColors.kOrange,
                   ),
-                  //icon: Icon(Icons.add, size: 18),
-                  child:  Text(Strings.kSwipeToPayout),
+                  child: Text(Strings.kSwipeToPayout,
+                      style: const TextStyle(
+                          fontFamily: 'Baloo2SemiBold',
+                          fontSize: 16,
+                          color: AppColors.kWhite)),
+                  onSwipe: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Swipped"),
+                        backgroundColor: Colors.green,
+                      ),
+                    );
+                  },
                 ),
               ),
               Center(

@@ -648,6 +648,9 @@ class _ParkOutPageState extends State<ParkOutPage> {
                     borderRadius: BorderRadius.circular(8),
                     activeTrackColor: AppColors.kOrange,
                     height: 50,
+                    thumb: Container(
+                      color: AppColors.kOrange,
+                    ),
                     child: Text(Strings.kSwipeToParkOut,
                         style: const TextStyle(
                             fontFamily: 'Baloo2SemiBold',

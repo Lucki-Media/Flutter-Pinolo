@@ -205,4 +205,10 @@ class Strings {
   static const String kNote  = 'Note';
   static const String kThisParkingSpot  = 'This parking spot is for small vehicle.';
   static const String kSwipeToParkOut  = '>>Swipe to Park Out';
+  static const String kSpotType = 'Spot Type';
+  static const String kDistance = 'Distance';
+  static const String kBeFirst = 'Be the first one to bid';
+  static const String kAuctionTime = 'Auction time';
+  static const String kCurrentPrice = 'Current price';
+  static const String kAuctioneers = 'Auctioneers';
 }

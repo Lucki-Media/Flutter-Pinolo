@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pinolo/src/ui/mapsicle_map.dart';
 import 'package:pinolo/src/ui/my_bids.dart';
 import 'package:pinolo/src/ui/my_cards.dart';
 import 'package:pinolo/src/ui/my_history.dart';
@@ -204,7 +205,7 @@ class _MainMapState extends State<MainMap> {
                     onPressed: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MyBids()),
+                        MaterialPageRoute(builder: (context) => MapsicleMap()),
                       );
                     },
                     btnText:Strings.kParkOut,

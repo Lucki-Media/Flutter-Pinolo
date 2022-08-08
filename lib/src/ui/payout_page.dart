@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pinolo/src/ui/add_bank_account.dart';
-import 'package:pinolo/src/ui/payput_info.dart';
+import 'package:pinolo/src/ui/payout_info.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/strings.dart';
 
