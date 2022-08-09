@@ -17,7 +17,6 @@ class _PayoutInfoState extends State<PayoutInfo> {
 
   bool isChecked = false;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,14 +121,22 @@ class _PayoutInfoState extends State<PayoutInfo> {
                         SizedBox(
                           width: 15,
                         ),
-                            RoundCheckBox(
-                              onTap: (selected) {
+                            Transform.scale(
+                              scale: 2,
+                              child: Checkbox(
+                                activeColor: AppColors.kDarkOrange, //The color to use when this checkbox is checked.
+                                checkColor: AppColors.kWhite,
+                                shape: CircleBorder(
+                                  side: new  BorderSide(color: Colors.orange),
+                                ),
+                                value: isChecked,
+                                onChanged: (v) {
+                                  setState(() {
+                                    isChecked = v!;
+                                  });
                                 },
-                              size: 35,
-                              checkedColor:AppColors.kDarkOrange,
-                              isChecked: isChecked,
+                              ),
                             ),
-
                           ],
                         ),
                         decoration: BoxDecoration(
@@ -160,7 +167,7 @@ class _PayoutInfoState extends State<PayoutInfo> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('1000 ${Strings.krsd}',
+                            Text('2000 ${Strings.krsd}',
                                 style: TextStyle(
                                     color: AppColors.kBlack.withOpacity(.2),
                                     fontFamily: 'Baloo2Regular',
@@ -168,14 +175,23 @@ class _PayoutInfoState extends State<PayoutInfo> {
                             SizedBox(
                               width: 15,
                             ),
-                            RoundCheckBox(
-                              onTap: (selected) {
-
-                              },
-                              size: 35,
-                              checkedColor:AppColors.kDarkOrange,
-                              borderColor: AppColors.kBlack.withOpacity(.2),
-                              isChecked: isChecked,
+                            Transform.scale(
+                              scale: 2,
+                              child: Checkbox(
+                                activeColor: AppColors.kDarkOrange, //The color to use when this checkbox is checked.
+                                checkColor: AppColors.kWhite,
+                                shape: RoundedRectangleBorder(
+                                    side:new  BorderSide(
+                                      width: 1,
+                                        color: AppColors.kBlack.withOpacity(.2)),
+                                    borderRadius: BorderRadius.all(Radius.circular(30.0))),
+                                value: isChecked,
+                                onChanged: (v) {
+                                  setState(() {
+                                    isChecked = v!;
+                                  });
+                                },
+                              ),
                             ),
 
                           ],
@@ -215,7 +231,7 @@ class _PayoutInfoState extends State<PayoutInfo> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('1000 ${Strings.krsd}',
+                            Text('5000 ${Strings.krsd}',
                                 style: TextStyle(
                                     color: AppColors.kBlack.withOpacity(.2),
                                     fontFamily: 'Baloo2Regular',
@@ -263,7 +279,7 @@ class _PayoutInfoState extends State<PayoutInfo> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('1000 ${Strings.krsd}',
+                            Text('10000 ${Strings.krsd}',
                                 style: TextStyle(
                                     color: AppColors.kBlack.withOpacity(.2),
                                     fontFamily: 'Baloo2Regular',
@@ -317,7 +333,7 @@ class _PayoutInfoState extends State<PayoutInfo> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('1000 ${Strings.krsd}',
+                          Text('20000 ${Strings.krsd}',
                               style: TextStyle(
                                   color: AppColors.kBlack.withOpacity(.2),
                                   fontFamily: 'Baloo2Regular',

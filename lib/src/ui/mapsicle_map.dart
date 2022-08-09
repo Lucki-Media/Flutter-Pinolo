@@ -61,12 +61,22 @@ class _MapsicleMapState extends State<MapsicleMap> {
                 infoWindow: InfoWindow(
                     title: "Hytech City",
                     onTap: () {
-                      var bottomSheetController = scaffoldKey.currentState!
-                          .showBottomSheet((context) => Container(
-                                child: getBottomSheet2("17.4435, 78.3772"),
-                                height: 550,
-                                color: Colors.transparent,
-                              ));
+                      showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        builder: (context) => Container(
+                          height: 550,
+                          decoration: new BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: new BorderRadius.only(
+                              topLeft: const Radius.circular(30.0),
+                              topRight: const Radius.circular(30.0),
+                            ),
+                          ),
+                          child: getBottomSheet(),
+                        ),
+                      );
                     },
                     snippet: "Snipet Hitech City"));
 
@@ -91,7 +101,7 @@ class _MapsicleMapState extends State<MapsicleMap> {
         ));
   }
 
-  Widget getBottomSheet(String s) {
+  Widget getBottomSheet() {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80.0,
@@ -99,6 +109,9 @@ class _MapsicleMapState extends State<MapsicleMap> {
         automaticallyImplyLeading: false,
         elevation: 5,
         backgroundColor: AppColors.kWhite,
+        shape: RoundedRectangleBorder(
+          borderRadius:  BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30)),
+        ),
         //foregroundColor: AppColors.kBlue,
         //centerTitle: true,
         title: Padding(
@@ -126,38 +139,22 @@ class _MapsicleMapState extends State<MapsicleMap> {
                       ),
                     ],
                   ),
-                  Row(
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.solidStar,
-                        color: Colors.amber,
-                        size: 8,
+                  Container(
+                    height: 10,
+                    width: 55,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: 5,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (BuildContext context, int index) => Padding(
+                        padding: const EdgeInsets.only(right: 3.0),
+                        child: Icon(
+                          FontAwesomeIcons.solidStar,
+                          color: Colors.amber,
+                          size: 8,
+                        ),
                       ),
-                      SizedBox(width: 3,),
-                      Icon(
-                        FontAwesomeIcons.solidStar,
-                        color: Colors.amber,
-                        size: 8,
-                      ),
-                      SizedBox(width: 3,),
-                      Icon(
-                        FontAwesomeIcons.solidStar,
-                        color: Colors.amber,
-                        size: 8,
-                      ),
-                      SizedBox(width: 3,),
-                      Icon(
-                        FontAwesomeIcons.solidStar,
-                        color: Colors.amber,
-                        size: 8,
-                      ),
-                      SizedBox(width: 3,),
-                      Icon(
-                        FontAwesomeIcons.solidStar,
-                        color: Colors.amber,
-                        size: 8,
-                      ),
-                    ],
+                    ),
                   ),
                 ],
               ),
@@ -451,6 +448,9 @@ class _MapsicleMapState extends State<MapsicleMap> {
         automaticallyImplyLeading: false,
         elevation: 5,
         backgroundColor: AppColors.kWhite,
+        shape: RoundedRectangleBorder(
+            borderRadius:  BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30)),
+        ),
         //foregroundColor: AppColors.kBlue,
         //centerTitle: true,
         title: Padding(
@@ -478,39 +478,23 @@ class _MapsicleMapState extends State<MapsicleMap> {
                       ),
                     ],
                   ),
-                  Row(
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.solidStar,
-                        color: Colors.amber,
-                        size: 8,
+                  Container(
+                    height: 10,
+                    width: 55,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: 5,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (BuildContext context, int index) => Padding(
+                        padding: const EdgeInsets.only(right: 3.0),
+                        child: Icon(
+                          FontAwesomeIcons.solidStar,
+                          color: Colors.amber,
+                          size: 8,
+                        ),
                       ),
-                      SizedBox(width: 3,),
-                      Icon(
-                        FontAwesomeIcons.solidStar,
-                        color: Colors.amber,
-                        size: 8,
-                      ),
-                      SizedBox(width: 3,),
-                      Icon(
-                        FontAwesomeIcons.solidStar,
-                        color: Colors.amber,
-                        size: 8,
-                      ),
-                      SizedBox(width: 3,),
-                      Icon(
-                        FontAwesomeIcons.solidStar,
-                        color: Colors.amber,
-                        size: 8,
-                      ),
-                      SizedBox(width: 3,),
-                      Icon(
-                        FontAwesomeIcons.solidStar,
-                        color: Colors.amber,
-                        size: 8,
-                      ),
-                    ],
-                  ),
+                    ),
+                  )
                 ],
               ),
               GestureDetector(
@@ -632,9 +616,20 @@ class _MapsicleMapState extends State<MapsicleMap> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Text("Veljko A",
+                                Text("2nd",
                                     style: TextStyle(
-                                        color: AppColors.kBlack.withOpacity(.7),
+                                        color: AppColors.kBlack.withOpacity(.5),
+                                        fontFamily: 'Baloo2SemiBold',
+                                        fontSize: 14)),
+                                Text("Atanasije Dj",
+                                    style: TextStyle(
+                                        color: AppColors.kBlack.withOpacity(.3),
+                                        fontFamily: 'Baloo2Medium',
+                                        fontSize: 14)),
+                                SizedBox(width: 10,),
+                                Text("+2000",
+                                    style: TextStyle(
+                                        color: AppColors.kBlack.withOpacity(.3),
                                         fontFamily: 'Baloo2Medium',
                                         fontSize: 14)),
                               ],
@@ -653,10 +648,10 @@ class _MapsicleMapState extends State<MapsicleMap> {
                     'assets/images/clock.png',
                     height: 70,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 13),
                   Image.asset(
                     'assets/images/2rsd.png',
-                    height: 70,
+                    height: 80,
                   ),
                 ],
               ),
