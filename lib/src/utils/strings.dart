@@ -211,4 +211,7 @@ class Strings {
   static const String kAuctionTime = 'Auction time';
   static const String kCurrentPrice = 'Current price';
   static const String kAuctioneers = 'Auctioneers';
+  static const String kIAmHere = 'I am here';
+  static const String kISeeHim = 'I see him';
+  static const String kArrivalTime = 'Arrival time';
 }

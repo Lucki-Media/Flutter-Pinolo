@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pinolo/src/ui/parkout_page.dart';
+import 'package:pinolo/src/ui/second_map.dart';
 import 'package:pinolo/src/ui/waiting_page.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
 import 'package:pinolo/src/utils/app_common.dart';
@@ -79,7 +80,7 @@ class _AuctionCompletedAuctioneerState extends State<AuctionCompletedAuctioneer>
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  ParkOutPage()),
+                  MaterialPageRoute(builder: (context) =>  SecondMap()),
                 );
               },
               btnText: '${Strings.kAlright}!',
