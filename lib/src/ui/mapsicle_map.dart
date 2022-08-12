@@ -1,12 +1,9 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:pinolo/src/ui/auction_completed_page.dart';
 import 'package:pinolo/src/ui/my_bids.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
-import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
 
 class MapsicleMap extends StatefulWidget {
@@ -89,6 +86,7 @@ class _MapsicleMapState extends State<MapsicleMap> {
               markers[markerId1] = marker1;
               markers[markerId2] = marker2;
               markers[markerId3] = marker3;
+
             });
           },
         ));

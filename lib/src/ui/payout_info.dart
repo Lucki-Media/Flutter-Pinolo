@@ -14,8 +14,34 @@ class PayoutInfo extends StatefulWidget {
 }
 
 class _PayoutInfoState extends State<PayoutInfo> {
-
-  bool isChecked = false;
+  String selected = "";
+  List checkListItems = [
+    {
+      "id": 0,
+      "value": false,
+      "title": "1000 rsd",
+    },
+    {
+      "id": 1,
+      "value": true,
+      "title": "2000 rsd",
+    },
+    {
+      "id": 2,
+      "value": false,
+      "title": "5000 rsd",
+    },
+    {
+      "id": 3,
+      "value": false,
+      "title": "10000 rsd",
+    },
+    {
+      "id": 4,
+      "value": false,
+      "title": "20000 rsd",
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -103,286 +129,373 @@ class _PayoutInfoState extends State<PayoutInfo> {
                       fontSize: 18),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 40),
-                child: Row(
-                  children: [
-                    Container(
-                        height: 55,
-                        width: 135,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                        Text('1000 ${Strings.krsd}',
-                            style: TextStyle(
-                                color: AppColors.kBlack.withOpacity(.7),
-                                fontFamily: 'Baloo2Regular',
-                                fontSize: 16)),
-                        SizedBox(
-                          width: 15,
-                        ),
-                            Transform.scale(
-                              scale: 2,
-                              child: Checkbox(
-                                activeColor: AppColors.kDarkOrange, //The color to use when this checkbox is checked.
-                                checkColor: AppColors.kWhite,
-                                shape: CircleBorder(
-                                  side: new  BorderSide(color: Colors.orange),
+              Center(
+                child: Wrap(
+                  children: List.generate(
+                    checkListItems.length,
+                    (index) => Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 15),
+                      child: Container(
+                          height: 55,
+                          width: 135,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 71,
+                                  child: Text(
+                                    checkListItems[index]["title"],
+                                    style: TextStyle(
+                                        color: checkListItems[index]["value"]
+                                            ? AppColors.kBlack.withOpacity(.7)
+                                            : AppColors.kBlack.withOpacity(.2),
+                                        fontFamily: 'Baloo2Regular',
+                                        fontSize: 16),
+                                  ),
                                 ),
-                                value: isChecked,
-                                onChanged: (v) {
-                                  setState(() {
-                                    isChecked = v!;
-                                  });
-                                },
-                              ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                RoundCheckBox(
+                                  size: 32,
+                                  checkedColor: AppColors.kDarkOrange,
+                                  borderColor: AppColors.kBlack.withOpacity(.2),
+                                  isChecked: checkListItems[index]["value"],
+                                  onTap: (value) {
+                                    setState(() {
+                                      for (var element in checkListItems) {
+                                        element["value"] = false;
+                                      }
+                                      checkListItems[index]["value"] = value;
+                                      selected =
+                                          "${checkListItems[index]["id"]}, ${checkListItems[index]["title"]}, ${checkListItems[index]["value"]}";
+                                    });
+                                  },
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: AppColors.kBlack.withOpacity(.5),
-                            width: 1,
                           ),
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppColors.kBlack.withOpacity(.25),
-                              blurRadius: 3.0, // soften the shadow
-                              spreadRadius: 1.0, //extend the shadow
-                              offset: Offset(
-                                2.0,
-                                4.0,
-                              ),
-                            )
-                          ],
-                        )),
-                    SizedBox(
-                      width: 60,
-                    ),
-                    Container(
-                        height: 55,
-                        width: 135,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('2000 ${Strings.krsd}',
-                                style: TextStyle(
+                          decoration: checkListItems[index]["value"]
+                              ? BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                    color: AppColors.kBlack.withOpacity(.5),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(30),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: AppColors.kBlack.withOpacity(.25),
+                                      blurRadius: 3.0, // soften the shadow
+                                      spreadRadius: 1.0, //extend the shadow
+                                      offset: Offset(
+                                        2.0,
+                                        4.0,
+                                      ),
+                                    )
+                                  ],
+                                )
+                              : BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
                                     color: AppColors.kBlack.withOpacity(.2),
-                                    fontFamily: 'Baloo2Regular',
-                                    fontSize: 16)),
-                            SizedBox(
-                              width: 15,
-                            ),
-                            Transform.scale(
-                              scale: 2,
-                              child: Checkbox(
-                                activeColor: AppColors.kDarkOrange, //The color to use when this checkbox is checked.
-                                checkColor: AppColors.kWhite,
-                                shape: RoundedRectangleBorder(
-                                    side:new  BorderSide(
-                                      width: 1,
-                                        color: AppColors.kBlack.withOpacity(.2)),
-                                    borderRadius: BorderRadius.all(Radius.circular(30.0))),
-                                value: isChecked,
-                                onChanged: (v) {
-                                  setState(() {
-                                    isChecked = v!;
-                                  });
-                                },
-                              ),
-                            ),
-
-                          ],
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: AppColors.kBlack.withOpacity(.2),
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(30),
-                          // boxShadow: [
-                          //   BoxShadow(
-                          //     color: AppColors.kBlack.withOpacity(.25),
-                          //     blurRadius: 3.0, // soften the shadow
-                          //     spreadRadius: 1.0, //extend the shadow
-                          //     offset: Offset(
-                          //       2.0,
-                          //       4.0,
-                          //     ),
-                          //   )
-                          // ],
-                        )),
-                  ],
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(30),
+                                  // boxShadow: [
+                                  //   BoxShadow(
+                                  //     color: AppColors.kBlack.withOpacity(.25),
+                                  //     blurRadius: 3.0, // soften the shadow
+                                  //     spreadRadius: 1.0, //extend the shadow
+                                  //     offset: Offset(
+                                  //       2.0,
+                                  //       4.0,
+                                  //     ),
+                                  //   )
+                                  // ],
+                                )),
+                    ),
+                  ),
                 ),
               ),
-              SizedBox(
-                height: 15,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 40),
-                child: Row(
-                  children: [
-                    Container(
-                        height: 55,
-                        width: 135,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('5000 ${Strings.krsd}',
-                                style: TextStyle(
-                                    color: AppColors.kBlack.withOpacity(.2),
-                                    fontFamily: 'Baloo2Regular',
-                                    fontSize: 16)),
-                            SizedBox(
-                              width: 15,
-                            ),
-                            RoundCheckBox(
-                              onTap: (selected) {
-
-                              },
-                              size: 35,
-                              checkedColor:AppColors.kDarkOrange,
-                              borderColor: AppColors.kBlack.withOpacity(.2),
-                              isChecked: isChecked,
-                            ),
-
-                          ],
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: AppColors.kBlack.withOpacity(.2),
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(30),
-                          // boxShadow: [
-                          //   BoxShadow(
-                          //     color: AppColors.kBlack.withOpacity(.25),
-                          //     blurRadius: 3.0, // soften the shadow
-                          //     spreadRadius: 1.0, //extend the shadow
-                          //     offset: Offset(
-                          //       2.0,
-                          //       4.0,
-                          //     ),
-                          //   )
-                          // ],
-                        )),
-                    SizedBox(
-                      width: 60,
-                    ),
-                    Container(
-                        height: 55,
-                        width: 135,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('10000 ${Strings.krsd}',
-                                style: TextStyle(
-                                    color: AppColors.kBlack.withOpacity(.2),
-                                    fontFamily: 'Baloo2Regular',
-                                    fontSize: 16)),
-                            SizedBox(
-                              width: 15,
-                            ),
-                            RoundCheckBox(
-                              onTap: (selected) {
-
-                              },
-                              size: 35,
-                              checkedColor:AppColors.kDarkOrange,
-                              borderColor: AppColors.kBlack.withOpacity(.2),
-                              isChecked: isChecked,
-                            ),
-
-                          ],
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: AppColors.kBlack.withOpacity(.2),
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(30),
-                          // boxShadow: [
-                          //   BoxShadow(
-                          //     color: AppColors.kBlack.withOpacity(.25),
-                          //     blurRadius: 3.0, // soften the shadow
-                          //     spreadRadius: 1.0, //extend the shadow
-                          //     offset: Offset(
-                          //       2.0,
-                          //       4.0,
-                          //     ),
-                          //   )
-                          // ],
-                        )),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 23,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                      height: 55,
-                      width: 135,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('20000 ${Strings.krsd}',
-                              style: TextStyle(
-                                  color: AppColors.kBlack.withOpacity(.2),
-                                  fontFamily: 'Baloo2Regular',
-                                  fontSize: 16)),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          RoundCheckBox(
-                            onTap: (selected) {
-
-                            },
-                            size: 35,
-                            checkedColor:AppColors.kDarkOrange,
-                            borderColor: AppColors.kBlack.withOpacity(.2),
-                            isChecked: isChecked,
-                          ),
-
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
-                          color: AppColors.kBlack.withOpacity(.2),
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(30),
-                        // boxShadow: [
-                        //   BoxShadow(
-                        //     color: AppColors.kBlack.withOpacity(.25),
-                        //     blurRadius: 3.0, // soften the shadow
-                        //     spreadRadius: 1.0, //extend the shadow
-                        //     offset: Offset(
-                        //       2.0,
-                        //       4.0,
-                        //     ),
-                        //   )
-                        // ],
-                      )),
-                ],
-              ),
+              // Padding(
+              //   padding:
+              //       const EdgeInsets.symmetric(vertical: 8, horizontal: 40),
+              //   child: Row(
+              //     children: [
+              //       Container(
+              //           height: 55,
+              //           width: 135,
+              //           child: Row(
+              //             mainAxisAlignment: MainAxisAlignment.center,
+              //             children: [
+              //               Text('1000 ${Strings.krsd}',
+              //                   style: TextStyle(
+              //                       color: AppColors.kBlack.withOpacity(.7),
+              //                       fontFamily: 'Baloo2Regular',
+              //                       fontSize: 16)),
+              //               SizedBox(
+              //                 width: 15,
+              //               ),
+              //               Transform.scale(
+              //                 scale: 2,
+              //                 child: Checkbox(
+              //                   activeColor: AppColors
+              //                       .kDarkOrange, //The color to use when this checkbox is checked.
+              //                   checkColor: AppColors.kWhite,
+              //                   shape: CircleBorder(
+              //                     side: new BorderSide(color: Colors.orange),
+              //                   ),
+              //                   value: isChecked,
+              //                   onChanged: (v) {
+              //                     setState(() {
+              //                       isChecked = v!;
+              //                     });
+              //                   },
+              //                 ),
+              //               ),
+              //             ],
+              //           ),
+              //           decoration: BoxDecoration(
+              //             color: Colors.white,
+              //             border: Border.all(
+              //               color: AppColors.kBlack.withOpacity(.5),
+              //               width: 1,
+              //             ),
+              //             borderRadius: BorderRadius.circular(30),
+              //             boxShadow: [
+              //               BoxShadow(
+              //                 color: AppColors.kBlack.withOpacity(.25),
+              //                 blurRadius: 3.0, // soften the shadow
+              //                 spreadRadius: 1.0, //extend the shadow
+              //                 offset: Offset(
+              //                   2.0,
+              //                   4.0,
+              //                 ),
+              //               )
+              //             ],
+              //           )),
+              //       SizedBox(
+              //         width: 60,
+              //       ),
+              //       Container(
+              //           height: 55,
+              //           width: 135,
+              //           child: Row(
+              //             mainAxisAlignment: MainAxisAlignment.center,
+              //             children: [
+              //               Text('2000 ${Strings.krsd}',
+              //                   style: TextStyle(
+              //                       color: AppColors.kBlack.withOpacity(.2),
+              //                       fontFamily: 'Baloo2Regular',
+              //                       fontSize: 16)),
+              //               SizedBox(
+              //                 width: 15,
+              //               ),
+              //               Transform.scale(
+              //                 scale: 2,
+              //                 child: Checkbox(
+              //                   activeColor: AppColors
+              //                       .kDarkOrange, //The color to use when this checkbox is checked.
+              //                   checkColor: AppColors.kWhite,
+              //                   shape: RoundedRectangleBorder(
+              //                       side: new BorderSide(
+              //                           width: 1,
+              //                           color:
+              //                               AppColors.kBlack.withOpacity(.2)),
+              //                       borderRadius: BorderRadius.all(
+              //                           Radius.circular(30.0))),
+              //                   value: isChecked,
+              //                   onChanged: (v) {
+              //                     setState(() {
+              //                       isChecked = v!;
+              //                     });
+              //                   },
+              //                 ),
+              //               ),
+              //             ],
+              //           ),
+              //           decoration: BoxDecoration(
+              //             color: Colors.white,
+              //             border: Border.all(
+              //               color: AppColors.kBlack.withOpacity(.2),
+              //               width: 1,
+              //             ),
+              //             borderRadius: BorderRadius.circular(30),
+              //             // boxShadow: [
+              //             //   BoxShadow(
+              //             //     color: AppColors.kBlack.withOpacity(.25),
+              //             //     blurRadius: 3.0, // soften the shadow
+              //             //     spreadRadius: 1.0, //extend the shadow
+              //             //     offset: Offset(
+              //             //       2.0,
+              //             //       4.0,
+              //             //     ),
+              //             //   )
+              //             // ],
+              //           )),
+              //     ],
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: 15,
+              // ),
+              // Padding(
+              //   padding:
+              //       const EdgeInsets.symmetric(vertical: 8, horizontal: 40),
+              //   child: Row(
+              //     children: [
+              //       Container(
+              //           height: 55,
+              //           width: 135,
+              //           child: Row(
+              //             mainAxisAlignment: MainAxisAlignment.center,
+              //             children: [
+              //               Text('5000 ${Strings.krsd}',
+              //                   style: TextStyle(
+              //                       color: AppColors.kBlack.withOpacity(.2),
+              //                       fontFamily: 'Baloo2Regular',
+              //                       fontSize: 16)),
+              //               SizedBox(
+              //                 width: 15,
+              //               ),
+              //               RoundCheckBox(
+              //                 onTap: (selected) {},
+              //                 size: 35,
+              //                 checkedColor: AppColors.kDarkOrange,
+              //                 borderColor: AppColors.kBlack.withOpacity(.2),
+              //                 isChecked: isChecked,
+              //               ),
+              //             ],
+              //           ),
+              //           decoration: BoxDecoration(
+              //             color: Colors.white,
+              //             border: Border.all(
+              //               color: AppColors.kBlack.withOpacity(.2),
+              //               width: 1,
+              //             ),
+              //             borderRadius: BorderRadius.circular(30),
+              //             // boxShadow: [
+              //             //   BoxShadow(
+              //             //     color: AppColors.kBlack.withOpacity(.25),
+              //             //     blurRadius: 3.0, // soften the shadow
+              //             //     spreadRadius: 1.0, //extend the shadow
+              //             //     offset: Offset(
+              //             //       2.0,
+              //             //       4.0,
+              //             //     ),
+              //             //   )
+              //             // ],
+              //           )),
+              //       SizedBox(
+              //         width: 60,
+              //       ),
+              //       Container(
+              //           height: 55,
+              //           width: 135,
+              //           child: Row(
+              //             mainAxisAlignment: MainAxisAlignment.center,
+              //             children: [
+              //               Text('10000 ${Strings.krsd}',
+              //                   style: TextStyle(
+              //                       color: AppColors.kBlack.withOpacity(.2),
+              //                       fontFamily: 'Baloo2Regular',
+              //                       fontSize: 16)),
+              //               SizedBox(
+              //                 width: 15,
+              //               ),
+              //               RoundCheckBox(
+              //                 onTap: (selected) {},
+              //                 size: 35,
+              //                 checkedColor: AppColors.kDarkOrange,
+              //                 borderColor: AppColors.kBlack.withOpacity(.2),
+              //                 isChecked: isChecked,
+              //               ),
+              //             ],
+              //           ),
+              //           decoration: BoxDecoration(
+              //             color: Colors.white,
+              //             border: Border.all(
+              //               color: AppColors.kBlack.withOpacity(.2),
+              //               width: 1,
+              //             ),
+              //             borderRadius: BorderRadius.circular(30),
+              //             // boxShadow: [
+              //             //   BoxShadow(
+              //             //     color: AppColors.kBlack.withOpacity(.25),
+              //             //     blurRadius: 3.0, // soften the shadow
+              //             //     spreadRadius: 1.0, //extend the shadow
+              //             //     offset: Offset(
+              //             //       2.0,
+              //             //       4.0,
+              //             //     ),
+              //             //   )
+              //             // ],
+              //           )),
+              //     ],
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: 23,
+              // ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Container(
+              //         height: 55,
+              //         width: 135,
+              //         child: Row(
+              //           mainAxisAlignment: MainAxisAlignment.center,
+              //           children: [
+              //             Text('20000 ${Strings.krsd}',
+              //                 style: TextStyle(
+              //                     color: AppColors.kBlack.withOpacity(.2),
+              //                     fontFamily: 'Baloo2Regular',
+              //                     fontSize: 16)),
+              //             SizedBox(
+              //               width: 15,
+              //             ),
+              //             RoundCheckBox(
+              //               onTap: (selected) {},
+              //               size: 35,
+              //               checkedColor: AppColors.kDarkOrange,
+              //               borderColor: AppColors.kBlack.withOpacity(.2),
+              //               isChecked: isChecked,
+              //             ),
+              //           ],
+              //         ),
+              //         decoration: BoxDecoration(
+              //           color: Colors.white,
+              //           border: Border.all(
+              //             color: AppColors.kBlack.withOpacity(.2),
+              //             width: 1,
+              //           ),
+              //           borderRadius: BorderRadius.circular(30),
+              //           // boxShadow: [
+              //           //   BoxShadow(
+              //           //     color: AppColors.kBlack.withOpacity(.25),
+              //           //     blurRadius: 3.0, // soften the shadow
+              //           //     spreadRadius: 1.0, //extend the shadow
+              //           //     offset: Offset(
+              //           //       2.0,
+              //           //       4.0,
+              //           //     ),
+              //           //   )
+              //           // ],
+              //         )),
+              //   ],
+              // ),
               Divider(
                 color: AppColors.kDividerGrey, //color of divider
-                height: 30, //height spacing of divider
+                height: 2, //height spacing of divider
                 thickness: 1, //thickness of divier line
                 indent: 25, //spacing at the start of divider
                 //endIndent: 25, //spacing at the end of divider
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 35.0,top: 5),
+                padding: const EdgeInsets.only(left: 35.0, top: 20),
                 child: Text(
                   Strings.kChooseDiffAmt,
                   style: TextStyle(
@@ -392,10 +505,11 @@ class _PayoutInfoState extends State<PayoutInfo> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 32.0,right: 32,top: 5),
+                padding: const EdgeInsets.only(left: 32.0, right: 32, top: 5),
                 child: TextFormField(
                   style: AppCommon.fieldTextStyle(),
-                  decoration: AppCommon.textFiledDecoration(hintText: Strings.kEnterAmt),
+                  decoration: AppCommon.textFiledDecoration(
+                      hintText: Strings.kEnterAmt),
                 ),
               ),
               Padding(
