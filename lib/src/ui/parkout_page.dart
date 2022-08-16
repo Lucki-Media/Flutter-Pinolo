@@ -15,6 +15,29 @@ class ParkOutPage extends StatefulWidget {
 class _ParkOutPageState extends State<ParkOutPage> {
   bool isChecked = false;
   bool isFinished = false;
+  String selected = "";
+  List checkListItems = [
+    {
+      "id": 0,
+      "value": false,
+      "title": "Volkswagen Passat",
+    },
+    {
+      "id": 1,
+      "value": true,
+      "title": "Mercedes - Benz E350d",
+    },
+    {
+      "id": 2,
+      "value": false,
+      "title": "Zastava 101",
+    },
+    {
+      "id": 3,
+      "value": false,
+      "title": "Lamborghini Huracan",
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,211 +107,96 @@ class _ParkOutPageState extends State<ParkOutPage> {
                         fontSize: 18),
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
-                  child: Row(
-                    children: [
-                      Container(
-                          height: 55,
-                          width: 150,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 70,
-                                child: Text('Volkswagen Passat',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: AppColors.kBlack.withOpacity(.7),
-                                        fontFamily: 'Baloo2Regular',
-                                        fontSize: 12)),
+                Center(
+                  child: Wrap(
+                    children: List.generate(
+                      checkListItems.length,
+                          (index) => Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 23, vertical: 15),
+                        child: Container(
+                            height: 55,
+                            width: 150,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 22.0),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: 71,
+                                    child: Text(
+                                      checkListItems[index]["title"],
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: checkListItems[index]["value"]
+                                              ? AppColors.kBlack.withOpacity(.7)
+                                              : AppColors.kBlack.withOpacity(.2),
+                                          fontFamily: 'Baloo2Regular',
+                                          fontSize: 12),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  RoundCheckBox(
+                                    size: 32,
+                                    checkedColor: AppColors.kDarkOrange,
+                                    borderColor: AppColors.kBlack.withOpacity(.2),
+                                    isChecked: checkListItems[index]["value"],
+                                    onTap: (value) {
+                                      setState(() {
+                                        for (var element in checkListItems) {
+                                          element["value"] = false;
+                                        }
+                                        checkListItems[index]["value"] = value;
+                                        selected =
+                                        "${checkListItems[index]["id"]}, ${checkListItems[index]["title"]}, ${checkListItems[index]["value"]}";
+                                      });
+                                    },
+                                  ),
+                                ],
                               ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              RoundCheckBox(
-                                onTap: (selected) {},
-                                size: 35,
-                                checkedColor: AppColors.kDarkOrange,
-                                isChecked: isChecked,
-                              ),
-                            ],
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(
-                              color: AppColors.kBlack.withOpacity(.5),
-                              width: 1,
                             ),
-                            borderRadius: BorderRadius.circular(30),
-                            boxShadow: [
-                              BoxShadow(
-                                color: AppColors.kBlack.withOpacity(.25),
-                                blurRadius: 3.0, // soften the shadow
-                                spreadRadius: 1.0, //extend the shadow
-                                offset: Offset(
-                                  2.0,
-                                  4.0,
-                                ),
-                              )
-                            ],
-                          )),
-                      SizedBox(
-                        width: 50,
+                            decoration: checkListItems[index]["value"]
+                                ? BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: AppColors.kBlack.withOpacity(.5),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.kBlack.withOpacity(.25),
+                                  blurRadius: 3.0, // soften the shadow
+                                  spreadRadius: 1.0, //extend the shadow
+                                  offset: Offset(
+                                    2.0,
+                                    4.0,
+                                  ),
+                                )
+                              ],
+                            )
+                                : BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: AppColors.kBlack.withOpacity(.2),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(30),
+                              // boxShadow: [
+                              //   BoxShadow(
+                              //     color: AppColors.kBlack.withOpacity(.25),
+                              //     blurRadius: 3.0, // soften the shadow
+                              //     spreadRadius: 1.0, //extend the shadow
+                              //     offset: Offset(
+                              //       2.0,
+                              //       4.0,
+                              //     ),
+                              //   )
+                              // ],
+                            )),
                       ),
-                      Container(
-                          height: 55,
-                          width: 150,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 70,
-                                child: Text('Mercedes - Benz E350d',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: AppColors.kBlack.withOpacity(.2),
-                                        fontFamily: 'Baloo2Regular',
-                                        fontSize: 12)),
-                              ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              RoundCheckBox(
-                                onTap: (selected) {},
-                                size: 35,
-                                checkedColor: AppColors.kDarkOrange,
-                                borderColor: AppColors.kBlack.withOpacity(.2),
-                                isChecked: isChecked,
-                              ),
-                            ],
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(
-                              color: AppColors.kBlack.withOpacity(.2),
-                              width: 1,
-                            ),
-                            borderRadius: BorderRadius.circular(30),
-                            // boxShadow: [
-                            //   BoxShadow(
-                            //     color: AppColors.kBlack.withOpacity(.25),
-                            //     blurRadius: 3.0, // soften the shadow
-                            //     spreadRadius: 1.0, //extend the shadow
-                            //     offset: Offset(
-                            //       2.0,
-                            //       4.0,
-                            //     ),
-                            //   )
-                            // ],
-                          )),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
-                  child: Row(
-                    children: [
-                      Container(
-                          height: 55,
-                          width: 150,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 70,
-                                child: Text('Zastava 101',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: AppColors.kBlack.withOpacity(.7),
-                                        fontFamily: 'Baloo2Regular',
-                                        fontSize: 12)),
-                              ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              RoundCheckBox(
-                                onTap: (selected) {},
-                                size: 35,
-                                checkedColor: AppColors.kDarkOrange,
-                                isChecked: isChecked,
-                              ),
-                            ],
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(
-                              color: AppColors.kBlack.withOpacity(.5),
-                              width: 1,
-                            ),
-                            borderRadius: BorderRadius.circular(30),
-                            boxShadow: [
-                              BoxShadow(
-                                color: AppColors.kBlack.withOpacity(.25),
-                                blurRadius: 3.0, // soften the shadow
-                                spreadRadius: 1.0, //extend the shadow
-                                offset: Offset(
-                                  2.0,
-                                  4.0,
-                                ),
-                              )
-                            ],
-                          )),
-                      SizedBox(
-                        width: 50,
-                      ),
-                      Container(
-                          height: 55,
-                          width: 150,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 70,
-                                child: Text('Lamborghini Huracan',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: AppColors.kBlack.withOpacity(.2),
-                                        fontFamily: 'Baloo2Regular',
-                                        fontSize: 12)),
-                              ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              RoundCheckBox(
-                                onTap: (selected) {},
-                                size: 35,
-                                checkedColor: AppColors.kDarkOrange,
-                                borderColor: AppColors.kBlack.withOpacity(.2),
-                                isChecked: isChecked,
-                              ),
-                            ],
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(
-                              color: AppColors.kBlack.withOpacity(.2),
-                              width: 1,
-                            ),
-                            borderRadius: BorderRadius.circular(30),
-                            // boxShadow: [
-                            //   BoxShadow(
-                            //     color: AppColors.kBlack.withOpacity(.25),
-                            //     blurRadius: 3.0, // soften the shadow
-                            //     spreadRadius: 1.0, //extend the shadow
-                            //     offset: Offset(
-                            //       2.0,
-                            //       4.0,
-                            //     ),
-                            //   )
-                            // ],
-                          )),
-                    ],
+                    ),
                   ),
                 ),
                 Divider(

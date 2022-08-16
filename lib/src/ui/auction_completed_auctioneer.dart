@@ -80,7 +80,7 @@ class _AuctionCompletedAuctioneerState extends State<AuctionCompletedAuctioneer>
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  SecondMap()),
+                  MaterialPageRoute(builder: (context) =>  WaitingPage()),
                 );
               },
               btnText: '${Strings.kAlright}!',
