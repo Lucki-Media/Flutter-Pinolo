@@ -14,7 +14,6 @@ class ParkOutPage extends StatefulWidget {
 
 class _ParkOutPageState extends State<ParkOutPage> {
   bool isChecked = false;
-  bool isFinished = false;
   String selected = "";
   List checkListItems = [
     {
@@ -36,6 +35,24 @@ class _ParkOutPageState extends State<ParkOutPage> {
       "id": 3,
       "value": false,
       "title": "Lamborghini Huracan",
+    },
+  ];
+  String selectedTime = "";
+  List checkListItemsTime = [
+    {
+      "id": 0,
+      "value": false,
+      "title": "2 min",
+    },
+    {
+      "id": 1,
+      "value": true,
+      "title": "5 min",
+    },
+    {
+      "id": 2,
+      "value": false,
+      "title": "10 min",
     },
   ];
   @override
@@ -98,7 +115,7 @@ class _ParkOutPageState extends State<ParkOutPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 35.0, top: 25),
+                  padding: const EdgeInsets.only(left: 35.0, top: 20),
                   child: Text(
                     Strings.kVehicle,
                     style: TextStyle(
@@ -201,7 +218,7 @@ class _ParkOutPageState extends State<ParkOutPage> {
                 ),
                 Divider(
                   color: AppColors.kDividerGrey, //color of divider
-                  height: 20, //height spacing of divider
+                  height: 10, //height spacing of divider
                   thickness: 1, //thickness of divier line
                   indent: 25, //spacing at the start of divider
                   //endIndent: 25, //spacing at the end of divider
@@ -340,165 +357,101 @@ class _ParkOutPageState extends State<ParkOutPage> {
                         fontSize: 18),
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
-                  child: Row(
-                    children: [
-                      Container(
-                          height: 55,
-                          width: 150,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 70,
-                                child: Text('2 min',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: AppColors.kBlack.withOpacity(.7),
-                                        fontFamily: 'Baloo2Regular',
-                                        fontSize: 16)),
-                              ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              RoundCheckBox(
-                                onTap: (selected) {},
-                                size: 35,
-                                checkedColor: AppColors.kDarkOrange,
-                                isChecked: isChecked,
-                              ),
-                            ],
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(
-                              color: AppColors.kBlack.withOpacity(.5),
-                              width: 1,
-                            ),
-                            borderRadius: BorderRadius.circular(30),
-                            boxShadow: [
-                              BoxShadow(
-                                color: AppColors.kBlack.withOpacity(.25),
-                                blurRadius: 3.0, // soften the shadow
-                                spreadRadius: 1.0, //extend the shadow
-                                offset: Offset(
-                                  2.0,
-                                  4.0,
-                                ),
-                              )
-                            ],
-                          )),
-                      SizedBox(
-                        width: 50,
-                      ),
-                      Container(
-                          height: 55,
-                          width: 150,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 70,
-                                child: Text('5 min',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: AppColors.kBlack.withOpacity(.2),
-                                        fontFamily: 'Baloo2Regular',
-                                        fontSize: 16)),
-                              ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              RoundCheckBox(
-                                onTap: (selected) {},
-                                size: 35,
-                                checkedColor: AppColors.kDarkOrange,
-                                borderColor: AppColors.kBlack.withOpacity(.2),
-                                isChecked: isChecked,
-                              ),
-                            ],
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(
-                              color: AppColors.kBlack.withOpacity(.2),
-                              width: 1,
-                            ),
-                            borderRadius: BorderRadius.circular(30),
-                            // boxShadow: [
-                            //   BoxShadow(
-                            //     color: AppColors.kBlack.withOpacity(.25),
-                            //     blurRadius: 3.0, // soften the shadow
-                            //     spreadRadius: 1.0, //extend the shadow
-                            //     offset: Offset(
-                            //       2.0,
-                            //       4.0,
-                            //     ),
-                            //   )
-                            // ],
-                          )),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
                 Center(
-                  child: Container(
-                      height: 55,
-                      width: 150,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: 70,
-                            child: Text('10 min',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: AppColors.kBlack.withOpacity(.2),
-                                    fontFamily: 'Baloo2Regular',
-                                    fontSize: 16)),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          RoundCheckBox(
-                            onTap: (selected) {},
-                            size: 35,
-                            checkedColor: AppColors.kDarkOrange,
-                            borderColor: AppColors.kBlack.withOpacity(.2),
-                            isChecked: isChecked,
-                          ),
-                        ],
+                  child: Wrap(
+                    children: List.generate(
+                      checkListItemsTime.length,
+                          (index) => Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 23, vertical: 15),
+                        child: Container(
+                            height: 55,
+                            width: 150,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 22.0),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: 71,
+                                    child: Text(
+                                      checkListItemsTime[index]["title"],
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: checkListItemsTime[index]["value"]
+                                              ? AppColors.kBlack.withOpacity(.7)
+                                              : AppColors.kBlack.withOpacity(.2),
+                                          fontFamily: 'Baloo2Regular',
+                                          fontSize: 16),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  RoundCheckBox(
+                                    size: 32,
+                                    checkedColor: AppColors.kDarkOrange,
+                                    borderColor: AppColors.kBlack.withOpacity(.2),
+                                    isChecked: checkListItemsTime[index]["value"],
+                                    onTap: (value) {
+                                      setState(() {
+                                        for (var element in checkListItemsTime) {
+                                          element["value"] = false;
+                                        }
+                                        checkListItemsTime[index]["value"] = value;
+                                        selectedTime =
+                                        "${checkListItemsTime[index]["id"]}, ${checkListItemsTime[index]["title"]}, ${checkListItemsTime[index]["value"]}";
+                                      });
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                            decoration: checkListItemsTime[index]["value"]
+                                ? BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: AppColors.kBlack.withOpacity(.5),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.kBlack.withOpacity(.25),
+                                  blurRadius: 3.0, // soften the shadow
+                                  spreadRadius: 1.0, //extend the shadow
+                                  offset: Offset(
+                                    2.0,
+                                    4.0,
+                                  ),
+                                )
+                              ],
+                            )
+                                : BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: AppColors.kBlack.withOpacity(.2),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(30),
+                              // boxShadow: [
+                              //   BoxShadow(
+                              //     color: AppColors.kBlack.withOpacity(.25),
+                              //     blurRadius: 3.0, // soften the shadow
+                              //     spreadRadius: 1.0, //extend the shadow
+                              //     offset: Offset(
+                              //       2.0,
+                              //       4.0,
+                              //     ),
+                              //   )
+                              // ],
+                            )),
                       ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
-                          color: AppColors.kBlack.withOpacity(.2),
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(30),
-                        // boxShadow: [
-                        //   BoxShadow(
-                        //     color: AppColors.kBlack.withOpacity(.25),
-                        //     blurRadius: 3.0, // soften the shadow
-                        //     spreadRadius: 1.0, //extend the shadow
-                        //     offset: Offset(
-                        //       2.0,
-                        //       4.0,
-                        //     ),
-                        //   )
-                        // ],
-                      )),
-                ),
-                SizedBox(
-                  height: 8,
+                    ),
+                  ),
                 ),
                 Divider(
                   color: AppColors.kDividerGrey, //color of divider
-                  height: 20, //height spacing of divider
+                  height: 10, //height spacing of divider
                   thickness: 1, //thickness of divier line
                   indent: 25, //spacing at the start of divider
                   //endIndent: 25, //spacing at the end of divider
