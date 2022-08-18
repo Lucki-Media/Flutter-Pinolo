@@ -57,84 +57,97 @@ class _EmptyCardsState extends State<EmptyCards> {
           ),
         ),
       ),
-      body: Center(
-        child: Column(
-          children:   [
-            const SizedBox(
-              height: 60,
-            ),
-            Image.asset(
-              'assets/images/welcome_logo.png',
-              height: 300,
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            const Text(
-              Strings.kThereIsNoInfo,
-              style: TextStyle(
-                fontSize: 22,
-                color: AppColors.kBlack,
-                fontFamily: 'Baloo2SemiBold',
-              ),
-            ),
-            SizedBox(
-              width: 255,
-              child: Text(
-                Strings.kNotAddAnyCardYet,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 12,
-                  color: AppColors.kBlack.withOpacity(.4),
-                  fontFamily: 'Baloo2Regular',
+      body: Stack(
+        children: [
+          Center(
+            child: Column(
+              children:   [
+                const SizedBox(
+                  height: 60,
                 ),
-              ),
+                Image.asset(
+                  'assets/images/welcome_logo.png',
+                  height: 300,
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                const Text(
+                  Strings.kThereIsNoInfo,
+                  style: TextStyle(
+                    fontSize: 22,
+                    color: AppColors.kBlack,
+                    fontFamily: 'Baloo2SemiBold',
+                  ),
+                ),
+                SizedBox(
+                  width: 255,
+                  child: Text(
+                    Strings.kNotAddAnyCardYet,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: AppColors.kBlack.withOpacity(.4),
+                      fontFamily: 'Baloo2Regular',
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 100,
+                ),
+              ],
             ),
-            const SizedBox(
-              height: 65,
-            ),
-            FloatingActionButton(
-              onPressed: () {
-                showModalBottomSheet(
-                  context: context,
-                  isScrollControlled: true,
-                  builder: (builder) {
-                    return AddCardPopUp();
+          ),
+          Positioned(
+            bottom: 35,
+            left: 72,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FloatingActionButton(
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      builder: (builder) {
+                        return AddCardPopUp();
+                      },
+                    );
                   },
-                );
-              },
-              child: Icon(
-                Icons.add,
-                color: Colors.white,
-                size: 30,
-              ),
-              backgroundColor: AppColors.kBlue,
-              //tooltip: '',
-              elevation: 5,
-              splashColor: Colors.grey,
-            ),
-            Text(
-              Strings.kAddNewCard,
-              style: TextStyle(
-                fontSize: 16,
-                color: AppColors.kBlack,
-                fontFamily: 'Baloo2SemiBold',
-              ),
-            ),
-            SizedBox(
-              width: 260,
-              child: Text(
-                Strings.kYouCanEnterMultiCards,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 12,
-                  color: AppColors.kBlack.withOpacity(.3),
-                  fontFamily: 'Baloo2Regular',
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  backgroundColor: AppColors.kBlue,
+                  //tooltip: '',
+                  elevation: 5,
+                  splashColor: Colors.grey,
                 ),
-              ),
+                Text(
+                  Strings.kAddNewCard,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: AppColors.kBlack,
+                    fontFamily: 'Baloo2SemiBold',
+                  ),
+                ),
+                SizedBox(
+                  width: 260,
+                  child: Text(
+                    Strings.kYouCanEnterMultiCards,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: AppColors.kBlack.withOpacity(.3),
+                      fontFamily: 'Baloo2Regular',
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
