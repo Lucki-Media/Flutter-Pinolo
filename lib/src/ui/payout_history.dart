@@ -23,18 +23,22 @@ class _PayoutHistoryState extends State<PayoutHistory> {
         //centerTitle: true,
         title: Padding(
           padding: const EdgeInsets.only(top: 20.0),
-          child: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: CircleAvatar(
-              backgroundColor: AppColors.kGrey,
-              child: Icon(
-                FontAwesomeIcons.arrowLeft,
-                color: AppColors.kBlack,
-                size: 18,
+          child: Row(
+            children: [
+              IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: CircleAvatar(
+                  backgroundColor: AppColors.kGrey,
+                  child: Icon(
+                    FontAwesomeIcons.arrowLeft,
+                    color: AppColors.kBlack,
+                    size: 18,
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
         ),
       ),

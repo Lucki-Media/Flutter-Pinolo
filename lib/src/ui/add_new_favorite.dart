@@ -69,7 +69,7 @@ class _AddNewFavoriteState extends State<AddNewFavorite> {
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(25.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -83,7 +83,7 @@ class _AddNewFavoriteState extends State<AddNewFavorite> {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: 70,
+                        width: 68,
                         child: MaterialButton(
                           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           onPressed: () {},
@@ -98,7 +98,7 @@ class _AddNewFavoriteState extends State<AddNewFavorite> {
                         ),
                       ),
                       SizedBox(
-                        width: 70,
+                        width: 68,
                         child: MaterialButton(
                           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           onPressed: () {},
@@ -113,7 +113,7 @@ class _AddNewFavoriteState extends State<AddNewFavorite> {
                         ),
                       ),
                       SizedBox(
-                        width: 70,
+                        width: 68,
                         child: MaterialButton(
                           onPressed: () {},
                           child: Image.asset(
@@ -127,7 +127,7 @@ class _AddNewFavoriteState extends State<AddNewFavorite> {
                         ),
                       ),
                       SizedBox(
-                        width: 70,
+                        width: 68,
                         child: MaterialButton(
                           onPressed: () {},
                           child: Image.asset(
@@ -141,7 +141,7 @@ class _AddNewFavoriteState extends State<AddNewFavorite> {
                         ),
                       ),
                       SizedBox(
-                        width: 70,
+                        width: 68,
                         child: MaterialButton(
                           onPressed: () {},
                           child: Image.asset(
@@ -189,7 +189,7 @@ class _AddNewFavoriteState extends State<AddNewFavorite> {
           Positioned(
             bottom: 35,
             child: Padding(
-              padding: const EdgeInsets.only(left: 32, right: 32),
+              padding: const EdgeInsets.only(left: 25, right: 25),
               child: AppCommon.appButton(
                   onPressed: (){
                     Navigator.push(
@@ -199,7 +199,7 @@ class _AddNewFavoriteState extends State<AddNewFavorite> {
                   },
                   btnText:Strings.kDone,
                   btnColor:AppColors.kBlue,
-                  horizontal: 153 ),
+                  horizontal: 150),
             ),
           )
 

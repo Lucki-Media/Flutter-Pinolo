@@ -147,7 +147,7 @@ class _MyCardsState extends State<MyCards> {
               }),
           Positioned(
             bottom: 30,
-            left: 80,
+            left: 70,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

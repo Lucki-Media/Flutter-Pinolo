@@ -295,7 +295,7 @@ class _MyProfileState extends State<MyProfile> {
                   onPressed: () {},
                   btnText: Strings.kSave,
                   btnColor: AppColors.kBlue,
-                  horizontal: 158),
+                  horizontal: 147),
             ),
           ],
         ),

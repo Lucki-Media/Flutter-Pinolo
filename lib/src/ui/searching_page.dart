@@ -59,7 +59,7 @@ class SearchingPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 32, right: 32),
+                  padding: const EdgeInsets.only(left: 25, right: 25),
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -73,7 +73,7 @@ class SearchingPage extends StatelessWidget {
                         color: AppColors.kBlack.withOpacity(.2),
                       ),
                       padding:
-                          EdgeInsets.symmetric(vertical: 10, horizontal: 150),
+                          EdgeInsets.symmetric(vertical: 10, horizontal: 148),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0)),
                       primary: Theme.of(context).scaffoldBackgroundColor,

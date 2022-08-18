@@ -68,7 +68,7 @@ class _EditFavoritesState extends State<EditFavorites> {
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(25.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -82,7 +82,7 @@ class _EditFavoritesState extends State<EditFavorites> {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: 70,
+                        width: 68,
                         child: MaterialButton(
                           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           onPressed: () {},
@@ -97,7 +97,7 @@ class _EditFavoritesState extends State<EditFavorites> {
                         ),
                       ),
                       SizedBox(
-                        width: 70,
+                        width: 68,
                         child: MaterialButton(
                           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           onPressed: () {},
@@ -112,7 +112,7 @@ class _EditFavoritesState extends State<EditFavorites> {
                         ),
                       ),
                       SizedBox(
-                        width: 70,
+                        width: 68,
                         child: MaterialButton(
                           onPressed: () {},
                           child: Image.asset(
@@ -126,7 +126,7 @@ class _EditFavoritesState extends State<EditFavorites> {
                         ),
                       ),
                       SizedBox(
-                        width: 70,
+                        width: 68,
                         child: MaterialButton(
                           onPressed: () {},
                           child: Image.asset(
@@ -140,7 +140,7 @@ class _EditFavoritesState extends State<EditFavorites> {
                         ),
                       ),
                       SizedBox(
-                        width: 70,
+                        width: 68,
                         child: MaterialButton(
                           onPressed: () {},
                           child: Image.asset(
@@ -175,7 +175,7 @@ class _EditFavoritesState extends State<EditFavorites> {
           Positioned(
             bottom: 35,
             child: Padding(
-              padding: const EdgeInsets.only(left: 32, right: 32),
+              padding: const EdgeInsets.only(left: 25, right: 25),
               child: AppCommon.appButton(
                   onPressed: (){
                     // Navigator.push(
@@ -185,7 +185,7 @@ class _EditFavoritesState extends State<EditFavorites> {
                   },
                   btnText:Strings.kDone,
                   btnColor:AppColors.kBlue,
-                  horizontal: 153 ),
+                  horizontal: 150 ),
             ),
           )
 

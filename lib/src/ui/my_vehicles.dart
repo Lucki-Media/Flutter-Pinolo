@@ -404,7 +404,7 @@ class _MyVehiclesState extends State<MyVehicles> {
                       },
                       btnText: Strings.kDone,
                       btnColor: AppColors.kBlue,
-                      horizontal: 152),
+                      horizontal: 142),
                 )
               ],
             ),

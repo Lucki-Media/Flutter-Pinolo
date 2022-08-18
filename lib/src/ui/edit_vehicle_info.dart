@@ -233,7 +233,7 @@ class _EditVehicleInfoState extends State<EditVehicleInfo> {
                   },
                   btnText:Strings.kSave,
                   btnColor:AppColors.kBlue,
-                  horizontal: 155 ),
+                  horizontal: 145 ),
             )
           ],
         ),

@@ -185,13 +185,16 @@ class _FavoritesPageState extends State<FavoritesPage> {
                     fontFamily: 'Baloo2SemiBold',
                   ),
                 ),
-                Text(
-                  Strings.kYouCanCreateMultiFav,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: AppColors.kBlack.withOpacity(.3),
-                    fontFamily: 'Baloo2Regular',
+                SizedBox(
+                  width: 350,
+                  child: Text(
+                    Strings.kYouCanCreateMultiFav,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: AppColors.kBlack.withOpacity(.3),
+                      fontFamily: 'Baloo2Regular',
+                    ),
                   ),
                 ),
               ],
