@@ -234,8 +234,8 @@ class _HomePageState extends State<HomePage> {
                         Suffix: InkWell(
                           child: Icon(
                             _isObscure
-                                ? Icons.visibility
-                                : Icons.visibility_off,
+                                ? Icons.visibility_off
+                                : Icons.visibility,
                           ),
                           onTap: () {
                             setState(() {
@@ -380,6 +380,8 @@ class _HomePageState extends State<HomePage> {
                     Padding(
                       padding: const EdgeInsets.only(left: 10, right: 10),
                       child: IntlPhoneField(
+                        flagsButtonPadding: EdgeInsets.only(left: 25),
+                        showDropdownIcon: false,
                         disableLengthCheck: true,
                         style: AppCommon.fieldTextStyle(),
                         decoration: AppCommon.textFiledDecoration(),

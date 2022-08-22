@@ -23,118 +23,123 @@ class _PersonalInfoState extends State<PersonalInfo> {
         children: [
           Padding(
             padding: const EdgeInsets.all(32.0),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 30,
-                ),
-                const Text(
-                  Strings.kSignUp,
-                  style: TextStyle(
-                    fontSize: 22,
-                    color: AppColors.kBlack,
-                    fontFamily: 'Baloo2SemiBold',
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      Strings.kFirstName,
-                      textAlign: TextAlign.center,
-                      style: AppCommon.labelTextStyle(),
+            child: SingleChildScrollView(
+              child: Container(
+                height: MediaQuery.of(context).size.height,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 30,
                     ),
-                  ),
-                ),
-                TextFormField(
-                  style: AppCommon.fieldTextStyle(),
-                  decoration: AppCommon.textFiledDecoration(hintText: Strings.kEnterFirstName),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      Strings.kLastName,
-                      textAlign: TextAlign.center,
-                      style: AppCommon.labelTextStyle(),
-                    ),
-                  ),
-                ),
-                TextFormField(
-                  style: AppCommon.fieldTextStyle(),
-                  decoration: AppCommon.textFiledDecoration(hintText: Strings.kEnterLastName),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      Strings.kPassword,
-                      textAlign: TextAlign.center,
-                      style: AppCommon.labelTextStyle(),
-                    ),
-                  ),
-                ),
-                TextFormField(
-                  obscureText: _isObscure,
-                  obscuringCharacter:'*',
-                  style: AppCommon.fieldTextStyle(),
-                  decoration: AppCommon.textFiledDecoration(
-                    hintText: Strings.kEnterPassword,
-                    Suffix:InkWell(
-                      child: Icon(
-                        _isObscure ? Icons.visibility : Icons.visibility_off,
+                    const Text(
+                      Strings.kSignUp,
+                      style: TextStyle(
+                        fontSize: 22,
+                        color: AppColors.kBlack,
+                        fontFamily: 'Baloo2SemiBold',
                       ),
-                      onTap: () {
-                        setState(() {
-                          _isObscure = !_isObscure;
-                        });
-                      },
-                    ), ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      Strings.kConfirmPassword,
-                      textAlign: TextAlign.center,
-                      style: AppCommon.labelTextStyle(),
                     ),
-                  ),
-                ),
-                TextFormField(
-                  obscureText: _isObscure2,
-                  obscuringCharacter:'*',
-                  style: AppCommon.fieldTextStyle(),
-                  decoration: AppCommon.textFiledDecoration(
-                    hintText: Strings.kConfirmYourPassword,
-                    Suffix:InkWell(
-                      child: Icon(
-                        _isObscure2 ? Icons.visibility : Icons.visibility_off,
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 24),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          Strings.kFirstName,
+                          textAlign: TextAlign.center,
+                          style: AppCommon.labelTextStyle(),
+                        ),
                       ),
-                      onTap: () {
-                        setState(() {
-                          _isObscure2 = !_isObscure2;
-                        });
-                      },
-                    ), ),
+                    ),
+                    TextFormField(
+                      style: AppCommon.fieldTextStyle(),
+                      decoration: AppCommon.textFiledDecoration(hintText: Strings.kEnterFirstName),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 24),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          Strings.kLastName,
+                          textAlign: TextAlign.center,
+                          style: AppCommon.labelTextStyle(),
+                        ),
+                      ),
+                    ),
+                    TextFormField(
+                      style: AppCommon.fieldTextStyle(),
+                      decoration: AppCommon.textFiledDecoration(hintText: Strings.kEnterLastName),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 24),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          Strings.kPassword,
+                          textAlign: TextAlign.center,
+                          style: AppCommon.labelTextStyle(),
+                        ),
+                      ),
+                    ),
+                    TextFormField(
+                      obscureText: _isObscure,
+                      obscuringCharacter:'*',
+                      style: AppCommon.fieldTextStyle(),
+                      decoration: AppCommon.textFiledDecoration(
+                        hintText: Strings.kEnterPassword,
+                        Suffix:InkWell(
+                          child: Icon(
+                            _isObscure ? Icons.visibility_off : Icons.visibility,
+                          ),
+                          onTap: () {
+                            setState(() {
+                              _isObscure = !_isObscure;
+                            });
+                          },
+                        ), ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 24),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          Strings.kConfirmPassword,
+                          textAlign: TextAlign.center,
+                          style: AppCommon.labelTextStyle(),
+                        ),
+                      ),
+                    ),
+                    TextFormField(
+                      obscureText: _isObscure2,
+                      obscuringCharacter:'*',
+                      style: AppCommon.fieldTextStyle(),
+                      decoration: AppCommon.textFiledDecoration(
+                        hintText: Strings.kConfirmYourPassword,
+                        Suffix:InkWell(
+                          child: Icon(
+                            _isObscure2 ? Icons.visibility_off : Icons.visibility,
+                          ),
+                          onTap: () {
+                            setState(() {
+                              _isObscure2 = !_isObscure2;
+                            });
+                          },
+                        ), ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
           Positioned(

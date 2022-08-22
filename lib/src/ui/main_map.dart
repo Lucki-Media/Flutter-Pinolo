@@ -414,26 +414,224 @@ class _MainMapState extends State<MainMap> {
                     color: AppColors.kWhite,
                 ),
 
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 20.0,left: 25),
-                    child: Column(
-                      children: [
-                        GestureDetector(
-                          onTap: (){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) =>  MyVehicles()),
-                            );
-                          },
-                          child: Row(
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 20.0,left: 25),
+                      child: Column(
+                        children: [
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  MyVehicles()),
+                              );
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset('assets/images/car.png',height: 22,),
+                                    SizedBox(width: 10,),
+                                    const Text(
+                                      Strings.kMyVehicles,
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        color: AppColors.kBlack,
+                                        fontFamily: 'Baloo2Regular',
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 20.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) =>  MyVehicles()),
+                                      );
+                                    },
+                                    child: Icon(
+                                      FontAwesomeIcons.chevronRight,
+                                      size: 22,
+                                      color: AppColors.kDividerGrey,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Divider(
+                            color: AppColors.kDividerGrey, //color of divider
+                            height: 10, //height spacing of divider
+                            thickness: 1, //thickness of divier line
+                            indent:2, //spacing at the start of divider
+                            //endIndent: 25, //spacing at the end of divider
+                          ),
+                          SizedBox(height: 15,),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  MyCards()),
+                              );
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset('assets/images/credit_card.png',height: 20,),
+                                    SizedBox(width: 10,),
+                                    const Text(
+                                      Strings.kMyCards,
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        color: AppColors.kBlack,
+                                        fontFamily: 'Baloo2Regular',
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 20.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) =>  MyCards()),
+                                      );
+                                    },
+                                    child: Icon(
+                                      FontAwesomeIcons.chevronRight,
+                                      size: 22,
+                                      color: AppColors.kDividerGrey,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Divider(
+                            color: AppColors.kDividerGrey, //color of divider
+                            height: 10, //height spacing of divider
+                            thickness: 1, //thickness of divier line
+                            indent:2, //spacing at the start of divider
+                            //endIndent: 25, //spacing at the end of divider
+                          ),
+                          SizedBox(height: 15,),
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  MyHistory()),
+                              );
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset('assets/images/history.png',height: 18,),
+                                    SizedBox(width: 10,),
+                                    const Text(
+                                      Strings.kMyHistory,
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        color: AppColors.kBlack,
+                                        fontFamily: 'Baloo2Regular',
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 20.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) =>  MyHistory()),
+                                      );
+                                    },
+                                    child: Icon(
+                                      FontAwesomeIcons.chevronRight,
+                                      size: 22,
+                                      color: AppColors.kDividerGrey,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Divider(
+                            color: AppColors.kDividerGrey, //color of divider
+                            height: 10, //height spacing of divider
+                            thickness: 1, //thickness of divier line
+                            indent:2, //spacing at the start of divider
+                            //endIndent: 25, //spacing at the end of divider
+                          ),
+                          SizedBox(height: 15,),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  Settings()),
+                              );
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset('assets/images/setting.png',height: 20,),
+                                    SizedBox(width: 10,),
+                                    const Text(
+                                      Strings.kSettings,
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        color: AppColors.kBlack,
+                                        fontFamily: 'Baloo2Regular',
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 20.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) =>  Settings()),
+                                      );
+                                    },
+                                    child: Icon(
+                                      FontAwesomeIcons.chevronRight,
+                                      size: 22,
+                                      color: AppColors.kDividerGrey,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Divider(
+                            color: AppColors.kDividerGrey, //color of divider
+                            height: 10, //height spacing of divider
+                            thickness: 1, //thickness of divier line
+                            indent:2, //spacing at the start of divider
+                            //endIndent: 25, //spacing at the end of divider
+                          ),
+                          SizedBox(height: 15,),
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 children: [
-                                  Image.asset('assets/images/car.png',height: 22,),
-                                  SizedBox(width: 10,),
+                                  Image.asset('assets/images/tree_nature.png',height: 22,),
+                                  SizedBox(width: 8,),
                                   const Text(
-                                    Strings.kMyVehicles,
+                                    Strings.kTreePlanting,
                                     style: TextStyle(
                                       fontSize: 18,
                                       color: AppColors.kBlack,
@@ -446,10 +644,10 @@ class _MainMapState extends State<MainMap> {
                                 padding: const EdgeInsets.only(right: 20.0),
                                 child: GestureDetector(
                                   onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) =>  MyVehicles()),
-                                    );
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
+                                    // );
                                   },
                                   child: Icon(
                                     FontAwesomeIcons.chevronRight,
@@ -460,34 +658,26 @@ class _MainMapState extends State<MainMap> {
                               ),
                             ],
                           ),
-                        ),
-                        Divider(
-                          color: AppColors.kDividerGrey, //color of divider
-                          height: 10, //height spacing of divider
-                          thickness: 1, //thickness of divier line
-                          indent:2, //spacing at the start of divider
-                          //endIndent: 25, //spacing at the end of divider
-                        ),
-                        SizedBox(height: 15,),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) =>  MyCards()),
-                            );
-                          },
-                          child: Row(
+                          Divider(
+                            color: AppColors.kDividerGrey, //color of divider
+                            height: 10, //height spacing of divider
+                            thickness: 1, //thickness of divier line
+                            indent:2, //spacing at the start of divider
+                            //endIndent: 25, //spacing at the end of divider
+                          ),
+                          SizedBox(height: 15,),
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 children: [
-                                  Image.asset('assets/images/credit_card.png',height: 20,),
+                                  Image.asset('assets/images/term_condition.png',height: 20,),
                                   SizedBox(width: 10,),
-                                  const Text(
-                                    Strings.kMyCards,
+                                  Text(
+                                    Strings.kTermsConditions,
                                     style: TextStyle(
                                       fontSize: 18,
-                                      color: AppColors.kBlack,
+                                      color: AppColors.kBlack.withOpacity(.5),
                                       fontFamily: 'Baloo2Regular',
                                     ),
                                   ),
@@ -497,10 +687,10 @@ class _MainMapState extends State<MainMap> {
                                 padding: const EdgeInsets.only(right: 20.0),
                                 child: GestureDetector(
                                   onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) =>  MyCards()),
-                                    );
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
+                                    // );
                                   },
                                   child: Icon(
                                     FontAwesomeIcons.chevronRight,
@@ -511,34 +701,26 @@ class _MainMapState extends State<MainMap> {
                               ),
                             ],
                           ),
-                        ),
-                        Divider(
-                          color: AppColors.kDividerGrey, //color of divider
-                          height: 10, //height spacing of divider
-                          thickness: 1, //thickness of divier line
-                          indent:2, //spacing at the start of divider
-                          //endIndent: 25, //spacing at the end of divider
-                        ),
-                        SizedBox(height: 15,),
-                        GestureDetector(
-                          onTap: (){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) =>  MyHistory()),
-                            );
-                          },
-                          child: Row(
+                          Divider(
+                            color: AppColors.kDividerGrey, //color of divider
+                            height: 10, //height spacing of divider
+                            thickness: 1, //thickness of divier line
+                            indent:2, //spacing at the start of divider
+                            //endIndent: 25, //spacing at the end of divider
+                          ),
+                          SizedBox(height: 15,),
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 children: [
-                                  Image.asset('assets/images/history.png',height: 18,),
+                                  Image.asset('assets/images/privacy.png',height: 22,),
                                   SizedBox(width: 10,),
-                                  const Text(
-                                    Strings.kMyHistory,
+                                  Text(
+                                    Strings.kPrivacyPolicy,
                                     style: TextStyle(
                                       fontSize: 18,
-                                      color: AppColors.kBlack,
+                                      color: AppColors.kBlack.withOpacity(.5),
                                       fontFamily: 'Baloo2Regular',
                                     ),
                                   ),
@@ -548,10 +730,10 @@ class _MainMapState extends State<MainMap> {
                                 padding: const EdgeInsets.only(right: 20.0),
                                 child: GestureDetector(
                                   onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) =>  MyHistory()),
-                                    );
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
+                                    // );
                                   },
                                   child: Icon(
                                     FontAwesomeIcons.chevronRight,
@@ -562,34 +744,26 @@ class _MainMapState extends State<MainMap> {
                               ),
                             ],
                           ),
-                        ),
-                        Divider(
-                          color: AppColors.kDividerGrey, //color of divider
-                          height: 10, //height spacing of divider
-                          thickness: 1, //thickness of divier line
-                          indent:2, //spacing at the start of divider
-                          //endIndent: 25, //spacing at the end of divider
-                        ),
-                        SizedBox(height: 15,),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) =>  Settings()),
-                            );
-                          },
-                          child: Row(
+                          Divider(
+                            color: AppColors.kDividerGrey, //color of divider
+                            height: 10, //height spacing of divider
+                            thickness: 1, //thickness of divier line
+                            indent:2, //spacing at the start of divider
+                            //endIndent: 25, //spacing at the end of divider
+                          ),
+                          SizedBox(height: 15,),
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 children: [
-                                  Image.asset('assets/images/setting.png',height: 20,),
+                                  Image.asset('assets/images/faq.png',height: 22,),
                                   SizedBox(width: 10,),
-                                  const Text(
-                                    Strings.kSettings,
+                                  Text(
+                                    Strings.kFAQ,
                                     style: TextStyle(
                                       fontSize: 18,
-                                      color: AppColors.kBlack,
+                                      color: AppColors.kBlack.withOpacity(.5),
                                       fontFamily: 'Baloo2Regular',
                                     ),
                                   ),
@@ -599,10 +773,10 @@ class _MainMapState extends State<MainMap> {
                                 padding: const EdgeInsets.only(right: 20.0),
                                 child: GestureDetector(
                                   onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) =>  Settings()),
-                                    );
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
+                                    // );
                                   },
                                   child: Icon(
                                     FontAwesomeIcons.chevronRight,
@@ -613,273 +787,101 @@ class _MainMapState extends State<MainMap> {
                               ),
                             ],
                           ),
-                        ),
-                        Divider(
-                          color: AppColors.kDividerGrey, //color of divider
-                          height: 10, //height spacing of divider
-                          thickness: 1, //thickness of divier line
-                          indent:2, //spacing at the start of divider
-                          //endIndent: 25, //spacing at the end of divider
-                        ),
-                        SizedBox(height: 15,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset('assets/images/tree_nature.png',height: 22,),
-                                SizedBox(width: 8,),
-                                const Text(
-                                  Strings.kTreePlanting,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: AppColors.kBlack,
-                                    fontFamily: 'Baloo2Regular',
+                          Divider(
+                            color: AppColors.kDividerGrey, //color of divider
+                            height: 10, //height spacing of divider
+                            thickness: 1, //thickness of divier line
+                            indent:2, //spacing at the start of divider
+                            //endIndent: 25, //spacing at the end of divider
+                          ),
+                          SizedBox(height: 15,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Image.asset('assets/images/support.png',height: 22,),
+                                  SizedBox(width: 10,),
+                                  Text(
+                                    Strings.kSupport,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: AppColors.kBlack.withOpacity(.5),
+                                      fontFamily: 'Baloo2Regular',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 20.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
+                                    // );
+                                  },
+                                  child: Icon(
+                                    FontAwesomeIcons.chevronRight,
+                                    size: 22,
+                                    color: AppColors.kDividerGrey,
                                   ),
                                 ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 20.0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
-                                  // );
-                                },
-                                child: Icon(
-                                  FontAwesomeIcons.chevronRight,
-                                  size: 22,
-                                  color: AppColors.kDividerGrey,
-                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          color: AppColors.kDividerGrey, //color of divider
-                          height: 10, //height spacing of divider
-                          thickness: 1, //thickness of divier line
-                          indent:2, //spacing at the start of divider
-                          //endIndent: 25, //spacing at the end of divider
-                        ),
-                        SizedBox(height: 15,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset('assets/images/term_condition.png',height: 20,),
-                                SizedBox(width: 10,),
-                                Text(
-                                  Strings.kTermsConditions,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: AppColors.kBlack.withOpacity(.5),
-                                    fontFamily: 'Baloo2Regular',
+                            ],
+                          ),
+                          Divider(
+                            color: AppColors.kDividerGrey, //color of divider
+                            height: 10, //height spacing of divider
+                            thickness: 1, //thickness of divier line
+                            indent:2, //spacing at the start of divider
+                            //endIndent: 25, //spacing at the end of divider
+                          ),
+                          SizedBox(height: 15,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Image.asset('assets/images/logout.png',height: 22,),
+                                  SizedBox(width: 10,),
+                                  Text(
+                                    Strings.kLogOut,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: AppColors.kBlack.withOpacity(.5),
+                                      fontFamily: 'Baloo2Regular',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 20.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
+                                    // );
+                                  },
+                                  child: Icon(
+                                    FontAwesomeIcons.chevronRight,
+                                    size: 22,
+                                    color: AppColors.kDividerGrey,
                                   ),
                                 ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 20.0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
-                                  // );
-                                },
-                                child: Icon(
-                                  FontAwesomeIcons.chevronRight,
-                                  size: 22,
-                                  color: AppColors.kDividerGrey,
-                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          color: AppColors.kDividerGrey, //color of divider
-                          height: 10, //height spacing of divider
-                          thickness: 1, //thickness of divier line
-                          indent:2, //spacing at the start of divider
-                          //endIndent: 25, //spacing at the end of divider
-                        ),
-                        SizedBox(height: 15,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset('assets/images/privacy.png',height: 22,),
-                                SizedBox(width: 10,),
-                                Text(
-                                  Strings.kPrivacyPolicy,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: AppColors.kBlack.withOpacity(.5),
-                                    fontFamily: 'Baloo2Regular',
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 20.0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
-                                  // );
-                                },
-                                child: Icon(
-                                  FontAwesomeIcons.chevronRight,
-                                  size: 22,
-                                  color: AppColors.kDividerGrey,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          color: AppColors.kDividerGrey, //color of divider
-                          height: 10, //height spacing of divider
-                          thickness: 1, //thickness of divier line
-                          indent:2, //spacing at the start of divider
-                          //endIndent: 25, //spacing at the end of divider
-                        ),
-                        SizedBox(height: 15,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset('assets/images/faq.png',height: 22,),
-                                SizedBox(width: 10,),
-                                Text(
-                                  Strings.kFAQ,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: AppColors.kBlack.withOpacity(.5),
-                                    fontFamily: 'Baloo2Regular',
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 20.0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
-                                  // );
-                                },
-                                child: Icon(
-                                  FontAwesomeIcons.chevronRight,
-                                  size: 22,
-                                  color: AppColors.kDividerGrey,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          color: AppColors.kDividerGrey, //color of divider
-                          height: 10, //height spacing of divider
-                          thickness: 1, //thickness of divier line
-                          indent:2, //spacing at the start of divider
-                          //endIndent: 25, //spacing at the end of divider
-                        ),
-                        SizedBox(height: 15,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset('assets/images/support.png',height: 22,),
-                                SizedBox(width: 10,),
-                                Text(
-                                  Strings.kSupport,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: AppColors.kBlack.withOpacity(.5),
-                                    fontFamily: 'Baloo2Regular',
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 20.0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
-                                  // );
-                                },
-                                child: Icon(
-                                  FontAwesomeIcons.chevronRight,
-                                  size: 22,
-                                  color: AppColors.kDividerGrey,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          color: AppColors.kDividerGrey, //color of divider
-                          height: 10, //height spacing of divider
-                          thickness: 1, //thickness of divier line
-                          indent:2, //spacing at the start of divider
-                          //endIndent: 25, //spacing at the end of divider
-                        ),
-                        SizedBox(height: 15,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset('assets/images/logout.png',height: 22,),
-                                SizedBox(width: 10,),
-                                Text(
-                                  Strings.kLogOut,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: AppColors.kBlack.withOpacity(.5),
-                                    fontFamily: 'Baloo2Regular',
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 20.0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
-                                  // );
-                                },
-                                child: Icon(
-                                  FontAwesomeIcons.chevronRight,
-                                  size: 22,
-                                  color: AppColors.kDividerGrey,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          color: AppColors.kDividerGrey, //color of divider
-                          height: 10, //height spacing of divider
-                          thickness: 1, //thickness of divier line
-                          indent:2, //spacing at the start of divider
-                          //endIndent: 25, //spacing at the end of divider
-                        ),
-                      ],
+                            ],
+                          ),
+                          Divider(
+                            color: AppColors.kDividerGrey, //color of divider
+                            height: 10, //height spacing of divider
+                            thickness: 1, //thickness of divier line
+                            indent:2, //spacing at the start of divider
+                            //endIndent: 25, //spacing at the end of divider
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
