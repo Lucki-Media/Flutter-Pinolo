@@ -91,8 +91,9 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         Positioned(
-          bottom: 35,
-          //left: 30,
+          bottom: 45,
+          left: 0,
+          right: 0,
           child: Column(
             children: [
               AppCommon.appButton(
@@ -107,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   btnText: Strings.kLogIn,
                   btnColor: AppColors.kOrange,
-                  horizontal: 138),
+                  horizontal: 145),
               const SizedBox(
                 height: 16,
               ),
@@ -123,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   btnText: Strings.kSignUp,
                   btnColor: AppColors.kBlue,
-                  horizontal: 133),
+                  horizontal: 140),
             ],
           ),
         ),
@@ -286,7 +287,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Positioned(
-              bottom: 35,
+              bottom: 45,
+              left: 0,
+              right: 0,
               child: Padding(
                 padding: const EdgeInsets.only(left: 32, right: 32),
                 child: AppCommon.appButton(
@@ -523,7 +526,9 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Positioned(
-                bottom: 35,
+                bottom: 45,
+                left: 0,
+                right: 0,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 32, right: 32),
                   child: Column(

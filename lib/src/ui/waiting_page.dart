@@ -113,6 +113,8 @@ class _WaitingPageState extends State<WaitingPage> {
           ),
           Positioned(
             bottom: 35,
+            left: 0,
+            right: 0,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

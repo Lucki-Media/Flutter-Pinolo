@@ -60,18 +60,22 @@ class WelcomePage extends StatelessWidget {
           ),
         ),
            Positioned(
-            bottom: 35,
-            //left: 30,
-            child: AppCommon.appButton(
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const FirstInfoSlider()),
-                  );
-                },
-                btnText:  Strings.kGetStart,
-                btnColor:AppColors.kOrange,
-            horizontal: 120),),
+            bottom: 45,
+            left: 0,
+            right: 0,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32),
+              child: AppCommon.appButton(
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const FirstInfoSlider()),
+                    );
+                  },
+                  btnText:  Strings.kGetStart,
+                  btnColor:AppColors.kOrange,
+              horizontal: 120),
+            ),),
         ]
       ),
     );

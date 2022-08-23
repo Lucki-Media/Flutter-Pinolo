@@ -189,7 +189,7 @@ class _VehicleInfoState extends State<VehicleInfo> {
               // SizedBox(height: 125,),
               Spacer(),
               Padding(
-                padding: const EdgeInsets.only(left: 32, right: 32,bottom: 30),
+                padding: const EdgeInsets.only(left: 32, right: 32,bottom: 45),
                 child: Column(
                   children: [
                     Padding(
@@ -238,7 +238,7 @@ class _VehicleInfoState extends State<VehicleInfo> {
                         },
                         btnText:Strings.kFinish,
                         btnColor:AppColors.kBlue,
-                        horizontal: 140 ),
+                        horizontal: 145 ),
                   ],
                 ),
               )

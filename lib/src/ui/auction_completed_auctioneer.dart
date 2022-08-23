@@ -75,17 +75,21 @@ class _AuctionCompletedAuctioneerState extends State<AuctionCompletedAuctioneer>
         ),
         Positioned(
           bottom: 40,
-          //left: 30,
-          child: AppCommon.appButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) =>  WaitingPage()),
-                );
-              },
-              btnText: '${Strings.kAlright}!',
-              btnColor: AppColors.kOrange,
-              horizontal: 140),
+          left: 0,
+          right: 0,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+            child: AppCommon.appButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  WaitingPage()),
+                  );
+                },
+                btnText: '${Strings.kAlright}!',
+                btnColor: AppColors.kOrange,
+                horizontal: 140),
+          ),
         ),
       ]),
     );

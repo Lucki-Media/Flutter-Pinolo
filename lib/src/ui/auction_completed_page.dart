@@ -92,18 +92,22 @@ class _AuctionCompletedPageState extends State<AuctionCompletedPage> {
           ),
         ),
         Positioned(
-          bottom: 35,
-          //left: 30,
-          child: AppCommon.appButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) =>  ParkingCompletedPage()),
-                );
-              },
-              btnText: '${Strings.kLetsGo}!',
-              btnColor: AppColors.kBlue,
-              horizontal: 133),
+          bottom: 45,
+          left: 0,
+          right: 0,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+            child: AppCommon.appButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  ParkingCompletedPage()),
+                  );
+                },
+                btnText: '${Strings.kLetsGo}!',
+                btnColor: AppColors.kBlue,
+                horizontal: 133),
+          ),
         ),
       ]),
     );

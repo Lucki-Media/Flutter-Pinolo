@@ -60,18 +60,22 @@ class _YourLocationPageState extends State<YourLocationPage> {
               ),
             ),
             Positioned(
-              bottom: 35,
-              //left: 30,
-              child: AppCommon.appButton(
-                  onPressed: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
-                    );
-                  },
-                  btnText:  Strings.kShareLocation,
-                  btnColor:AppColors.kBlue,
-                  horizontal: 90),),
+              bottom: 45,
+              left: 0,
+              right: 0,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: AppCommon.appButton(
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const HomePage()),
+                      );
+                    },
+                    btnText:  Strings.kShareLocation,
+                    btnColor:AppColors.kBlue,
+                    horizontal: 90),
+              ),),
           ]
       ),
     );

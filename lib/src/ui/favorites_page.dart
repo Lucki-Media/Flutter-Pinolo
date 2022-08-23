@@ -156,7 +156,8 @@ class _FavoritesPageState extends State<FavoritesPage> {
               }),
           Positioned(
             bottom: 30,
-            left: 22,
+            left: 0,
+            right: 0,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

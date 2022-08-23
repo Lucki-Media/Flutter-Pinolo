@@ -128,8 +128,9 @@ class _Verification_pageState extends State<Verification_page> {
           ),
         ),
         Positioned(
-          bottom: 35,
-          //left: 30,
+          bottom: 45,
+          left: 0,
+          right: 0,
           child: Column(
             children: [
               Padding(
@@ -156,7 +157,7 @@ class _Verification_pageState extends State<Verification_page> {
                   },
                   btnText:Strings.kNext,
                   btnColor:AppColors.kBlue,
-                  horizontal: 145 ),
+                  horizontal: 150 ),
             ],
           ),
         ),

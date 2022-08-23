@@ -148,7 +148,8 @@ class _PayoutPageState extends State<PayoutPage> {
               }),
           Positioned(
             bottom: 30,
-            left: 80,
+            left: 0,
+            right: 0,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

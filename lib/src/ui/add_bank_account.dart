@@ -134,7 +134,7 @@ class _AddBankAccountState extends State<AddBankAccount> {
                   },
                   btnText:Strings.kDone,
                   btnColor:AppColors.kBlue,
-                  horizontal: 142)
+                  horizontal: 145)
             ],
           ),
         ),

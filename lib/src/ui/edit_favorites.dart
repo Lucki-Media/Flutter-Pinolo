@@ -173,9 +173,11 @@ class _EditFavoritesState extends State<EditFavorites> {
             ),
           ),
           Positioned(
-            bottom: 35,
+            bottom: 45,
+            left: 0,
+            right: 0,
             child: Padding(
-              padding: const EdgeInsets.only(left: 25, right: 25),
+              padding: const EdgeInsets.only(left: 32, right: 32),
               child: AppCommon.appButton(
                   onPressed: (){
                     // Navigator.push(
