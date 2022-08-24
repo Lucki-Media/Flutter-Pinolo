@@ -289,13 +289,15 @@ class _MyProfileState extends State<MyProfile> {
                   ),
                 ),
             SizedBox(height: 95,),
-            Padding(
-              padding: const EdgeInsets.only(left: 30, right: 30),
-              child: AppCommon.appButton(
-                  onPressed: () {},
-                  btnText: Strings.kSave,
-                  btnColor: AppColors.kBlue,
-                  horizontal: 147),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 30, right: 30),
+                child: AppCommon.appButton(
+                    onPressed: () {},
+                    btnText: Strings.kSave,
+                    btnColor: AppColors.kBlue,
+                    horizontal: 147),
+              ),
             ),
           ],
         ),
