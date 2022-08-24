@@ -28,35 +28,46 @@ class _MyCardsState extends State<MyCards> {
         //centerTitle: true,
         title: Padding(
           padding: const EdgeInsets.only(top: 20.0),
-          child: Row(
+          child:Column(
+            //mainAxisSize: MainAxisSize.min,
+            //crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                icon: CircleAvatar(
-                  backgroundColor: AppColors.kGrey,
-                  child: Icon(
-                    FontAwesomeIcons.arrowLeft,
-                    color: AppColors.kBlack,
-                    size: 18,
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: const Text(
+                      Strings.kMyCards,
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: AppColors.kBlack,
+                        fontFamily: 'Baloo2SemiBold',
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              SizedBox(
-                width: 100,
-              ),
-              const Text(
-                Strings.kMyCards,
-                style: TextStyle(
-                  fontSize: 18,
-                  color: AppColors.kBlack,
-                  fontFamily: 'Baloo2SemiBold',
-                ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      icon: CircleAvatar(
+                        backgroundColor: AppColors.kGrey,
+                        child: Icon(
+                          FontAwesomeIcons.arrowLeft,
+                          color: AppColors.kBlack,
+                          size: 18,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ],
           ),
         ),
+
       ),
       body: Stack(
         children: [
@@ -212,31 +223,41 @@ class _MyCardsState extends State<MyCards> {
             backgroundColor: AppColors.kWhite,
             title: Padding(
               padding: const EdgeInsets.only(top: 20.0),
-              child: Row(
+              child:Column(
+                //mainAxisSize: MainAxisSize.min,
+                //crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    icon: CircleAvatar(
-                      backgroundColor: AppColors.kGrey,
-                      child: Icon(
-                        Icons.close,
-                        color: AppColors.kBlack,
-                        size: 18,
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child:  const Text(
+                          '+${Strings.kAddNewCard}',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: AppColors.kBlack,
+                            fontFamily: 'Baloo2SemiBold',
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 80,
-                  ),
-                  const Text(
-                    '+${Strings.kAddNewCard}',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: AppColors.kBlack,
-                      fontFamily: 'Baloo2SemiBold',
-                    ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: CircleAvatar(
+                            backgroundColor: AppColors.kGrey,
+                            child: Icon(
+                              Icons.close,
+                              color: AppColors.kBlack,
+                              size: 18,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ],
               ),
@@ -313,27 +334,27 @@ class _MyCardsState extends State<MyCards> {
                                   filled: true, //<-- SEE HERE
                                   fillColor: AppColors.kWhite,
                                   contentPadding: const EdgeInsets.symmetric(
-                                          vertical: 0, horizontal: 25),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                            color: AppColors.kBlue, width: 1.0),
-                                        borderRadius: BorderRadius.circular(30.0),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: AppColors.kBlack.withOpacity(0.2),
-                                            width: 1.0),
-                                        borderRadius: BorderRadius.circular(30.0),
-                                      ),
-                                      hintText: '**** **** **** ****',
-                                      hintStyle: TextStyle(
-                                        fontSize: 18,
-                                        color: AppColors.kBlack.withOpacity(.5),
-                                        fontFamily: 'Baloo2Regular',
-                                      ),
-                                      //suffixIcon: Suffix
-                                    //labelText: ,
+                                      vertical: 0, horizontal: 25),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: AppColors.kBlue, width: 1.0),
+                                    borderRadius: BorderRadius.circular(30.0),
                                   ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: AppColors.kBlack.withOpacity(0.2),
+                                        width: 1.0),
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                  hintText: '**** **** **** ****',
+                                  hintStyle: TextStyle(
+                                    fontSize: 18,
+                                    color: AppColors.kBlack.withOpacity(.5),
+                                    fontFamily: 'Baloo2Regular',
+                                  ),
+                                  //suffixIcon: Suffix
+                                  //labelText: ,
+                                ),
                               ),
                               SizedBox(
                                 height: 15,
@@ -492,7 +513,7 @@ class _MyCardsState extends State<MyCards> {
                       },
                       btnText: Strings.kDone,
                       btnColor: AppColors.kBlue,
-                      horizontal: 152),
+                      horizontal: 143),
                 ),
               )
             ],

@@ -201,7 +201,7 @@ class _AddNewFavoriteState extends State<AddNewFavorite> {
                   },
                   btnText:Strings.kDone,
                   btnColor:AppColors.kBlue,
-                  horizontal: 150),
+                  horizontal: 142),
             ),
           )
 

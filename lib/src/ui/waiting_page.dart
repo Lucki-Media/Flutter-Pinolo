@@ -129,7 +129,7 @@ class _WaitingPageState extends State<WaitingPage> {
                         color: AppColors.kBlack.withOpacity(.2),
                       ),
                       padding:
-                      EdgeInsets.symmetric(vertical: 10, horizontal: 150),
+                      EdgeInsets.symmetric(vertical: 10, horizontal: 140),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0)),
                       primary: Theme.of(context).scaffoldBackgroundColor,

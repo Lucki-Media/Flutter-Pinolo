@@ -91,7 +91,8 @@ class _MyBidsState extends State<MyBids> {
             ),
             Positioned(
               bottom: 35,
-              //left: 30,
+              left: 0,
+              right: 0,
               child: Padding(
                 padding: const EdgeInsets.only(left: 32, right: 32),
                 child: AppCommon.appButton(
@@ -129,7 +130,7 @@ Widget MyBidsPopUp() {
             //foregroundColor: AppColors.kBlue,
             //centerTitle: true,
             title: Padding(
-              padding: const EdgeInsets.only(top: 10.0),
+              padding: const EdgeInsets.only(top: 25.0),
               child: Column(
                 //mainAxisSize: MainAxisSize.min,
                 //crossAxisAlignment: CrossAxisAlignment.stretch,

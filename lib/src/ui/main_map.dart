@@ -199,6 +199,8 @@ class _MainMapState extends State<MainMap> {
             ),
             Positioned(
               bottom: 35,
+              left: 0,
+              right: 0,
               child: Padding(
                 padding: const EdgeInsets.only(left: 32, right: 32),
                 child: AppCommon.appButton(

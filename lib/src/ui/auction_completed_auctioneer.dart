@@ -88,7 +88,7 @@ class _AuctionCompletedAuctioneerState extends State<AuctionCompletedAuctioneer>
                 },
                 btnText: '${Strings.kAlright}!',
                 btnColor: AppColors.kOrange,
-                horizontal: 140),
+                horizontal: 135),
           ),
         ),
       ]),

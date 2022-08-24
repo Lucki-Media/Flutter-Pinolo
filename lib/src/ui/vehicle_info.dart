@@ -238,7 +238,7 @@ class _VehicleInfoState extends State<VehicleInfo> {
                         },
                         btnText:Strings.kFinish,
                         btnColor:AppColors.kBlue,
-                        horizontal: 145 ),
+                        horizontal: 140 ),
                   ],
                 ),
               )

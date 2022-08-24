@@ -273,6 +273,8 @@ class _PaymentMethodState extends State<PaymentMethod> {
           ),
           Positioned(
             bottom: 35,
+            left: 0,
+            right: 0,
             child: Padding(
               padding: const EdgeInsets.only(left: 25, right: 25),
               child: AppCommon.appButton(
@@ -284,7 +286,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                   },
                   btnText:'+${Strings.kAddNewCard}',
                   btnColor:AppColors.kBlue,
-                  horizontal: 120 ),
+                  horizontal: 100 ),
             ),
           )
         ],

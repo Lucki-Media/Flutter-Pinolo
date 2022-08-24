@@ -56,31 +56,41 @@ class _PayoutInfoState extends State<PayoutInfo> {
           //centerTitle: true,
           title: Padding(
             padding: const EdgeInsets.only(top: 20.0),
-            child: Row(
+            child:Column(
+              //mainAxisSize: MainAxisSize.min,
+              //crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  icon: CircleAvatar(
-                    backgroundColor: AppColors.kGrey,
-                    child: Icon(
-                      FontAwesomeIcons.arrowLeft,
-                      color: AppColors.kBlack,
-                      size: 18,
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Align(
+                      alignment: Alignment.center,
+                      child: const Text(
+                        Strings.kPayout,
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: AppColors.kBlack,
+                          fontFamily: 'Baloo2SemiBold',
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-                SizedBox(
-                  width: 120,
-                ),
-                const Text(
-                  Strings.kPayout,
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: AppColors.kBlack,
-                    fontFamily: 'Baloo2SemiBold',
-                  ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        icon: CircleAvatar(
+                          backgroundColor: AppColors.kGrey,
+                          child: Icon(
+                            FontAwesomeIcons.arrowLeft,
+                            color: AppColors.kBlack,
+                            size: 18,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ],
             ),

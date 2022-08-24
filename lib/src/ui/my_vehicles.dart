@@ -35,31 +35,41 @@ class _MyVehiclesState extends State<MyVehicles> {
         //centerTitle: true,
         title: Padding(
           padding: const EdgeInsets.only(top: 20.0),
-          child: Row(
+          child:Column(
+            //mainAxisSize: MainAxisSize.min,
+            //crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                icon: CircleAvatar(
-                  backgroundColor: AppColors.kGrey,
-                  child: Icon(
-                    FontAwesomeIcons.arrowLeft,
-                    color: AppColors.kBlack,
-                    size: 18,
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: const Text(
+                      Strings.kMyVehicles,
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: AppColors.kBlack,
+                        fontFamily: 'Baloo2SemiBold',
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              SizedBox(
-                width: 100,
-              ),
-              const Text(
-                Strings.kMyVehicles,
-                style: TextStyle(
-                  fontSize: 18,
-                  color: AppColors.kBlack,
-                  fontFamily: 'Baloo2SemiBold',
-                ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      icon: CircleAvatar(
+                        backgroundColor: AppColors.kGrey,
+                        child: Icon(
+                          FontAwesomeIcons.arrowLeft,
+                          color: AppColors.kBlack,
+                          size: 18,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ],
           ),
@@ -142,7 +152,8 @@ class _MyVehiclesState extends State<MyVehicles> {
               }),
           Positioned(
             bottom: 30,
-            left: 50,
+            left: 0,
+            right: 0,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -206,31 +217,41 @@ class _MyVehiclesState extends State<MyVehicles> {
             backgroundColor: AppColors.kWhite,
             title: Padding(
               padding: const EdgeInsets.only(top: 20.0),
-              child: Row(
+              child:Column(
+                //mainAxisSize: MainAxisSize.min,
+                //crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    icon: CircleAvatar(
-                      backgroundColor: AppColors.kGrey,
-                      child: Icon(
-                        Icons.close,
-                        color: AppColors.kBlack,
-                        size: 18,
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child: const Text(
+                          '+${Strings.kAddNewVehicle}',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: AppColors.kBlack,
+                            fontFamily: 'Baloo2SemiBold',
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 80,
-                  ),
-                  const Text(
-                    '+${Strings.kAddNewVehicle}',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: AppColors.kBlack,
-                      fontFamily: 'Baloo2SemiBold',
-                    ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: CircleAvatar(
+                            backgroundColor: AppColors.kGrey,
+                            child: Icon(
+                              Icons.close,
+                              color: AppColors.kBlack,
+                              size: 18,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ],
               ),

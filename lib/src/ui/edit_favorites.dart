@@ -187,7 +187,7 @@ class _EditFavoritesState extends State<EditFavorites> {
                   },
                   btnText:Strings.kDone,
                   btnColor:AppColors.kBlue,
-                  horizontal: 150 ),
+                  horizontal: 142 ),
             ),
           )
 
