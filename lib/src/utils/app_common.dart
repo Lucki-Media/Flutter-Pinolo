@@ -62,5 +62,19 @@ class AppCommon {
       child:  Text(btnText),
     );
   }
-
+  static Container divider(){
+    return Container(
+      height: 1.0,
+      decoration: BoxDecoration(
+        color:AppColors.kBorderGrey,
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.kShadowGrey,
+            blurRadius: 4,
+            offset: Offset(0,3), // changes position of shadow
+          ),
+        ],
+      ),
+    );
+  }
 }
