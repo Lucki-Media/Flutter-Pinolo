@@ -16,175 +16,174 @@ class _AddNewFavoriteState extends State<AddNewFavorite> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100.0,
-        shadowColor: AppColors.kShadowGrey,
-        automaticallyImplyLeading: false,
-        elevation: 5,
-        backgroundColor: AppColors.kWhite,
-        //foregroundColor: AppColors.kBlue,
-        //centerTitle: true,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Column(
-            //mainAxisSize: MainAxisSize.min,
-            //crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      '+${Strings.kAddNewFavorite}',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: AppColors.kBlack,
-                        fontFamily: 'Baloo2SemiBold',
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      icon: CircleAvatar(
-                        backgroundColor: AppColors.kGrey,
-                        child: Icon(
-                          FontAwesomeIcons.arrowLeft,
-                          color: AppColors.kBlack,
-                          size: 18,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
       body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(25.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(Strings.kChooseIcon,style: TextStyle(
-                  fontSize: 18,
-                  color: AppColors.kBlack,
-                  fontFamily: 'Baloo2Medium',
-                ),),
-                Padding(
-                  padding: const EdgeInsets.only(top: 30,bottom: 30),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 68,
-                        child: MaterialButton(
-                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          onPressed: () {},
-                          child: Image.asset(
-                            'assets/images/home.png',
-                            height: 25,
-                          ),
-                          padding: EdgeInsets.all(10),
-                          shape: CircleBorder(
-                              side: BorderSide(color: AppColors.kToggleLGrey)
+          Column(
+            children: [
+              SafeArea(
+                minimum:const EdgeInsets.only(top: 35.0,bottom: 12),
+                top: false,
+                bottom: false,
+                child: Column(
+                  children: [
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Align(
+                          alignment: Alignment.center,
+                          child:Text(
+                            '+${Strings.kAddNewFavorite}',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: AppColors.kBlack,
+                              fontFamily: 'Baloo2SemiBold',
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 68,
-                        child: MaterialButton(
-                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          onPressed: () {},
-                          child: Image.asset(
-                            'assets/images/bag.png',
-                            height: 25,
-                          ),
-                          padding: EdgeInsets.all(10),
-                          shape: CircleBorder(
-                              side: BorderSide(color: AppColors.kToggleLGrey)
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 68,
-                        child: MaterialButton(
-                          onPressed: () {},
-                          child: Image.asset(
-                            'assets/images/heart.png',
-                            height: 25,
-                          ),
-                          padding: EdgeInsets.all(10),
-                          shape: CircleBorder(
-                              side: BorderSide(color: AppColors.kToggleLGrey)
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: IconButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              icon: CircleAvatar(
+                                backgroundColor: AppColors.kGrey,
+                                child: Icon(
+                                  FontAwesomeIcons.arrowLeft,
+                                  color: AppColors.kBlack,
+                                  size: 18,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              AppCommon.divider(),
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(Strings.kChooseIcon,style: TextStyle(
+                      fontSize: 18,
+                      color: AppColors.kBlack,
+                      fontFamily: 'Baloo2Medium',
+                    ),),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30,bottom: 30),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 68,
+                            child: MaterialButton(
+                              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              onPressed: () {},
+                              child: Image.asset(
+                                'assets/images/home.png',
+                                height: 25,
+                              ),
+                              padding: EdgeInsets.all(10),
+                              shape: CircleBorder(
+                                  side: BorderSide(color: AppColors.kToggleLGrey)
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 68,
+                            child: MaterialButton(
+                              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              onPressed: () {},
+                              child: Image.asset(
+                                'assets/images/bag.png',
+                                height: 25,
+                              ),
+                              padding: EdgeInsets.all(10),
+                              shape: CircleBorder(
+                                  side: BorderSide(color: AppColors.kToggleLGrey)
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 68,
+                            child: MaterialButton(
+                              onPressed: () {},
+                              child: Image.asset(
+                                'assets/images/heart.png',
+                                height: 25,
+                              ),
+                              padding: EdgeInsets.all(10),
+                              shape: CircleBorder(
+                                  side: BorderSide(color: AppColors.kToggleLGrey)
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 68,
+                            child: MaterialButton(
+                              onPressed: () {},
+                              child: Image.asset(
+                                'assets/images/diamond.png',
+                                height: 25,
+                              ),
+                              padding: EdgeInsets.all(10),
+                              shape: CircleBorder(
+                                  side: BorderSide(color: AppColors.kToggleLGrey)
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 68,
+                            child: MaterialButton(
+                              onPressed: () {},
+                              child: Image.asset(
+                                'assets/images/diamond.png',
+                                height: 25,
+                              ),
+                              padding: EdgeInsets.all(10),
+                              shape: CircleBorder(
+                                  side: BorderSide(color: AppColors.kToggleLGrey)
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        width: 68,
-                        child: MaterialButton(
-                          onPressed: () {},
-                          child: Image.asset(
-                            'assets/images/diamond.png',
-                            height: 25,
-                          ),
-                          padding: EdgeInsets.all(10),
-                          shape: CircleBorder(
-                              side: BorderSide(color: AppColors.kToggleLGrey)
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 68,
-                        child: MaterialButton(
-                          onPressed: () {},
-                          child: Image.asset(
-                            'assets/images/diamond.png',
-                            height: 25,
-                          ),
-                          padding: EdgeInsets.all(10),
-                          shape: CircleBorder(
-                              side: BorderSide(color: AppColors.kToggleLGrey)
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8.0),
+                      child: Text(Strings.kAddName,style: TextStyle(
+                        fontSize: 18,
+                        color: AppColors.kBlack,
+                        fontFamily: 'Baloo2Medium',
+                      ),),
+                    ),
+                    TextFormField(
+                      style: AppCommon.fieldTextStyle(),
+                      decoration: AppCommon.textFiledDecoration(
+                          hintText: Strings.kEnterFavName),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8.0,top: 30),
+                      child: Text(Strings.kAddAddress,style: TextStyle(
+                        fontSize: 18,
+                        color: AppColors.kBlack,
+                        fontFamily: 'Baloo2Medium',
+                      ),),
+                    ),
+                    TextFormField(
+                      style: AppCommon.fieldTextStyle(),
+                      decoration: AppCommon.textFiledDecoration(
+                          hintText: Strings.kEnterAddress),
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
-                  child: Text(Strings.kAddName,style: TextStyle(
-                    fontSize: 18,
-                    color: AppColors.kBlack,
-                    fontFamily: 'Baloo2Medium',
-                  ),),
-                ),
-                TextFormField(
-                  style: AppCommon.fieldTextStyle(),
-                  decoration: AppCommon.textFiledDecoration(
-                      hintText: Strings.kEnterFavName),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0,top: 30),
-                  child: Text(Strings.kAddAddress,style: TextStyle(
-                    fontSize: 18,
-                    color: AppColors.kBlack,
-                    fontFamily: 'Baloo2Medium',
-                  ),),
-                ),
-                TextFormField(
-                  style: AppCommon.fieldTextStyle(),
-                  decoration: AppCommon.textFiledDecoration(
-                      hintText: Strings.kEnterAddress),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
           Positioned(
             bottom: 45,

@@ -15,9 +15,12 @@ class WelcomePage extends StatelessWidget {
         children: [
         Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            //mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children:   [
+              const SizedBox(
+                height: 80,
+              ),
               const Text(
                 Strings.kWelcomeTo,
                 style: TextStyle(
@@ -53,14 +56,14 @@ class WelcomePage extends StatelessWidget {
                 'assets/images/welcome_logo.png',
                 height: 300,
               ),
-              const SizedBox(
-                height: 150,
-              ),
+              // const SizedBox(
+              //   height: 150,
+              // ),
             ],
           ),
         ),
            Positioned(
-            bottom: 45,
+            bottom: 35,
             left: 0,
             right: 0,
             child: Padding(

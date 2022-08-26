@@ -4,6 +4,7 @@ import 'package:pinolo/src/ui/settings_dark_mode.dart';
 import 'package:pinolo/src/ui/settings_face_touch_id.dart';
 import 'package:pinolo/src/ui/settings_notifications.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
+import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
 
 class Settings extends StatefulWidget {
@@ -17,48 +18,53 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100.0,
-        shadowColor: AppColors.kShadowGrey,
-        automaticallyImplyLeading: false,
-        elevation: 5,
-        backgroundColor: AppColors.kWhite,
-        //foregroundColor: AppColors.kBlue,
-        //centerTitle: true,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Row(
-            children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                icon: CircleAvatar(
-                  backgroundColor: AppColors.kGrey,
-                  child: Icon(
-                    FontAwesomeIcons.arrowLeft,
-                    color: AppColors.kBlack,
-                    size: 18,
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 110,
-              ),
-              const Text(
-                Strings.kSettings,
-                style: TextStyle(
-                  fontSize: 18,
-                  color: AppColors.kBlack,
-                  fontFamily: 'Baloo2SemiBold',
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
       body: Column(
         children: [
+          SafeArea(
+            minimum:const EdgeInsets.only(top: 35.0,bottom: 12),
+            top: false,
+            bottom: false,
+            child: Column(
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Align(
+                      alignment: Alignment.center,
+                      child: const Text(
+                        Strings.kSettings,
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: AppColors.kBlack,
+                          fontFamily: 'Baloo2SemiBold',
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: CircleAvatar(
+                            backgroundColor: AppColors.kGrey,
+                            child: Icon(
+                              FontAwesomeIcons.arrowLeft,
+                              color: AppColors.kBlack,
+                              size: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          AppCommon.divider(),
           GestureDetector(
                     onTap: () {
                       Navigator.push(

@@ -57,7 +57,7 @@ class SplashScreenState extends State<SplashScreen>
           Center(
               child: Image.asset(
                 'assets/images/app_logo.png',
-                height: 150,
+                height: 200,
               ),
             ),
           const Positioned(
