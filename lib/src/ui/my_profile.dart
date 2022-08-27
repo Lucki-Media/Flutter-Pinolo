@@ -344,6 +344,7 @@ class _MyProfileState extends State<MyProfile> {
                     horizontal: 147),
               ),
             ),
+            SizedBox(height: 35,),
           ],
         ),
       ),

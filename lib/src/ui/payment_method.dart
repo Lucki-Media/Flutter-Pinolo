@@ -14,75 +14,73 @@ class _PaymentMethodState extends State<PaymentMethod> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100.0,
-        shadowColor: AppColors.kShadowGrey,
-        automaticallyImplyLeading: false,
-        elevation: 5,
-        backgroundColor: AppColors.kWhite,
-        //foregroundColor: AppColors.kBlue,
-        //centerTitle: true,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Column(
-            //mainAxisSize: MainAxisSize.min,
-            //crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: const Text(
-                      Strings.kPaymentMethod,
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: AppColors.kBlack,
-                        fontFamily: 'Baloo2SemiBold',
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      icon: CircleAvatar(
-                        backgroundColor: AppColors.kGrey,
-                        child: Icon(
-                          FontAwesomeIcons.arrowLeft,
-                          color: AppColors.kBlack,
-                          size: 18,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      icon: CircleAvatar(
-                        backgroundColor: AppColors.kGrey,
-                        child: Image.asset(
-                          'assets/images/info.png',
-                          height: 20,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
       body: Stack(
         children: [
           Column(
             children: [
+              SafeArea(
+                minimum:const EdgeInsets.only(top: 35.0,bottom: 12),
+                top: false,
+                bottom: false,
+                child: Column(
+                  children: [
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Align(
+                          alignment: Alignment.center,
+                          child:const Text(
+                            Strings.kPaymentMethod,
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: AppColors.kBlack,
+                              fontFamily: 'Baloo2SemiBold',
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: IconButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              icon: CircleAvatar(
+                                backgroundColor: AppColors.kGrey,
+                                child: Icon(
+                                  FontAwesomeIcons.arrowLeft,
+                                  color: AppColors.kBlack,
+                                  size: 18,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 10.0),
+                            child: IconButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              icon: CircleAvatar(
+                                backgroundColor: AppColors.kGrey,
+                                child: Image.asset(
+                                  'assets/images/info.png',
+                                  height: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              AppCommon.divider(),
               Padding(
                 padding: const EdgeInsets.only(top: 30.0,left: 30),
                 child: Row(
