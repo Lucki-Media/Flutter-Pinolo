@@ -71,91 +71,95 @@ class _MyCardsState extends State<MyCards> {
               ),
               AppCommon.divider(),
               Expanded(
-                child: ListView.builder(
-                    itemCount: items.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      final item = items[index];
-                      return Dismissible(
-                        direction: DismissDirection.endToStart,
-                        key: Key(item),
-                        onDismissed: (direction) {
-                          // Removes that item the list on swipwe
-                          setState(() {
-                            items.removeAt(index);
-                          });
-                          // Shows the information on Snackbar
-                          Scaffold.of(context).showSnackBar(
-                              SnackBar(content: Text("$item dismissed")));
-                        },
-                        background: Container(color: Colors.red),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => CardInfo()),
-                            );
+                child: MediaQuery.removePadding(
+                  context: context,
+                  removeTop: true,
+                  child: ListView.builder(
+                      itemCount: items.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final item = items[index];
+                        return Dismissible(
+                          direction: DismissDirection.endToStart,
+                          key: Key(item),
+                          onDismissed: (direction) {
+                            // Removes that item the list on swipwe
+                            setState(() {
+                              items.removeAt(index);
+                            });
+                            // Shows the information on Snackbar
+                            Scaffold.of(context).showSnackBar(
+                                SnackBar(content: Text("$item dismissed")));
                           },
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 18.0, top: 25, right: 22, bottom: 5),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  //crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 20),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Visa',
-                                            style: TextStyle(
-                                                color: AppColors.kBlack,
-                                                fontFamily: 'Baloo2Regular',
-                                                fontSize: 16),
-                                          ),
-                                          Text(
-                                            '**** **** **** 4255. Expires: 04/24',
-                                            style: TextStyle(
-                                                color: AppColors.kBlack.withOpacity(.4),
-                                                fontFamily: 'Baloo2Regular',
-                                                fontSize: 14),
-                                          ),
-                                        ],
+                          background: Container(color: Colors.red),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CardInfo()),
+                              );
+                            },
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 18.0, top: 25, right: 22, bottom: 5),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    //crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 20),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Visa',
+                                              style: TextStyle(
+                                                  color: AppColors.kBlack,
+                                                  fontFamily: 'Baloo2Regular',
+                                                  fontSize: 16),
+                                            ),
+                                            Text(
+                                              '**** **** **** 4255. Expires: 04/24',
+                                              style: TextStyle(
+                                                  color: AppColors.kBlack.withOpacity(.4),
+                                                  fontFamily: 'Baloo2Regular',
+                                                  fontSize: 14),
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                    GestureDetector(
-                                        onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    CardInfo()),
-                                          );
-                                        },
-                                        child: Icon(
-                                          FontAwesomeIcons.chevronRight,
-                                          size: 22,
-                                          color: AppColors.kShadowGrey,
-                                        )),
-                                  ],
+                                      GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      CardInfo()),
+                                            );
+                                          },
+                                          child: Icon(
+                                            FontAwesomeIcons.chevronRight,
+                                            size: 22,
+                                            color: AppColors.kShadowGrey,
+                                          )),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Divider(
-                                color: AppColors.kDividerGrey, //color of divider
-                                height: 0, //height spacing of divider
-                                thickness: 1, //thickness of divier line
-                                indent: 25, //spacing at the start of divider
-                                //endIndent: 25, //spacing at the end of divider
-                              )
-                            ],
+                                Divider(
+                                  color: AppColors.kDividerGrey, //color of divider
+                                  height: 0, //height spacing of divider
+                                  thickness: 1, //thickness of divier line
+                                  indent: 25, //spacing at the start of divider
+                                  //endIndent: 25, //spacing at the end of divider
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                      );
-                    }),
+                        );
+                      }),
+                ),
               ),
             ],
           ),

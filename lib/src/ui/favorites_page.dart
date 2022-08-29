@@ -69,101 +69,105 @@ class _FavoritesPageState extends State<FavoritesPage> {
               AppCommon.divider(),
               Container(
                 height: MediaQuery.of(context).size.height -280,
-                child: ListView.builder(
-                    itemCount: items.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      final item = items[index];
-                      return Dismissible(
-                        direction: DismissDirection.endToStart,
-                        key: Key(item),
-                        onDismissed: (direction) {
-                          // Removes that item the list on swipwe
-                          setState(() {
-                            items.removeAt(index);
-                          });
-                          // Shows the information on Snackbar
-                          Scaffold.of(context).showSnackBar(
-                              SnackBar(content: Text("$item dismissed")));
-                        },
-                        background: Container(color: Colors.red),
-                        child: GestureDetector(
-                          onTap: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //       builder: (context) => EditVehicleInfo()),
-                            // );
+                child: MediaQuery.removePadding(
+                  context: context,
+                  removeTop: true,
+                  child: ListView.builder(
+                      itemCount: items.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final item = items[index];
+                        return Dismissible(
+                          direction: DismissDirection.endToStart,
+                          key: Key(item),
+                          onDismissed: (direction) {
+                            // Removes that item the list on swipwe
+                            setState(() {
+                              items.removeAt(index);
+                            });
+                            // Shows the information on Snackbar
+                            Scaffold.of(context).showSnackBar(
+                                SnackBar(content: Text("$item dismissed")));
                           },
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 22.0, top: 25, right: 22, bottom: 5),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Image.asset(
-                                          'assets/images/home.png',
-                                          height: 25,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(left: 15),
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Home',
-                                                style: TextStyle(
-                                                    color: AppColors.kBlack.withOpacity(.9),
-                                                    fontFamily: 'Baloo2Medium',
-                                                    fontSize: 16),
-                                              ),
-                                              Text(
-                                                'Obilicev venac 18 - 20',
-                                                style: TextStyle(
-                                                    color: AppColors.kBlack.withOpacity(.3),
-                                                    fontFamily: 'Baloo2Medium',
-                                                    fontSize: 14),
-                                              ),
-                                            ],
+                          background: Container(color: Colors.red),
+                          child: GestureDetector(
+                            onTap: () {
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //       builder: (context) => EditVehicleInfo()),
+                              // );
+                            },
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 22.0, top: 25, right: 22, bottom: 5),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Image.asset(
+                                            'assets/images/home.png',
+                                            height: 25,
                                           ),
-                                        )
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(bottom: 5.0),
-                                      child: GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      EditFavorites()),
-                                            );
-                                          },
-                                          child: Image.asset(
-                                            'assets/images/edit.png',
-                                            height: 16,
-                                          ),),
-                                    ),
-                                  ],
+                                          Padding(
+                                            padding: const EdgeInsets.only(left: 15),
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Home',
+                                                  style: TextStyle(
+                                                      color: AppColors.kBlack.withOpacity(.9),
+                                                      fontFamily: 'Baloo2Medium',
+                                                      fontSize: 16),
+                                                ),
+                                                Text(
+                                                  'Obilicev venac 18 - 20',
+                                                  style: TextStyle(
+                                                      color: AppColors.kBlack.withOpacity(.3),
+                                                      fontFamily: 'Baloo2Medium',
+                                                      fontSize: 14),
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(bottom: 5.0),
+                                        child: GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        EditFavorites()),
+                                              );
+                                            },
+                                            child: Image.asset(
+                                              'assets/images/edit.png',
+                                              height: 16,
+                                            ),),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Divider(
-                                color: AppColors.kDividerGrey, //color of divider
-                                height: 0, //height spacing of divider
-                                thickness: 1, //thickness of divier line
-                                indent: 25, //spacing at the start of divider
-                                //endIndent: 25, //spacing at the end of divider
-                              )
-                            ],
+                                Divider(
+                                  color: AppColors.kDividerGrey, //color of divider
+                                  height: 0, //height spacing of divider
+                                  thickness: 1, //thickness of divier line
+                                  indent: 25, //spacing at the start of divider
+                                  //endIndent: 25, //spacing at the end of divider
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                      );
-                    }),
+                        );
+                      }),
+                ),
               ),
             ],
           ),
