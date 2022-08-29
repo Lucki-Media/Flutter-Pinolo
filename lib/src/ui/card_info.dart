@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pinolo/src/utils/app_colors.dart';
+import 'package:pinolo/src/utils/app_common.dart';
 import 'package:pinolo/src/utils/strings.dart';
 
 class CardInfo extends StatefulWidget {
@@ -16,61 +17,56 @@ class _CardInfoState extends State<CardInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100.0,
-        shadowColor: AppColors.kShadowGrey,
-        automaticallyImplyLeading: false,
-        elevation: 5,
-        backgroundColor: AppColors.kWhite,
-        //foregroundColor: AppColors.kBlue,
-        //centerTitle: true,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child:Column(
-            //mainAxisSize: MainAxisSize.min,
-            //crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child:  const Text(
-                      'Visa',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: AppColors.kBlack,
-                        fontFamily: 'Baloo2SemiBold',
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      icon: CircleAvatar(
-                        backgroundColor: AppColors.kGrey,
-                        child: Icon(
-                          FontAwesomeIcons.arrowLeft,
-                          color: AppColors.kBlack,
-                          size: 18,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SafeArea(
+              minimum:const EdgeInsets.only(top: 35.0,bottom: 12),
+              top: false,
+              bottom: false,
+              child: Column(
+                children: [
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child:const Text(
+                          'Visa',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: AppColors.kBlack,
+                            fontFamily: 'Baloo2SemiBold',
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            icon: CircleAvatar(
+                              backgroundColor: AppColors.kGrey,
+                              child: Icon(
+                                FontAwesomeIcons.arrowLeft,
+                                color: AppColors.kBlack,
+                                size: 18,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            AppCommon.divider(),
              Padding(
                padding: const EdgeInsets.only(top: 20,left: 16,bottom: 10),
                child: Text(

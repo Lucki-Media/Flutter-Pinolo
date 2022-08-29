@@ -18,144 +18,147 @@ class _MyCardsState extends State<MyCards> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100.0,
-        shadowColor: AppColors.kShadowGrey,
-        automaticallyImplyLeading: false,
-        elevation: 5,
-        backgroundColor: AppColors.kWhite,
-        //foregroundColor: AppColors.kBlue,
-        //centerTitle: true,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child:Column(
-            //mainAxisSize: MainAxisSize.min,
-            //crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: const Text(
-                      Strings.kMyCards,
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: AppColors.kBlack,
-                        fontFamily: 'Baloo2SemiBold',
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      icon: CircleAvatar(
-                        backgroundColor: AppColors.kGrey,
-                        child: Icon(
-                          FontAwesomeIcons.arrowLeft,
-                          color: AppColors.kBlack,
-                          size: 18,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ],
-          ),
-        ),
-
-      ),
       body: Stack(
         children: [
-          ListView.builder(
-              itemCount: items.length,
-              itemBuilder: (BuildContext context, int index) {
-                final item = items[index];
-                return Dismissible(
-                  direction: DismissDirection.endToStart,
-                  key: Key(item),
-                  onDismissed: (direction) {
-                    // Removes that item the list on swipwe
-                    setState(() {
-                      items.removeAt(index);
-                    });
-                    // Shows the information on Snackbar
-                    Scaffold.of(context).showSnackBar(
-                        SnackBar(content: Text("$item dismissed")));
-                  },
-                  background: Container(color: Colors.red),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => CardInfo()),
-                      );
-                    },
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 18.0, top: 25, right: 22, bottom: 5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            //crossAxisAlignment: CrossAxisAlignment.end,
+          Column(
+            children: [
+              Container(
+                height: 100,
+                child: SafeArea(
+                  minimum:const EdgeInsets.only(top: 35.0,bottom: 12),
+                  top: false,
+                  bottom: false,
+                  child: Column(
+                    children: [
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Align(
+                            alignment: Alignment.center,
+                            child:const Text(
+                              Strings.kMyCards,
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: AppColors.kBlack,
+                                fontFamily: 'Baloo2SemiBold',
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
+                              child: IconButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                icon: CircleAvatar(
+                                  backgroundColor: AppColors.kGrey,
+                                  child: Icon(
+                                    FontAwesomeIcons.arrowLeft,
+                                    color: AppColors.kBlack,
+                                    size: 18,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              AppCommon.divider(),
+              Expanded(
+                child: ListView.builder(
+                    itemCount: items.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      final item = items[index];
+                      return Dismissible(
+                        direction: DismissDirection.endToStart,
+                        key: Key(item),
+                        onDismissed: (direction) {
+                          // Removes that item the list on swipwe
+                          setState(() {
+                            items.removeAt(index);
+                          });
+                          // Shows the information on Snackbar
+                          Scaffold.of(context).showSnackBar(
+                              SnackBar(content: Text("$item dismissed")));
+                        },
+                        background: Container(color: Colors.red),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CardInfo()),
+                            );
+                          },
+                          child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(left: 20),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                padding: const EdgeInsets.only(
+                                    left: 18.0, top: 25, right: 22, bottom: 5),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  //crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    Text(
-                                      'Visa',
-                                      style: TextStyle(
-                                          color: AppColors.kBlack,
-                                          fontFamily: 'Baloo2Regular',
-                                          fontSize: 16),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 20),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Visa',
+                                            style: TextStyle(
+                                                color: AppColors.kBlack,
+                                                fontFamily: 'Baloo2Regular',
+                                                fontSize: 16),
+                                          ),
+                                          Text(
+                                            '**** **** **** 4255. Expires: 04/24',
+                                            style: TextStyle(
+                                                color: AppColors.kBlack.withOpacity(.4),
+                                                fontFamily: 'Baloo2Regular',
+                                                fontSize: 14),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                    Text(
-                                      '**** **** **** 4255. Expires: 04/24',
-                                      style: TextStyle(
-                                          color: AppColors.kBlack.withOpacity(.4),
-                                          fontFamily: 'Baloo2Regular',
-                                          fontSize: 14),
-                                    ),
+                                    GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    CardInfo()),
+                                          );
+                                        },
+                                        child: Icon(
+                                          FontAwesomeIcons.chevronRight,
+                                          size: 22,
+                                          color: AppColors.kShadowGrey,
+                                        )),
                                   ],
                                 ),
                               ),
-                              GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              CardInfo()),
-                                    );
-                                  },
-                                  child: Icon(
-                                    FontAwesomeIcons.chevronRight,
-                                    size: 22,
-                                    color: AppColors.kShadowGrey,
-                                  )),
+                              Divider(
+                                color: AppColors.kDividerGrey, //color of divider
+                                height: 0, //height spacing of divider
+                                thickness: 1, //thickness of divier line
+                                indent: 25, //spacing at the start of divider
+                                //endIndent: 25, //spacing at the end of divider
+                              )
                             ],
                           ),
                         ),
-                        Divider(
-                          color: AppColors.kDividerGrey, //color of divider
-                          height: 0, //height spacing of divider
-                          thickness: 1, //thickness of divier line
-                          indent: 25, //spacing at the start of divider
-                          //endIndent: 25, //spacing at the end of divider
-                        )
-                      ],
-                    ),
-                  ),
-                );
-              }),
+                      );
+                    }),
+              ),
+            ],
+          ),
           Positioned(
             bottom: 30,
             left: 0,
