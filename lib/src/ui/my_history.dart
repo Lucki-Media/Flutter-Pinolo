@@ -91,249 +91,261 @@ class _MyHistoryState extends State<MyHistory> {
               child: TabBarView(
                 children: <Widget>[
                   Center(
-                    child: ListView.builder(
-                        itemCount: 3,
-                        itemBuilder: (BuildContext context, int index) {
-                          return GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => PayoutHistory()),
-                              );
-                            },
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 18.0, top: 18, right: 22, bottom: 5),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 20),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              Strings.kPayout,
-                                              style: TextStyle(
-                                                  color: AppColors.kBlack
-                                                      .withOpacity(.9),
-                                                  fontFamily: 'Baloo2Medium',
-                                                  fontSize: 16),
-                                            ),
-                                            Text(
-                                              'March 14. 22 at 15:34',
-                                              style: TextStyle(
-                                                  color: AppColors.kBlack
-                                                      .withOpacity(.4),
-                                                  fontFamily: 'Baloo2Regular',
-                                                  fontSize: 14),
-                                            ),
-                                          ],
+                    child: MediaQuery.removePadding(
+                      context: context,
+                      removeTop: true,
+                      child: ListView.builder(
+                          itemCount: 3,
+                          itemBuilder: (BuildContext context, int index) {
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => PayoutHistory()),
+                                );
+                              },
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 18.0, top: 18, right: 22, bottom: 5),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 20),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                Strings.kPayout,
+                                                style: TextStyle(
+                                                    color: AppColors.kBlack
+                                                        .withOpacity(.9),
+                                                    fontFamily: 'Baloo2Medium',
+                                                    fontSize: 16),
+                                              ),
+                                              Text(
+                                                'March 14. 22 at 15:34',
+                                                style: TextStyle(
+                                                    color: AppColors.kBlack
+                                                        .withOpacity(.4),
+                                                    fontFamily: 'Baloo2Regular',
+                                                    fontSize: 14),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      SizedBox(
-                                        width: 120,
-                                      ),
-                                      Text("+350 rsd",
-                                          style: TextStyle(
-                                              color: AppColors.kBlack,
-                                              fontFamily: 'Baloo2Regular',
-                                              fontSize: 14)),
-                                      GestureDetector(
-                                          onTap: () {
+                                        SizedBox(
+                                          width: 120,
+                                        ),
+                                        Text("+350 rsd",
+                                            style: TextStyle(
+                                                color: AppColors.kBlack,
+                                                fontFamily: 'Baloo2Regular',
+                                                fontSize: 14)),
+                                        GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        PayoutHistory()),
+                                              );
+                                            },
+                                            child: Icon(
+                                              FontAwesomeIcons.chevronRight,
+                                              size: 22,
+                                              color: AppColors.kShadowGrey,
+                                            )),
+                                      ],
+                                    ),
+                                  ),
+                                  Divider(
+                                    color: AppColors.kDividerGrey, //color of divider
+                                    height: 1, //height spacing of divider
+                                    thickness: 1, //thickness of divier line
+                                    indent: 25, //spacing at the start of divider
+                                    //endIndent: 25, //spacing at the end of divider
+                                  )
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
+                  ),
+                  Center(
+                    child: MediaQuery.removePadding(
+                      context: context,
+                      removeTop: true,
+                      child: ListView.builder(
+                          itemCount: 3,
+                          itemBuilder: (BuildContext context, int index) {
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) =>  ParkedInHistory()),
+                                );
+                              },
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 18.0, top: 18, right: 22, bottom: 5),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 20),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                Strings.kParkedIn,
+                                                style: TextStyle(
+                                                    color: AppColors.kBlack
+                                                        .withOpacity(.9),
+                                                    fontFamily: 'Baloo2Medium',
+                                                    fontSize: 16),
+                                              ),
+                                              Text(
+                                                'March 14. 22 at 15:34',
+                                                style: TextStyle(
+                                                    color: AppColors.kBlack
+                                                        .withOpacity(.4),
+                                                    fontFamily: 'Baloo2Regular',
+                                                    fontSize: 14),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 120,
+                                        ),
+                                        Text("+350 rsd",
+                                            style: TextStyle(
+                                                color: AppColors.kBlack,
+                                                fontFamily: 'Baloo2Regular',
+                                                fontSize: 14)),
+                                        GestureDetector(
+                                          onTap:(){
                                             Navigator.push(
                                               context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      PayoutHistory()),
+                                              MaterialPageRoute(builder: (context) =>  ParkedInHistory()),
                                             );
                                           },
                                           child: Icon(
                                             FontAwesomeIcons.chevronRight,
                                             size: 22,
                                             color: AppColors.kShadowGrey,
-                                          )),
-                                    ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Divider(
-                                  color: AppColors.kDividerGrey, //color of divider
-                                  height: 1, //height spacing of divider
-                                  thickness: 1, //thickness of divier line
-                                  indent: 25, //spacing at the start of divider
-                                  //endIndent: 25, //spacing at the end of divider
-                                )
-                              ],
-                            ),
-                          );
-                        }),
+                                  Divider(
+                                    color: AppColors.kDividerGrey, //color of divider
+                                    height: 1, //height spacing of divider
+                                    thickness: 1, //thickness of divier line
+                                    indent: 25, //spacing at the start of divider
+                                    //endIndent: 25, //spacing at the end of divider
+                                  )
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
                   ),
                   Center(
-                    child: ListView.builder(
-                        itemCount: 3,
-                        itemBuilder: (BuildContext context, int index) {
-                          return GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) =>  ParkedInHistory()),
-                              );
-                            },
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 18.0, top: 18, right: 22, bottom: 5),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 20),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              Strings.kParkedIn,
-                                              style: TextStyle(
-                                                  color: AppColors.kBlack
-                                                      .withOpacity(.9),
-                                                  fontFamily: 'Baloo2Medium',
-                                                  fontSize: 16),
-                                            ),
-                                            Text(
-                                              'March 14. 22 at 15:34',
-                                              style: TextStyle(
-                                                  color: AppColors.kBlack
-                                                      .withOpacity(.4),
-                                                  fontFamily: 'Baloo2Regular',
-                                                  fontSize: 14),
-                                            ),
-                                          ],
+                    child: MediaQuery.removePadding(
+                      context: context,
+                      removeTop: true,
+                      child: ListView.builder(
+                          itemCount: 3,
+                          itemBuilder: (BuildContext context, int index) {
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
+                                );
+                              },
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 18.0, top: 18, right: 22, bottom: 5),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 20),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                Strings.kParkedOut,
+                                                style: TextStyle(
+                                                    color: AppColors.kBlack
+                                                        .withOpacity(.9),
+                                                    fontFamily: 'Baloo2Medium',
+                                                    fontSize: 16),
+                                              ),
+                                              Text(
+                                                'March 14. 22 at 15:34',
+                                                style: TextStyle(
+                                                    color: AppColors.kBlack
+                                                        .withOpacity(.4),
+                                                    fontFamily: 'Baloo2Regular',
+                                                    fontSize: 14),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      SizedBox(
-                                        width: 120,
-                                      ),
-                                      Text("+350 rsd",
-                                          style: TextStyle(
-                                              color: AppColors.kBlack,
-                                              fontFamily: 'Baloo2Regular',
-                                              fontSize: 14)),
-                                      GestureDetector(
-                                        onTap:(){
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(builder: (context) =>  ParkedInHistory()),
-                                          );
-                                        },
-                                        child: Icon(
-                                          FontAwesomeIcons.chevronRight,
-                                          size: 22,
-                                          color: AppColors.kShadowGrey,
+                                        SizedBox(
+                                          width: 120,
                                         ),
-                                      ),
-                                    ],
+                                        Text("+350 rsd",
+                                            style: TextStyle(
+                                                color: AppColors.kBlack,
+                                                fontFamily: 'Baloo2Regular',
+                                                fontSize: 14)),
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
+                                            );
+                                          },
+                                          child: Icon(
+                                            FontAwesomeIcons.chevronRight,
+                                            size: 22,
+                                            color: AppColors.kShadowGrey,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Divider(
-                                  color: AppColors.kDividerGrey, //color of divider
-                                  height: 1, //height spacing of divider
-                                  thickness: 1, //thickness of divier line
-                                  indent: 25, //spacing at the start of divider
-                                  //endIndent: 25, //spacing at the end of divider
-                                )
-                              ],
-                            ),
-                          );
-                        }),
-                  ),
-                  Center(
-                    child: ListView.builder(
-                        itemCount: 3,
-                        itemBuilder: (BuildContext context, int index) {
-                          return GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
-                              );
-                            },
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 18.0, top: 18, right: 22, bottom: 5),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 20),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              Strings.kParkedOut,
-                                              style: TextStyle(
-                                                  color: AppColors.kBlack
-                                                      .withOpacity(.9),
-                                                  fontFamily: 'Baloo2Medium',
-                                                  fontSize: 16),
-                                            ),
-                                            Text(
-                                              'March 14. 22 at 15:34',
-                                              style: TextStyle(
-                                                  color: AppColors.kBlack
-                                                      .withOpacity(.4),
-                                                  fontFamily: 'Baloo2Regular',
-                                                  fontSize: 14),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 120,
-                                      ),
-                                      Text("+350 rsd",
-                                          style: TextStyle(
-                                              color: AppColors.kBlack,
-                                              fontFamily: 'Baloo2Regular',
-                                              fontSize: 14)),
-                                      GestureDetector(
-                                        onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(builder: (context) =>  ParkedOutHistory()),
-                                          );
-                                        },
-                                        child: Icon(
-                                          FontAwesomeIcons.chevronRight,
-                                          size: 22,
-                                          color: AppColors.kShadowGrey,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Divider(
-                                  color: AppColors.kDividerGrey, //color of divider
-                                  height: 1, //height spacing of divider
-                                  thickness: 1, //thickness of divier line
-                                  indent: 25, //spacing at the start of divider
-                                  //endIndent: 25, //spacing at the end of divider
-                                )
-                              ],
-                            ),
-                          );
-                        }),
+                                  Divider(
+                                    color: AppColors.kDividerGrey, //color of divider
+                                    height: 1, //height spacing of divider
+                                    thickness: 1, //thickness of divier line
+                                    indent: 25, //spacing at the start of divider
+                                    //endIndent: 25, //spacing at the end of divider
+                                  )
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
                   ),
                 ],
               ),
