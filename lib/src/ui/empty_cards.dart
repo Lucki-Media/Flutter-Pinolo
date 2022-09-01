@@ -13,65 +13,58 @@ class EmptyCards extends StatefulWidget {
 }
 
 class _EmptyCardsState extends State<EmptyCards> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100.0,
-        shadowColor: AppColors.kShadowGrey,
-        automaticallyImplyLeading: false,
-        elevation: 5,
-        backgroundColor: AppColors.kWhite,
-        //foregroundColor: AppColors.kBlue,
-        //centerTitle: true,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Column(
-            //mainAxisSize: MainAxisSize.min,
-            //crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: const Text(
-                      Strings.kMyCards,
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: AppColors.kBlack,
-                        fontFamily: 'Baloo2SemiBold',
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      icon: CircleAvatar(
-                        backgroundColor: AppColors.kGrey,
-                        child: Icon(
-                          FontAwesomeIcons.arrowLeft,
-                          color: AppColors.kBlack,
-                          size: 18,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
       body: Stack(
         children: [
           Center(
             child: Column(
-              children:   [
+              children: [
+                SafeArea(
+                    minimum: const EdgeInsets.only(top: 35.0, bottom: 12),
+                    top: false,
+                    bottom: false,
+                    child: Column(
+                      children: [
+                        Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Align(
+                              alignment: Alignment.center,
+                              child: const Text(
+                                Strings.kMyCards,
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: AppColors.kBlack,
+                                  fontFamily: 'Baloo2SemiBold',
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: IconButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  icon: CircleAvatar(
+                                    backgroundColor: AppColors.kGrey,
+                                    child: Icon(
+                                      FontAwesomeIcons.arrowLeft,
+                                      color: AppColors.kBlack,
+                                      size: 18,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    )),
+                AppCommon.divider(),
                 const SizedBox(
                   height: 60,
                 ),
@@ -175,7 +168,7 @@ class _EmptyCardsState extends State<EmptyCards> {
             backgroundColor: AppColors.kWhite,
             title: Padding(
               padding: const EdgeInsets.only(top: 20.0),
-              child:Column(
+              child: Column(
                 //mainAxisSize: MainAxisSize.min,
                 //crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -184,7 +177,7 @@ class _EmptyCardsState extends State<EmptyCards> {
                     children: [
                       Align(
                         alignment: Alignment.center,
-                        child:  const Text(
+                        child: const Text(
                           '+${Strings.kAddNewCard}',
                           style: TextStyle(
                             fontSize: 18,
@@ -237,7 +230,8 @@ class _EmptyCardsState extends State<EmptyCards> {
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: TextFormField(
                         style: AppCommon.fieldTextStyle(),
-                        decoration: AppCommon.textFiledDecoration(hintText: Strings.kChooseCard),
+                        decoration: AppCommon.textFiledDecoration(
+                            hintText: Strings.kChooseCard),
                       ),
                     ),
                     SizedBox(
@@ -258,7 +252,8 @@ class _EmptyCardsState extends State<EmptyCards> {
                         height: 205,
                         width: 365,
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 15),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 24, vertical: 15),
                           child: Column(
                             children: [
                               Padding(
@@ -294,7 +289,8 @@ class _EmptyCardsState extends State<EmptyCards> {
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: AppColors.kBlack.withOpacity(0.2),
+                                        color:
+                                            AppColors.kBlack.withOpacity(0.2),
                                         width: 1.0),
                                     borderRadius: BorderRadius.circular(30.0),
                                   ),
@@ -317,7 +313,8 @@ class _EmptyCardsState extends State<EmptyCards> {
                                     child: Column(
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 24),
+                                          padding:
+                                              const EdgeInsets.only(left: 24),
                                           child: Align(
                                             alignment: Alignment.topLeft,
                                             child: Text(
@@ -340,23 +337,30 @@ class _EmptyCardsState extends State<EmptyCards> {
                                           decoration: InputDecoration(
                                             filled: true, //<-- SEE HERE
                                             fillColor: AppColors.kWhite,
-                                            contentPadding: const EdgeInsets.symmetric(
-                                                vertical: 0, horizontal: 25),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                                    vertical: 0,
+                                                    horizontal: 25),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
-                                                  color: AppColors.kBlue, width: 1.0),
-                                              borderRadius: BorderRadius.circular(30.0),
+                                                  color: AppColors.kBlue,
+                                                  width: 1.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(30.0),
                                             ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                  color: AppColors.kBlack.withOpacity(0.2),
+                                                  color: AppColors.kBlack
+                                                      .withOpacity(0.2),
                                                   width: 1.0),
-                                              borderRadius: BorderRadius.circular(30.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(30.0),
                                             ),
                                             hintText: '00/00',
                                             hintStyle: TextStyle(
                                               fontSize: 18,
-                                              color: AppColors.kBlack.withOpacity(.5),
+                                              color: AppColors.kBlack
+                                                  .withOpacity(.5),
                                               fontFamily: 'Baloo2Regular',
                                             ),
                                             //suffixIcon: Suffix
@@ -373,7 +377,8 @@ class _EmptyCardsState extends State<EmptyCards> {
                                     child: Column(
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 24),
+                                          padding:
+                                              const EdgeInsets.only(left: 24),
                                           child: Align(
                                             alignment: Alignment.topLeft,
                                             child: Text(
@@ -396,23 +401,30 @@ class _EmptyCardsState extends State<EmptyCards> {
                                           decoration: InputDecoration(
                                             filled: true, //<-- SEE HERE
                                             fillColor: AppColors.kWhite,
-                                            contentPadding: const EdgeInsets.symmetric(
-                                                vertical: 0, horizontal: 25),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                                    vertical: 0,
+                                                    horizontal: 25),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
-                                                  color: AppColors.kBlue, width: 1.0),
-                                              borderRadius: BorderRadius.circular(14.0),
+                                                  color: AppColors.kBlue,
+                                                  width: 1.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(14.0),
                                             ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                  color: AppColors.kBlack.withOpacity(0.2),
+                                                  color: AppColors.kBlack
+                                                      .withOpacity(0.2),
                                                   width: 1.0),
-                                              borderRadius: BorderRadius.circular(14.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(14.0),
                                             ),
                                             hintText: '***',
                                             hintStyle: TextStyle(
                                               fontSize: 18,
-                                              color: AppColors.kBlack.withOpacity(.5),
+                                              color: AppColors.kBlack
+                                                  .withOpacity(.5),
                                               fontFamily: 'Baloo2Regular',
                                             ),
                                             //suffixIcon: Suffix
